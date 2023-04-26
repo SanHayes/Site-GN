@@ -1,0 +1,24 @@
+{include file="headafk" /}
+<body style="font-size: 16px;">
+<form action="/index/index/login" method="post">
+    <div id="app">
+        <div class="t_box_login"
+             style="background-image: url('/public/jpg/background.png'); background-repeat: no-repeat;">
+            <div class="t_logo"><img src="{$conf['web_logo']}" alt=""
+                                     data-src="{$conf['web_logo']}" lazy="loaded"></div>
+            <div class="login_box">
+                <ul>
+                    <li><i></i> <input type="text" placeholder="请输入手机号" onfocus="this.placeholder=''"
+                                       onblur="this.placeholder='请输入手机号'" name="username"></li>
+                    <li><i></i> <input type="password" placeholder="请输入密码" onfocus="this.placeholder=''"
+                                       onblur="this.placeholder='请输入密码'" name="pwd"></li>
+                    <li><input type="submit" value="登陆"></li>
+                    <li><input type="button" value="会员注册"></li>
+                </ul>
+                <p>在线客服</p></div>
+        </div>
+    </div>
+</form>
+
+</body>
+</html>

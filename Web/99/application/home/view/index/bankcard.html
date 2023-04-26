@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta name="full-screen" content="yes">
+    <meta name="x5-fullscreen" content="true">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link rel="shortcut icon" href="" type="image/x-icon">
+    <link rel="stylesheet" type="" href="/pc/css/bootstrap.min.css">
+    <link rel="stylesheet" type="" href="/pc/css/bootstrapValidator.css">
+</head>
+<body>
+<style type="text/css">
+    .dialog{
+        display: none
+    }
+</style>
+<title>银行卡管理</title>
+<link rel="stylesheet" href="/pc/css/c96bb6.css">
+<header id="header" class=" bgMainDark">
+    <div class=" logoNavWrap d-flex align-items-center flex align-items justify-between">
+        <h1 class="logo mr-auto ml"><a href="javascript:viod(0)"  class="forJsClick" data-url="/index/index.html"> <img alt="logo" src="{$conf['web_logo']}" /> </a></h1>
+        {include file="nav" /}
+    </div>
+</header><!-- End Header -->
+<main class="main">
+    <div class="container">
+        <h3>收款方式管理</h3>
+        <section class="mTable  ">
+            <table class="table table-hover">
+                <thead>
+                <tr>
+                    <th>姓名</th>
+                    <th>银行卡号</th>
+                    <!--<th>银行名称</th>-->
+                    <!--<th>开户网点</th>-->
+                </tr>
+                </thead>
+                <tbody>
+                {volist name="bankcards" id="vo" key='k'}
+                <tr>
+                    <td>{$vo.accntnm}</td>
+                    <td>{:substr($vo['accntno'],0,6).str_pad('*',strlen($vo['accntno'])-10,'*').substr($vo['accntno'],-4)}</td>
+                    <!--<td>中国农业银行</td>-->
+                    <!--<td>中国农业银行</td>-->
+                </tr>
+                {/volist}
+                </tbody>
+            </table>
+            {if count($bankcards) > 0 &&  $userinfo.card_delete_count < $card_delete_count}
+            <div style="display: flex;justify-content: center;">
+                <button id="card-reset" class="btn ripple btn-lg  btn-primary">解除银行卡</button>
+            </div>
+            {/if}
+        </section>
+        <!-- mForm结束 -->
+        <!-- 没有银行卡展示下面 -->
+        <section data-url="{:url('/home/index/add_bank')}" class="forJsClick addCard flex fontDetail column align-items justify-center <?php if (count($bankcards) != 0) { echo 'hidden'; } ?>">
+            请添加银行卡
+            <div class="plus">+</div>
+        </section>
+    </div>
+</main><!-- End #main -->
+<div data-url="{$conf['sys_kefu']}"  class="kefu hoverPointer forJsClick003 bgUseable" >
+    <span><i class="iconfont icon-kefu fontPanel" ></i></span>
+    &nbsp;&nbsp;&nbsp;<span class="fontPanel" id="zaixian" >在线客服</span>
+</div>
+<script src="/pc/js/jquery.min.js"></script>
+<script src="/pc/js/layer/layer.js"></script>
+<script src="/pc/js/bootstrap.min.js"></script>
+<script src="/pc/js/bootstrapValidator.js"></script>
+<script>
+</script>
+<!-- 如果使用了某些拓展插件还需要额外的JS -->
+<script src="/pc/js/fde4e3.js"></script>
+<script src="/pc/js/8c120f.js"></script>
+<script>
+    var url = "{:Url('/index/index/card_reset')}";
+    $("#card-reset").on("click", function () {
+        var index = layer.load(1);
+        $.post(url, {}, function (res) {
+            layer.close(index);
+            console.log(res);
+            layer.msg(res.data, {time:1000}, function () {
+                window.location.reload();
+            });
+        });
+    });
+</script>
+</body>
+</html>

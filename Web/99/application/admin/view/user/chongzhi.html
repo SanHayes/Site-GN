@@ -1,0 +1,79 @@
+{include file="head" /}
+
+{include file="menu" /}
+
+
+
+   <!--main content start-->
+      <section id="main-content">
+          <section class="wrapper">
+
+              <div class="row state-overview">
+                <div class="container">
+                <form id="formid" action="{:url('user/userlist')}" method="post">
+                <div class="row">
+                     <div class="col-lg-3 mar-10">
+                      <div class="input-group">
+                              <span class="input-group-addon">用户名</span>
+                              <input type="text" value="" placeholder="请输入用户用户名" name="username" class="form-control">
+                          </div>
+                      </div>
+                      <div class="col-lg-3 mar-10">
+                        <span class="input-group-addon" style="display: inline-block;width: 45%;height: 34px;line-height: 20px;float: left;">是否显示</span>
+                        <select name="isshow" style="display: inline-block;width: 45%;float: left;border-radius: 0px 5px 5px 0px;" class="form-control">
+                            <option selected="selected" value="1">显示</option>
+                            <option value="0">隐藏</option>
+                        </select>
+                      </div>
+                      <div class="col-lg-5 mar-10">
+
+                        <div class="input-group">
+                            <span class="input-group-addon" id="basic-addon1">操作金额</span>
+                            <input type="text"  value=""  class="form-control" name="bpprice" placeholder="正数为加款，负数为扣款"/>
+                        </div>
+                      </div>
+                      <div class="col-lg-5 mar-10">
+
+                        <div class="input-group">
+                            <span class="input-group-addon" id="basic-addon1">备注</span>
+                            <input type="text"  value=""  class="form-control" name="remark" placeholder="请输入备注"/>
+                        </div>
+                      </div>
+                  <div class="mar-10">
+                   <input type="submit" onclick="return editcon(this.form)" class="btn btn-success" value="提交">
+                  </div>
+                </div>
+                </form>
+              </div>
+              
+                 
+              
+              <!-- page end-->
+          </section>
+      </section>
+      <!--main content end-->
+  </section>
+
+
+{include file="foot" /}
+<script>
+  function editcon(form){
+    
+    var username = form.username.value;
+    var bpprice = form.bpprice.value;
+    var isshow = form.isshow.value;
+ 
+    if(!username){layer.msg('请输入用户名'); return false;}
+    if(!bpprice){layer.msg('请输入充值金额'); return false;}
+    
+      var formurl = "{:Url('user/addprice')}";
+      var data = $('#formid').serialize();
+      var locurl1 = "{:Url('user/userprice')}", locurl2 = "{:Url('user/cash')}";
+      locurl = bpprice>0 ? locurl1 : locurl2;
+
+      WPpost(formurl,data,locurl);
+
+      return false;
+  }
+</script>
+

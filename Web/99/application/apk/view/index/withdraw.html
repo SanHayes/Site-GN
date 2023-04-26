@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta name="full-screen" content="yes">
+    <meta name="x5-fullscreen" content="true">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    
+    <link rel="stylesheet"  href="/mobile/css/weui.css">
+    <link rel="stylesheet" href="/mobile/css/jquery-weui.min.css">
+    <script src="/mobile/js/2461f3.js"></script>
+</head>
+<body>
+<script>
+    var _online_url = "/mberem/oledab.html";
+</script>
+<title>提现</title>
+<link rel="stylesheet" href="/mobile/css/5fa5f0.css">
+
+<div class="withdrawal">
+
+    <!-- title开始 -->
+    <div class="topPart  flex align-items">
+        <i id="goBack" class="iconfont  icon-back1 pl pr "></i>
+        <div class="flex justify-center align-items box">提现</div>
+    </div>
+    <!-- title结束 -->
+    <div class="info">
+
+        <div class="weui-cells weui-cells_form fontDetail">
+            <div class="weui-cell">
+                <div class="weui-cell__hd"><label disabled class="weui-label">用户余额:</label></div>
+                <div class="weui-cell__bd">
+                    {if $conf.sys_yue_benjin==2}
+                    <input id="remain" value="{$userinfo.usermoney}" disabled class="weui-input">
+                    {else/}
+                    <input id="remain" value="<?php echo $userinfo['usermoney']-$userinfo['freeze']>=0?$userinfo['usermoney']-$userinfo['freeze']:0;?>" disabled class="weui-input">
+                    {/if}
+                </div>
+            </div>
+        </div>
+        <div class="weui-cells weui-cells_form fontDetail">
+            <div class="weui-cell">
+                <div class="weui-cell__hd"><label class="weui-label">提现金额:</label></div>
+                <div class="weui-cell__bd">
+                    <input id="withdrawalMoney" class="weui-input" placeholder="请输入提现金额">
+                </div>
+            </div>
+        </div>
+        <div class="weui-cells weui-cells_form fontDetail">
+            <div class="weui-cell">
+                <div class="weui-cell__hd"><label class="weui-label">手续费:</label></div>
+                <div class="weui-cell__bd">
+                    <input disabled class="weui-input" value="{$conf.reg_par|default=0}%">
+                </div>
+            </div>
+        </div>
+        <div class="weui-cells weui-cells_form fontDetail">
+            <div class="weui-cell">
+                <div class="weui-cell__hd"><label class="weui-label">实际到账:</label></div>
+                <div class="weui-cell__bd">
+                    <input disabled class="weui-input" id="sjdz" value="0.00">
+                </div>
+            </div>
+        </div>
+        <div class="weui-cells weui-cells_form fontDetail">
+            <div class="weui-cell">
+                <div class="weui-cell__hd"><label class="weui-label">银行卡号:</label></div>
+                <div class="weui-cell__bd">
+                    <input disabled class="weui-input" id="bankcardno" value="{:substr($bankinfo['accntno'],0,6).str_pad('*',strlen($bankinfo['accntno'])-10,'*').substr($bankinfo['accntno'],-4)}">
+                </div>
+            </div>
+        </div>
+        <div class="weui-cells weui-cells_form fontDetail">
+            <div class="weui-cell">
+                <div class="weui-cell__hd"><label class="weui-label">姓名:</label></div>
+                <div class="weui-cell__bd">
+                    <input disabled  class="weui-input" value="{$userinfo['nickname']}">
+                </div>
+            </div>
+        </div>
+        <div class="weui-cells weui-cells_form fontDetail">
+            <div class="weui-cell">
+                <div class="weui-cell__hd"><label class="weui-label">提现密码:</label></div>
+                <div class="weui-cell__bd">
+                    <input id="withdrawalPwd" class="weui-input"  type="password" placeholder="请输入提现密码">
+                </div>
+            </div>
+        </div>
+        <div class="ripple btnWrap">
+            <a id="submit" href="javascript:;" class="forJsClick weui-btn   bgDisable ma weui-btn_disabled">提交</a>
+            <p style="text-align: center;">
+                <a href="{:url('apk/index/modityepwd')}" style="color: #fff;">修改提现密码</a>
+            </p>
+        </div>
+    </div>
+</div>
+{include file="nav" /}
+<!-- loading遮罩层开始 -->
+<div id="loading" class="hidden">
+    <div class="mloading">
+        <div class="flex align-items justify-center loadingWrap">
+            <i class="weui-loading"></i>
+        </div>
+    </div>
+</div>
+<!-- loading遮罩层结束 -->
+<!-- loading遮罩层,点击不能关闭开始 -->
+<div id="loadingNotTuochClose" class="hidden">
+    <div class="mloadingNoTouch">
+        <div class="flex align-items justify-center loadingWrap">
+            <i class="weui-loading"></i>
+        </div>
+    </div>
+</div>
+<!-- loading遮罩层结束 -->
+
+<!-- body 最后 -->
+<script src="/mobile/js/jquery.min.js"></script>
+<script src="/mobile/js/jquery-weui.min.js"></script>
+<script>
+    var _txfee = {$conf.reg_par|default=0} / 100;
+    var bankid = '{$bankinfo.id}';
+    var _withdrawurl = "{:url('/apk/index/withdraw')}", _jump_url = "{:url('/apk/index/withdrawrecord')}";
+    $(document).ready(function (e) {
+        //链接 点击
+        $('.forJsClick').on('click', function (e) {
+            e.preventDefault()
+            e.stopPropagation()
+            var url = $(this).data('url')
+            if (url) {
+                setTimeout(function () {
+                    window.location.href = url;
+                }, 300)
+            }
+        })
+        //弹窗关闭
+        $('.footerItem').each(function (e) {
+            var url = $(this).data('url')
+            url = url && url.replace('./', '')
+            if (window.location.href.indexOf(url) > -1) {
+                $(this).addClass('on')
+            }
+        });
+        //遮罩层可以关闭
+        $('.loadingWrap').on('click', function () {
+            $('#loading').addClass('hidden')
+        })
+        //返回
+        $('#goBack').on('click', function () {
+            window.history.back()
+        })
+        var browser = {
+            versions: function () {
+                var u = navigator.userAgent, app = navigator.appVersion;
+                return {     //移动终端浏览器版本信息
+                    mobile: !!u.match(/AppleWebKit.*Mobile.*/), //是否为移动终端
+                };
+            }(),
+        }
+
+        if (!browser.versions.mobile) {
+            //pc
+            $('body').addClass('plantPc')
+        }
+    });
+</script>
+<!-- 如果使用了某些拓展插件还需要额外的JS -->
+<script src="/mobile/js/9123ce.js"></script>
+</body>
+</html>

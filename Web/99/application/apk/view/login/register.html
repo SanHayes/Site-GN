@@ -1,0 +1,160 @@
+
+<!DOCTYPE html>
+<html data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta name="full-screen" content="yes">
+    <meta name="x5-fullscreen" content="true">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    
+    <link rel="stylesheet"  href="/mobile/css/weui.css">
+    <link rel="stylesheet" href="/mobile/css/jquery-weui.min.css">
+    <script src="/mobile/js/2461f3.js"></script>
+</head>
+<body>
+
+<title>注册</title>
+
+<link rel="stylesheet" href="/mobile/css/c2056b.css">
+<body  class="register" >
+<div class="flex justify-center hTitle">
+    <div class="fontMain hTitleLabel " >
+        用户注册
+    </div>
+    <!-- 要用图片把下面的注释掉就可以 -->
+    <!-- <img class="logo" src="./static/images/mock_logo.png" /> -->
+</div>
+<div class="pa">
+    {if $conf.sys_truename}
+    <div class="weui-cells weui-cells_form fontTitle">
+        <div class="weui-cell">
+            <div class="weui-cell__hd"><label class="weui-label">姓名:</label></div>
+            <div class="weui-cell__bd">
+                <input id="name" class="weui-input" placeholder="请输入姓名">
+            </div>
+        </div>
+    </div>
+    {/if}
+    {if $conf.register_id eq 1}
+    <div class="weui-cells weui-cells_form fontTitle">
+        <div class="weui-cell">
+            <div class="weui-cell__hd"><label class="weui-label">身份证号:</label></div>
+            <div class="weui-cell__bd">
+                <input id="scard" type="text" class="weui-input" placeholder="身份证号">
+            </div>
+        </div>
+    </div>
+    {/if}
+    <div class="weui-cells weui-cells_form fontTitle">
+        <div class="weui-cell">
+            <div class="weui-cell__hd"><label class="weui-label">会员账号:</label></div>
+            <div class="weui-cell__bd">
+                <input id="account" class="weui-input" placeholder="请输入会员账号">
+            </div>
+        </div>
+    </div>
+    <div class="weui-cells weui-cells_form fontTitle">
+        <div class="weui-cell">
+            <div class="weui-cell__hd"><label class="weui-label">登录密码:</label></div>
+            <div class="weui-cell__bd">
+                <input id="password" type="password" class="weui-input" placeholder="密码">
+            </div>
+        </div>
+    </div>
+    <div class="weui-cells weui-cells_form fontTitle">
+        <div class="weui-cell">
+            <div class="weui-cell__hd"><label class="weui-label">确认密码:</label></div>
+            <div class="weui-cell__bd">
+                <input id="confirmPwd" type="password" class="weui-input" placeholder="确认密码">
+            </div>
+        </div>
+    </div>
+    <div class="weui-cells weui-cells_form fontTitle">
+        <div class="weui-cell">
+            <div class="weui-cell__hd"><label class="weui-label">提现密码:</label></div>
+            <div class="weui-cell__bd">
+                <input id="withdrawal" type="password" class="weui-input" placeholder="提现密码">
+            </div>
+        </div>
+    </div>
+    {if $conf.sys_mobile eq 1}
+    <div class="weui-cells weui-cells_form fontTitle">
+        <div class="weui-cell">
+            <div class="weui-cell__hd"><label class="weui-label">手机号:</label></div>
+            <div class="weui-cell__bd">
+                <input id="utel" type="text" class="weui-input" placeholder="手机号">
+            </div>
+        </div>
+    </div>
+    {/if}
+    <div class="weui-cells weui-cells_form fontTitle">
+        <div class="weui-cell">
+            <div class="weui-cell__hd"><label class="weui-label">邀请码:</label></div>
+            <div class="weui-cell__bd">
+                {if $conf.sys_invit eq 1}
+                <input id="invitCode" class="weui-input" placeholder="必填">
+                {else/}
+                <input id="invitCode" class="weui-input" placeholder="选填">
+                {/if}
+            </div>
+        </div>
+    </div>
+    <div id="submit" class=" ripple borderRadius">
+        <a id="subBtn" href="javascript:;" class="weui-btn  bgDisable  ">注册</a>
+    </div>
+    <div data-url="{$conf['sys_kefu']}" class="forgetPwd fontMain  forJsClick mt pt">联系客服</div>
+    <div class="gRegister fontDetail">
+        已有账号<span data-url="{:url('apk/login/login')}" class="pl fontMain forJsClick">立即登录</span>
+    </div>
+</div>
+</div>
+<!-- loading遮罩层开始 -->
+<div id="loading" class="hidden">
+    <div class="mloading">
+        <div class="flex align-items justify-center loadingWrap">
+            <i class="weui-loading"></i>
+        </div>
+    </div>
+</div>
+<!-- loading遮罩层结束 -->
+<!-- loading遮罩层,点击不能关闭开始 -->
+<div id="loadingNotTuochClose" class="hidden">
+    <div class="mloadingNoTouch">
+        <div class="flex align-items justify-center loadingWrap">
+            <i class="weui-loading"></i>
+        </div>
+    </div>
+</div>
+<!-- loading遮罩层结束 -->
+<script src="/mobile/js/jquery.min.js"></script>
+<script src="/mobile/js/jquery-weui.min.js"></script>
+<script>
+    var _regurl = "{:url('/apk/login/register')}";
+    var _loginurl = "{:url('/apk/login/login')}";
+    var _inviteNeed = '{$conf.sys_invit}';
+    var _registerIdNeed = '{$conf.register_id}';
+    var _truenameNeed = '{$conf.sys_truename}';
+    var _msg_name = "姓名必须填写",
+        _msg_account = "账号必须填写",
+        _msg_password = "密码必须填写",
+        _msg_password_length = "密码长度要不小于6位",
+        _msg_confirm = "确认密码必须填写",
+        _msg_password_disagree = "密码与确认密码不一致",
+        _msg_tx_password = "提现密码必须填写",
+        _msg_tx_password_length = "提现密码长度要不小于6位",
+        _msg_invite_need = '必须填写邀请码',
+        _msg_register_id = '必须填写身份证号',
+        _msg_reg_success = "注册成功";
+</script>
+<script src="/mobile/js/bbacde.js"></script>
+</body>
+</html>

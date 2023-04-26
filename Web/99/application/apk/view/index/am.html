@@ -1,0 +1,3598 @@
+{include file="comhead" /}
+
+    <style type="text/css">@import url("/public/static/css/index.css");</style>
+    <style type="text/css">body, dd, dl, form, h1, h2, h3, h4, h5, h6, hr, input, ol, p, pre, tbody, td, textarea, tfoot, th, thead, ul {
+        margin: 0;
+        padding: 0
+    }
+
+    ol, ul {
+        list-style: none
+    }
+
+    html {
+        -ms-text-size-adjust: none;
+        -webkit-text-size-adjust: none;
+        text-size-adjust: none
+    }
+
+    body {
+        line-height: 1.5;
+        font-size: 14px
+    }
+
+    body, button, input, select, textarea {
+        font-family: helvetica neue, tahoma, hiragino sans gb, stheiti, wenquanyi micro hei, \5FAE\8F6F\96C5\9ED1, \5B8B\4F53, sans-serif
+    }
+
+    b, strong {
+        font-weight: 700
+    }
+
+    em, i {
+        font-style: normal
+    }
+
+    table {
+        border-collapse: collapse;
+        border-spacing: 0
+    }
+
+    table td, table th {
+        border: 1px solid #ddd;
+        padding: 5px
+    }
+
+    table th {
+        font-weight: inherit;
+        border-bottom-width: 2px;
+        border-bottom-color: #ccc
+    }
+
+    img {
+        border: 0 none;
+        width: auto \9;
+        max-width: 100%;
+        vertical-align: top;
+        height: auto
+    }
+
+    button, input, select, textarea {
+        font-family: inherit;
+        font-size: 100%;
+        margin: 0;
+        vertical-align: baseline
+    }
+
+    button, html input[type=button], input[type=reset], input[type=submit] {
+        -webkit-appearance: button;
+        cursor: pointer
+    }
+
+    button[disabled], input[disabled] {
+        cursor: default
+    }
+
+    input[type=checkbox], input[type=radio] {
+        box-sizing: border-box;
+        padding: 0
+    }
+
+    input[type=search] {
+        -webkit-appearance: textfield;
+        -moz-box-sizing: content-box;
+        -webkit-box-sizing: content-box;
+        box-sizing: content-box
+    }
+
+    input[type=search]::-webkit-search-decoration {
+        -webkit-appearance: none
+    }
+
+    input:focus {
+        outline: none
+    }
+
+    select[multiple], select[size], select[size][multiple] {
+        border: 1px solid #aaa;
+        padding: 0
+    }
+
+    article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {
+        display: block
+    }
+
+    audio, canvas, progress, video {
+        display: inline-block
+    }
+
+    body {
+        background: #fff
+    }
+
+    input::-webkit-input-speech-button {
+        display: none
+    }
+
+    button, input, textarea {
+        -webkit-tap-highlight-color: transparent
+    }
+
+    .fl {
+        float: left
+    }
+
+    .fr {
+        float: right
+    }
+
+    img {
+        display: inline-block
+    }
+
+    body, html {
+        height: 100%
+    }
+
+    a {
+        text-decoration: none
+    }
+
+    li, ol {
+        list-style: none
+    }
+
+    button, input {
+        border: none;
+        outline: none
+    }
+
+    .el-message-box {
+        width: 66%;
+        border-radius: .4rem;
+        padding-bottom: .266667rem
+    }
+
+    .el-message-box .el-message-box__header {
+        padding-top: .266667rem
+    }
+
+    .el-message-box .el-message-box__content {
+        border-bottom: .013333rem solid #ccc
+    }
+
+    .el-message-box .el-message-box__btns {
+        padding-top: .266667rem
+    }
+
+    .el-message, .el-message--success {
+        position: fixed !important;
+        top: -.2rem !important;
+        max-width: 8rem !important;
+        font-size: .533333rem;
+        background: none;
+        border: none
+    }
+
+    .el-message--success p, .el-message p {
+        color: #f56c6c;
+        font-size: .4rem !important;
+        background-color: #fef0f0;
+        padding: .213333rem .8rem;
+        border-radius: .083333rem;
+        min-width: 5.066667rem;
+        text-align: center
+    }
+
+    #app {
+        width: 100%
+    }
+
+    #app, .box {
+        height: 100%;
+        display: flex;
+        flex-direction: column
+    }
+
+    .box .maintain {
+        z-index: 1000;
+        overflow: hidden;
+        height: 100%;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        left: 0
+    }
+
+    .box .maintain img {
+        height: 100%;
+        width: 100%;
+        z-index: 2000
+    }
+
+    .box .maintain .remind {
+        position: absolute;
+        left: 50%;
+        top: 18%;
+        transform: translate(-50%, -18%)
+    }
+
+    .box .maintain .remind p {
+        color: #fff;
+        text-align: center
+    }
+
+    .box .maintain .count_down {
+        position: absolute;
+        bottom: 6%;
+        left: 50%;
+        transform: translate(-50%, -5%);
+        width: 4.8rem;
+        height: 1.2rem;
+        color: #000;
+        display: flex;
+        flex-direction: row
+    }
+
+    .box .maintain .count_down span {
+        display: block;
+        line-height: 1.2rem;
+        text-align: center;
+        font-size: .6rem;
+        color: #023a60;
+        font-weight: 600
+    }
+
+    .box .maintain .count_down span:first-child {
+        margin-top: .026667rem;
+        width: 24%
+    }
+
+    .box .maintain .count_down span:nth-child(2) {
+        margin-top: .026667rem;
+        width: 22%
+    }
+
+    .box .maintain .count_down span:last-child {
+        flex: 1;
+        font-size: .8rem
+    }
+
+    .box .jun-content {
+        height: 92%;
+        width: 100%;
+        display: flex
+    }</style>
+    <style type="text/css">.dk-spinner-mask {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: #fff;
+        opacity: .4;
+        z-index: 2090
+    }
+
+    .dk-spinner-three-bounce.dk-spinner {
+        position: absolute;
+        top: 53%;
+        left: 47%;
+        background-color: none !important;
+        z-index: 2099;
+        margin: 0 auto;
+        width: 70px;
+        text-align: center
+    }
+
+    .dk-spinner-three-bounce div {
+        width: .24rem;
+        height: .24rem;
+        background-color: #1ab394;
+        border-radius: 100%;
+        display: inline-block;
+        -webkit-animation: dk-threeBounceDelay 1.4s infinite ease-in-out;
+        animation: dk-threeBounceDelay 1.4s infinite ease-in-out;
+        -webkit-animation-fill-mode: both;
+        animation-fill-mode: both
+    }
+
+    .dk-spinner-three-bounce .dk-bounce1 {
+        -webkit-animation-delay: -.32s;
+        animation-delay: -.32s
+    }
+
+    .dk-spinner-three-bounce .dk-bounce2 {
+        -webkit-animation-delay: -.16s;
+        animation-delay: -.16s
+    }
+
+    @-webkit-keyframes dk-threeBounceDelay {
+        0%, 80%, to {
+            -webkit-transform: scale(0);
+            transform: scale(0)
+        }
+        40% {
+            -webkit-transform: scale(1);
+            transform: scale(1)
+        }
+    }
+
+    @keyframes dk-threeBounceDelay {
+        0%, 80%, to {
+            -webkit-transform: scale(0);
+            transform: scale(0)
+        }
+        40% {
+            -webkit-transform: scale(1);
+            transform: scale(1)
+        }
+    }</style>
+    <style type="text/css">.versions_cover_box {
+        position: fixed;
+        height: 100%;
+        width: 100%;
+        z-index: 3000
+    }
+
+    .versions_cover_box .t_cover {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        background-color: #666;
+        opacity: .5
+    }
+
+    .versions_cover_box .t_versions {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        height: 5.5rem;
+        width: 8.026667rem;
+        border: .266667rem solid #fd6e77;
+        border-radius: .266667rem;
+        background-color: #fff
+    }
+
+    .versions_cover_box .t_versions .t_header_box .t_header {
+        position: absolute;
+        left: 20%;
+        top: -.733333rem;
+        height: .933333rem;
+        width: 4.32rem;
+        line-height: .933333rem;
+        text-align: center;
+        text-indent: 1.626667rem;
+        background: linear-gradient(#fd6e77, #d73741);
+        border-radius: .133333rem;
+        transform: skew(-30deg);
+        -webkit-transform: skew(-30deg);
+        -moz-transform: skew(-30deg);
+        -o-transform: skew(-30deg);
+        -ms-transform: skew(-30deg)
+    }
+
+    .versions_cover_box .t_versions .t_header_box h1 {
+        position: absolute;
+        top: -.16rem;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: #fff;
+        height: .933333rem;
+        text-align: center;
+        line-height: .933333rem;
+        font-size: .48rem;
+        font-weight: 500;
+        letter-spacing: .133333rem;
+        z-index: 3001
+    }
+
+    .versions_cover_box .t_versions .t_con {
+        height: 3.466667rem;
+        margin: 0 auto;
+        width: 90%;
+        margin-top: 1.066667rem;
+        overflow: scroll;
+        -webkit-overflow-scrolling: touch
+    }
+
+    .versions_cover_box .t_versions .t_con p {
+        word-wrap: break-word;
+        font-size: .4rem;
+        margin-bottom: .133333rem;
+        text-align: center
+    }
+
+    .versions_cover_box .t_versions .t_con p:nth-child(2) {
+        color: #fd6e77;
+        font-size: .613333rem
+    }
+
+    .versions_cover_box .t_versions .t_con .j_btn {
+        height: 1.4rem;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center
+    }
+
+    .versions_cover_box .t_versions .t_con .j_btn button:first-child {
+        position: absolute;
+        left: 15%;
+        width: 1.8rem;
+        height: .8rem;
+        font-size: .4rem;
+        background: #909399;
+        color: #fff;
+        border-radius: .133333rem
+    }
+
+    .versions_cover_box .t_versions .t_con .j_btn a:last-child {
+        width: 1.8rem;
+        height: .8rem;
+        position: absolute;
+        right: 15%
+    }
+
+    .versions_cover_box .t_versions .t_con .j_btn a:last-child button {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #409eff
+    }</style>
+    <style type="text/css">body {
+        background: #110e1f;
+        overflow: auto
+    }
+
+    .l_userNews {
+        width: 100%;
+        height: 1rem;
+        background-color: #f0f4f8;
+        color: #7d5dd8;
+        margin-top: .15rem
+    }
+
+    .l_userNews ul {
+        width: 100%;
+        height: 100%;
+        overflow: hidden
+    }
+
+    .l_userNews ul li {
+        float: left
+    }
+
+    .l_userNews ul .l_firm {
+        width: 14%;
+        height: 100%;
+        font-size: .36rem
+    }
+
+    .l_userNews ul .l_firm .l_firmTxt {
+        width: 80%;
+        height: 100%;
+        text-align: center;
+        background: #b9d5ff;
+        float: left;
+        color: #000;
+        margin: 0
+    }
+
+    .l_userNews ul .l_firm .l_firmArrowBox {
+        background: #9b06f5
+    }
+
+    .l_userNews ul .l_userMon {
+        width: 32%;
+        height: 100%;
+        text-align: center
+    }
+
+    .l_userNews ul .l_userMon p {
+        width: 100%;
+        height: 50%;
+        left: .75rem;
+        font-size: .35rem
+    }
+
+    .l_userNews ul .l_userMon .l_userAbleMon {
+        color: #000
+    }
+
+    .l_userNews ul .l_userMon .l_userAbleTit {
+        color: #7d5dd8
+    }
+
+    .l_userNews ul .l_verticalLine {
+        width: .013333rem;
+        height: 70%;
+        background: #34323f;
+        margin-top: 2%
+    }
+
+    .l_userNews ul .l_firmArrowBox {
+        width: .5rem;
+        height: 1rem;
+        border-radius: 0 1rem 1rem 0;
+        margin-left: -.1rem;
+        position: relative
+    }
+
+    .l_userNews ul .l_rechargeBtnBox {
+        width: 19%;
+        height: 100%
+    }
+
+    .l_userNews ul .l_rechargeBtnBox span {
+        float: left
+    }
+
+    .l_userNews ul .l_rechargeBtnBox .l_rechargeBtn {
+        width: 70%;
+        height: .76rem;
+        background-color: #7d5dd8;
+        margin-top: .12rem;
+        text-align: center;
+        line-height: .76rem;
+        font-size: .36rem;
+        color: #fff;
+        border-radius: .133333rem
+    }
+
+    .l_salesVolume {
+        width: 100%;
+        height: 1.5rem
+    }
+
+    .l_salesVolume > div {
+        height: 100%;
+        float: left
+    }
+
+    .l_salesVolume .l_buyData {
+        width: 42.5%;
+        position: relative
+    }
+
+    .l_salesVolume .l_buyData .l_content {
+        display: block;
+        width: 95%;
+        margin: 0 auto
+    }
+
+    .l_salesVolume .l_buyData .l_content .l_progressBar {
+        width: 80%;
+        height: .24rem;
+        background: #eaeaea;
+        border-radius: 10rem;
+        margin-top: .6rem;
+        position: relative;
+        overflow: hidden;
+        z-index: 5
+    }
+
+    .l_salesVolume .l_buyData .l_content .l_progressBar .l_AllProgressBar {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        border-radius: 10rem
+    }
+
+    .l_salesVolume .l_buyData .l_content .l_progressBarR {
+        left: 20%
+    }
+
+    .l_salesVolume .l_buyData .l_content .l_salesVolumeTxt {
+        width: 20%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        text-align: center;
+        line-height: 1.4rem;
+        font-size: .36rem
+    }
+
+    .l_salesVolume .l_buyData .l_content .l_salesVolumeTxtL {
+        right: 0
+    }
+
+    .l_salesVolume .l_buyData .l_content .l_salesVolumeTxtR {
+        left: 0
+    }
+
+    .l_salesVolume .l_salesVolumeTit {
+        width: 15%;
+        text-align: center;
+        line-height: 1.4rem;
+        color: #000;
+        font-size: .4rem
+    }
+
+    .l_salesVolume .l_buyData .l_buyProgressBar {
+        background: #ff3d3d;
+        left: 63%
+    }
+
+    .l_salesVolume .l_buyData .l_sellProgressBar {
+        background: #2fd0a4;
+        left: -37%
+    }
+
+    .l_btnBox {
+        width: 100%;
+        height: 1rem;
+        margin-bottom: 1.8rem
+    }
+
+    .l_btnBox .l_content {
+        width: 95%;
+        height: 100%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center
+    }
+
+    .l_btnBox .l_content .l_btn {
+        width: 48%;
+        height: 100%;
+        text-align: center;
+        line-height: 1rem;
+        color: #fff;
+        font-size: .5rem;
+        border-radius: .1rem
+    }
+
+    .l_btnBox .l_content .l_riseBtn {
+        background: #ff3d3d
+    }
+
+    .l_btnBox .l_content .l_fallBtn {
+        background: #26a848
+    }
+
+    .el-message--error .el-message__content {
+        font-size: .4rem
+    }</style>
+    <style type="text/css">a {
+        outline: none;
+        color: inherit
+    }
+
+    a, a:active, a:hover, a:link, a:visited {
+        text-decoration: none
+    }
+
+    html {
+        zoom: 1
+    }
+
+    html * {
+        outline: 0;
+        zoom: 1
+    }
+
+    html button::-moz-focus-inner {
+        border-color: transparent !important
+    }
+
+    blockquote, body, code, dd, div, dl, dt, fieldset, form, h1, h2, h3, h4, h5, h6, input, legend, li, ol, p, pre, td, textarea, th, ul {
+        margin: 0;
+        padding: 0
+    }
+
+    table {
+        border-collapse: collapse;
+        border-spacing: 0
+    }
+
+    a img, fieldset {
+        border: 0
+    }
+
+    address, caption, cite, code, dfn, em, th, var，i {
+        font-style: normal;
+        font-weight: 400
+    }
+
+    li {
+        list-style: none
+    }
+
+    caption, th {
+        text-align: left
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        font-size: 100%;
+        font-weight: 400
+    }
+
+    q:after, q:before {
+        content: ""
+    }
+
+    em, i {
+        font-style: normal
+    }
+
+    button, input[type=button], input[type=date], input[type=reset], input[type=submit], input[type=text], select {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        tap-highlight-color: transparent !important
+    }
+
+    a, input[type=password], input[type=text], select, textarea {
+        tap-highlight-color: transparent !important
+    }
+
+    input::-webkit-input-placeholder {
+        color: #aaa
+    }
+
+    input:focus::-webkit-input-placeholder {
+        color: #eee
+    }
+
+    *, :after, :before {
+        margin: 0;
+        padding: 0;
+        -webkit-tap-highlight-color: transparent;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box
+    }
+
+    span {
+        display: inline-block
+    }
+
+    a.link, a.visited, a:active, a:hover {
+        text-decoration: none
+    }
+
+    .l_body {
+        width: 100%;
+        min-width: 4.266667rem;
+        overflow: auto;
+        background-color: #fff
+    }
+
+    .l_body .l_headerNav {
+        width: 100%;
+        height: 1.2rem;
+        background: #181f2f;
+        position: fixed;
+        right: 0;
+        left: 0;
+        top: 0;
+        z-index: 100
+    }
+
+    .l_body .l_headerNav .l_content {
+        width: 96%;
+        height: 100%;
+        margin: 0 auto;
+        overflow: hidden;
+        position: relative
+    }
+
+    .l_body .l_headerNav .l_content .l_backArrow {
+        width: .3rem;
+        height: .5rem;
+        background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAAhCAMAAADj/gtmAAAAUVBMVEVMaXH////////////////////////////////////////////////////////////////////////////////////////////////////////JzkR1AAAAGnRSTlMAiEryUfr1hYlMhvvkT/zzTflb9kvsg1OjirlxHP8AAAB6SURBVCjPbZJJEoAgDAQRRUXcd/n/Q42eyDAcu0gTJjFGn/OogbQxRk0aIU6RTki4sGrbkZQePYtHj6uwqrYpKT6PRU+Ysw5zj0fPlPUzDilZhfTKY25Bj86D3CIu9iLri3XP/siSYHmxVFn2bEJsjmzabCfY5vz79QLNLAzsmE3bygAAAABJRU5ErkJggg==) no-repeat;
+        -webkit-background-size: contain;
+        background-size: contain;
+        margin-top: .35rem;
+        float: left
+    }
+
+    .l_body .l_headerNav .l_content .l_backArrow:active {
+        opacity: .5
+    }
+
+    .l_body .l_headerNav .l_content .l_navTit {
+        width: 50%;
+        height: 100%;
+        margin: 0 auto 0 -25%;
+        line-height: 1.2rem;
+        text-align: center;
+        font-size: .5rem;
+        color: #fff;
+        position: absolute;
+        left: 50%
+    }
+
+    .l_body .l_headerNav .l_content .l_navTit ul {
+        width: 100%;
+        height: 100%
+    }
+
+    .l_body .l_headerNav .l_content .l_navTit ul li {
+        height: 100%;
+        float: left
+    }
+
+    .l_body .l_headerNav .l_content .l_navTit ul .l_leftTabTit, .l_body .l_headerNav .l_content .l_navTit ul .l_rightTabTit {
+        width: 20%
+    }
+
+    .l_body .l_headerNav .l_content .l_navTit ul .l_navTitTxt {
+        width: 60%
+    }
+
+    .l_body .l_headerNav .l_content .l_navTit ul .l_leftTabTit span {
+        width: 0;
+        height: 0;
+        border-right: .3rem solid #fff;
+        border-top: .15rem solid transparent;
+        border-bottom: .15rem solid transparent
+    }
+
+    .l_body .l_headerNav .l_content .l_navTit ul .l_rightTabTit span {
+        width: 0;
+        height: 0;
+        border-left: .3rem solid #fff;
+        border-top: .15rem solid transparent;
+        border-bottom: .15rem solid transparent
+    }
+
+    .l_body .l_headerNav .l_content .l_withdrawalBtn {
+        width: 1.7rem;
+        height: .8rem;
+        background: #7d5dd8;
+        float: right;
+        margin-top: .2rem;
+        text-align: center;
+        font-size: .4rem;
+        line-height: .8rem;
+        color: #fff;
+        border-radius: .15rem
+    }
+
+    .l_fffColor {
+        color: #fff
+    }
+
+    .l_riseColor {
+        color: #ff3d3d
+    }
+
+    .l_riseBg {
+        background: #ff3d3d
+    }
+
+    .l_flatColor {
+        color: #bc9455
+    }
+
+    .l_fallColor {
+        color: #2fd0a4
+    }
+
+    .l_fallBg {
+        background: #2fd0a4
+    }</style>
+    <style type="text/css">.l_chartDataNav {
+        width: 100%;
+        height: 1.2rem;
+        background: #ff3d3d;
+        color: #fff;
+        overflow: hidden;
+        margin-top: 1.2rem;
+        position: relative
+    }
+
+    .l_chartDataNav .l_chartDataNavL {
+        width: 40%;
+        height: 100%;
+        float: left;
+        text-align: center;
+        line-height: 1.2rem;
+        font-size: .7rem
+    }
+
+    .l_chartDataNav .l_chartDataNavR {
+        width: 60%;
+        height: 100%;
+        float: left
+    }
+
+    .l_chartDataNav .l_chartDataNavR ul {
+        width: 100%;
+        height: 100%
+    }
+
+    .l_chartDataNav .l_chartDataNavR ul li {
+        width: 50%;
+        height: 50%;
+        float: left;
+        text-align: center;
+        line-height: .6rem;
+        font-size: .35rem;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap
+    }
+
+    .l_chart .l_spot {
+        background: red;
+        left: 1.333333rem
+    }
+
+    .l_chart .l_spot, .l_chart .l_spot span {
+        position: absolute;
+        width: .133333rem;
+        height: .133333rem;
+        top: 0;
+        border-radius: 50%
+    }
+
+    .l_chart .l_spot span {
+        left: 0
+    }
+
+    .l_chart .l_spot .l_bigSpot {
+        width: .133333rem;
+        height: .133333rem;
+        background: rgba(240, 101, 105, .8);
+        animation: big 1.5s infinite
+    }
+
+    .l_chart .l_spot .l_centerSpot {
+        width: .2rem;
+        height: .2rem;
+        left: -.026rem;
+        top: -.0288rem;
+        background: #fff
+    }
+
+    .l_chart .l_spot .l_smallSpot {
+        background: #ef4b4f
+    }
+
+    .l_chart .l_showKlineVal {
+        display: none;
+        width: 100%;
+        height: .026667rem;
+        position: absolute
+    }
+
+    .l_chart .l_showKlineVal div {
+        width: 2rem;
+        height: .666667rem;
+        position: absolute;
+        left: 50%;
+        top: -.333333rem;
+        margin-left: -1rem;
+        text-align: center;
+        line-height: .666667rem;
+        color: #fff;
+        border-radius: .133333rem
+    }
+
+    @keyframes big {
+        0% {
+            transform: scale(1)
+        }
+        to {
+            transform: scale(5)
+        }
+    }
+
+    @keyframes center {
+        0% {
+            transform: scale(1)
+        }
+        to {
+            transform: scale(3)
+        }
+    }
+
+    .l_chartNav {
+        width: 100%;
+        height: .8rem;
+        background-color: #f0f4f8;
+        position: relative
+    }
+
+    .l_chartNav ul {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        border-top: .026667rem solid #cfcfcf;
+        border-bottom: .026667rem solid #cfcfcf
+    }
+
+    .l_chartNav ul li {
+        float: left;
+        flex: 1;
+        text-align: center;
+        line-height: .8rem;
+        margin: 0 .266667rem;
+        font-size: .3rem;
+        color: #000
+    }
+
+    .l_chartNav ul li.active {
+        background-color: #4c98ff;
+        border-radius: .133333rem;
+        color: #fff
+    }
+
+    .l_orderNews {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: rgba(0, 0, 0, .8);
+        z-index: 100
+    }
+
+    .l_orderNews > .l_content {
+        width: 93%;
+        height: 100%;
+        position: absolute;
+        top: 46%;
+        left: 50%;
+        margin-top: -7.5rem;
+        margin-left: -46.5%;
+        background: #151227
+    }
+
+    .l_orderNews > .l_content .l_orderTit {
+        width: 90%;
+        height: 1.2rem;
+        margin: 0 auto;
+        border-bottom: .013333rem solid #ccc;
+        position: relative
+    }
+
+    .l_orderNews > .l_content .l_orderTit .l_orderTitTxt {
+        display: block;
+        width: 50%;
+        height: 100%;
+        margin: 0 auto;
+        text-align: center;
+        line-height: 1.2rem;
+        color: #fff;
+        font-size: .5rem
+    }
+
+    .l_orderNews > .l_content .l_orderTit .l_choseOrder {
+        width: .7rem;
+        height: .7rem;
+        background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACoAAAAqCAMAAADyHTlpAAABAlBMVEVMaXH///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////9lJUEIAAAAVXRSTlMA+y8GSw9M+cUO1AeQgBSP9I7PN+z8tgUkMdWS8wja6j/uEzAENP60CbFXLZmurxWRMzXb7fYyLJzwPlhKuZO1EqeosvpWejx4Cg3QJT0mK4VaHZ3xlM7bewAAAhtJREFUOMt9lVd34jAQha8NrAtgjOkl9B4gQAghYdOT7X33/v+/sg8YkISNnuaMvnOkuaO5AqQVaSQn9tIwlvYk2YggfJXGSwqrOS6FgHq+R9qzUakVj7dKo5lN9vJ6AHiW1ugmzsXUecqlljpTyaLHXOVCzV5UcvSKcm5RZ20RdKtFjdmMmMhUmbeCK7DyrApssc7nQpgshWfW93c48/hyQsPIC72BH6d5GTuhNqxLpn09tVx3G3W+BLPdnLbV94H3fqp/9V5CBlH/Xvd8AIBSz3X8rSENkbVMftpGjtsrAVgzsduLmSJrmTS++3GKayB+w2uIbFQg3+02rnkTxy1t4cwDK5GAzVskD+eLrEIiwSSmHOGYVUlsOEWZbRyxG5WEzjKyVJ9ezCRVEg6zMBhXm/PnivylPgQaAahlkgfNBDRL54g0fpsq6zB7VNa29pjK6iyrYu1UUtkNp0oLDnoqbIJJubGi8jJrsyE9F7lHMZPGRz/+yX9xYM0UDu81Kvfiw36m/gJYsersp0BW6PNuCpwq5wBwx4q/1QnxAlR4BwBoa7k5Tq55Tmvvh9s6Ody1fTkDj8NCOFkY8utAMKKnThjZeRKMCMi47IfZW5+ubIVZ1rqBxqKaJvDNo1ZpqWBrptH7cWTwKY1uWjb4dDXI4AHoeZJ24k1/LBQe9beETTLw2wCA1bgpf0arE2pHGslJufn62iwff3H/AaKOVtk93dDvAAAAAElFTkSuQmCC) no-repeat;
+        -webkit-background-size: contain;
+        background-size: contain;
+        position: absolute;
+        top: 50%;
+        margin-top: -.35rem;
+        right: 0
+    }
+
+    .l_orderNews > .l_content .l_orderTime {
+        width: 100%;
+        margin-top: .1rem;
+        overflow: hidden
+    }
+
+    .l_orderNews > .l_content .l_orderTime .l_orderTimeTit {
+        width: 100%;
+        height: .6rem;
+        color: #fff;
+        font-size: .4rem;
+        line-height: .6rem;
+        text-indent: 2em;
+        margin-bottom: .1rem
+    }
+
+    .l_orderNews > .l_content .l_orderTime .l_orderTimeListBox {
+        width: 90%;
+        height: 2.6rem;
+        margin: .3rem auto 0;
+        overflow: auto
+    }
+
+    .l_orderNews > .l_content .l_orderTime .l_orderTimeListBox .l_orderTimeUl {
+        width: 800%;
+        height: 100%
+    }
+
+    .l_orderNews > .l_content .l_orderTime .l_orderTimeListBox .l_orderTimeUl li {
+        float: left;
+        margin-right: .25%
+    }
+
+    .l_orderNews > .l_content .l_orderTime .l_orderTimeListBox .l_orderTimeUl .l_orderTimeList {
+        width: 2.6rem;
+        height: 100%;
+        border: .04rem solid #367fff;
+        border-radius: .2rem;
+        position: relative;
+        overflow: hidden;
+        box-sizing: border-box
+    }
+
+    .l_orderNews > .l_content .l_orderTime .l_orderTimeListBox .l_orderTimeUl .l_orderTimeList .l_secondsBox {
+        width: 100%;
+        height: 1.6rem;
+        background: #1e1a35;
+        color: #3b7eff
+    }
+
+    .l_orderNews > .l_content .l_orderTime .l_orderTimeListBox .l_orderTimeUl .l_orderTimeList .l_secondsBox .l_secondsTxt {
+        width: 80%;
+        height: 100%;
+        font-size: 1rem;
+        line-height: 1.6rem;
+        text-align: center;
+        float: left
+    }
+
+    .l_orderNews > .l_content .l_orderTime .l_orderTimeListBox .l_orderTimeUl .l_orderTimeList .l_secondsBox .l_secondsType {
+        width: 18%;
+        font-size: .4rem;
+        float: left;
+        line-height: 1.2rem
+    }
+
+    .l_orderNews > .l_content .l_orderTime .l_orderTimeListBox .l_orderTimeUl .l_orderTimeList .l_secondsProfit {
+        width: 100%;
+        height: .9rem;
+        background: #251f45;
+        text-align: center;
+        font-size: .35rem;
+        line-height: .9rem;
+        color: #3b7eff
+    }
+
+    .l_orderNews > .l_content .l_orderTime .l_orderTimeListBox .l_orderTimeUl .l_orderTimeList .hookBox {
+        display: none
+    }
+
+    .l_orderNews > .l_content .l_orderTime .l_orderTimeListBox .l_orderTimeUl .active .hookBox {
+        display: block;
+        width: 1.5rem;
+        height: 1.5rem;
+        border-top-right-radius: .2rem;
+        overflow: hidden;
+        position: absolute;
+        top: 0;
+        right: 0
+    }
+
+    .l_orderNews > .l_content .l_orderTime .l_orderTimeListBox .l_orderTimeUl .active .hookBox .hook {
+        display: block;
+        width: 0;
+        height: 0;
+        border-top: 1.5rem solid #3b7eff;
+        border-left: 1.5rem solid transparent;
+        border-bottom: .65rem solid transparent
+    }
+
+    .l_orderNews > .l_content .l_orderTime .l_orderTimeListBox .l_orderTimeUl .active .hookBox img {
+        width: .75rem;
+        height: .55rem;
+        position: absolute;
+        top: .2rem;
+        right: .1rem
+    }
+
+    .l_orderNews > .l_content .l_orderMoney {
+        width: 90%;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center
+    }
+
+    .l_orderNews > .l_content .l_orderMoney .l_orderMoneyTit {
+        width: 100%;
+        color: #fff;
+        font-size: .4rem;
+        margin-top: .1rem
+    }
+
+    .l_orderNews > .l_content .l_orderMoney .l_orderMoneyCon {
+        width: 100%;
+        position: relative
+    }
+
+    .l_orderNews > .l_content .l_orderMoney .l_orderMonProgressBar {
+        width: 80%;
+        height: .66rem;
+        background: #3b7eff;
+        border-radius: 10rem;
+        margin-top: .2rem;
+        float: left;
+        position: relative;
+        margin-bottom: .4rem
+    }
+
+    .l_orderNews > .l_content .l_orderMoney .l_orderMonProgressBar .l_orderMonProgressBarL {
+        width: 70%;
+        height: 100%;
+        border-radius: 10rem 0 0 10rem;
+        border-right: .013333rem solid #c88bff;
+        float: left
+    }
+
+    .l_orderNews > .l_content .l_orderMoney .l_orderMonProgressBar .l_orderMonProgressBarL .el-slider__runway {
+        width: 100%;
+        height: .66rem;
+        margin: 0;
+        background: #3b7eff;
+        border-radius: 10rem 0 0 10rem;
+        border-right: .013333rem solid #c88bff
+    }
+
+    .l_orderNews > .l_content .l_orderMoney .l_orderMonProgressBar .l_orderMonProgressBarL .el-slider__runway .el-slider__bar {
+        height: .66rem;
+        border-radius: 10rem 0 0 10rem
+    }
+
+    .l_orderNews > .l_content .l_orderMoney .l_orderMonProgressBar .l_orderMonProgressBarL .el-slider__runway .el-slider__button, .l_orderNews > .l_content .l_orderMoney .l_orderMonProgressBar .l_orderMonProgressBarL .el-slider__runway .el-slider__button-wrapper {
+        width: .95rem;
+        height: .95rem;
+        background: #fff;
+        border-radius: 50%;
+        border: .013333rem solid #fff
+    }
+
+    .l_orderNews > .l_content .l_orderMoney .l_orderMonProgressBar .l_orderMonProgressBarL .l_orderMonProgressBarBall {
+        position: absolute;
+        top: -.15rem;
+        left: 0;
+        width: .95rem;
+        height: .95rem;
+        background: #fff;
+        border-radius: 50%
+    }
+
+    .l_orderNews > .l_content .l_orderMoney .l_orderMonProgressBar .l_orderMonProgressBarL .l_orderMonProgressBarBallSlider {
+        height: 100%;
+        background: #3b7eff;
+        border-radius: 10rem 0 0 10rem
+    }
+
+    .l_orderNews > .l_content .l_orderMoney .l_orderMonProgressBar .l_orderMonProgressBarR {
+        width: 28%;
+        height: 100%;
+        text-align: center;
+        line-height: .66rem;
+        font-size: .4rem;
+        color: #fff;
+        position: absolute;
+        right: 0;
+        top: 0
+    }
+
+    .l_orderNews > .l_content .l_orderMoney .l_orderMonCustom {
+        width: 18%;
+        height: 100%;
+        float: right;
+        color: #fff;
+        line-height: .66rem;
+        margin-top: .2rem;
+        text-align: center;
+        background: #3b7eff;
+        box-sizing: border-box;
+        border-radius: .1rem;
+        font-size: .35rem
+    }
+
+    .l_orderNews > .l_content .l_allMon {
+        width: 90%;
+        margin: 0 auto;
+        font-size: .4rem;
+        color: #fff;
+        overflow: hidden
+    }
+
+    .l_orderNews > .l_content .l_allMon div {
+        width: 50%;
+        height: 100%;
+        float: left;
+        margin-bottom: .1rem
+    }
+
+    .l_orderNews > .l_content .l_allMon .l_serviceCharge {
+        text-align: right
+    }
+
+    .l_orderNews > .l_content .jun-money-select {
+        width: 90%;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        border-bottom: .013333rem solid #ccc
+    }
+
+    .l_orderNews > .l_content .jun-money-select h6 {
+        color: #fff;
+        height: 40px;
+        line-height: 40px
+    }
+
+    .l_orderNews > .l_content .jun-money-box {
+        width: 90%;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap
+    }
+
+    .l_orderNews > .l_content .jun-money-box li {
+        width: 28%;
+        height: .8rem;
+        line-height: .8rem;
+        color: #fff;
+        text-align: center;
+        border: .026667rem solid #367fff;
+        border-radius: .133333rem;
+        margin-left: .233333rem;
+        margin-bottom: .3rem;
+        position: relative
+    }
+
+    .l_orderNews > .l_content .jun-money-box li .jun-hook {
+        position: absolute;
+        top: 0;
+        right: 0;
+        display: block;
+        width: 0;
+        height: 0;
+        border-top: .5rem solid #3b7eff;
+        border-left: .5rem solid transparent;
+        border-bottom: .25rem solid transparent;
+        display: none
+    }
+
+    .l_orderNews > .l_content .jun-money-box li img {
+        position: absolute;
+        top: 0;
+        right: 0;
+        display: block;
+        width: .26rem;
+        height: .26rem;
+        display: none
+    }
+
+    .l_orderNews > .l_content .jun-money-box .jun-active img, .l_orderNews > .l_content .jun-money-box .jun-active span {
+        display: block
+    }
+
+    .l_orderNews > .l_content .l_orderNewsData {
+        width: 90%;
+        margin: 0 auto;
+        color: #fff
+    }
+
+    .l_orderNews > .l_content .l_orderNewsData ul {
+        width: 100%;
+        display: flex
+    }
+
+    .l_orderNews > .l_content .l_orderNewsData ul li {
+        flex: 1;
+        text-align: center;
+        font-size: .4rem
+    }
+
+    .l_orderNews > .l_content .l_orderNewsData ul li p {
+        margin-top: .3rem
+    }
+
+    .l_orderNews > .l_content .winnerVolume {
+        width: 90%;
+        margin: 0 auto;
+        font-size: .5rem;
+        color: #fff
+    }
+
+    .l_orderNews > .l_content .winnerVolume:before {
+        content: "";
+        display: inline-block;
+        width: .5rem;
+        height: .5rem;
+        border: 1px solid #fff;
+        border-radius: 50%;
+        vertical-align: middle;
+        margin-right: .5rem
+    }
+
+    .l_orderNews > .l_content .winnerVolume.active:before {
+        background: #3b7eff url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAASCAMAAACZ8IWSAAAAw1BMVEVMaXH///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////9cBOwOAAAAQHRSTlMAERoTurcL/goG+/z5CAEOhAnlgbG/ejiAHHR5dX5uw2kPxmXLcGpk/c6+YEn0TtoNx1bR1RUY11Jbs8Ks3jAdM/zN0gAAAKBJREFUGBltwQk7AlEAhtGvpubONFsRWUpaLSlCIeL9/79KzyhM954jp/Qzk1P4wTqRQ7gC8yVbowrUZQsqQF02/wjoyJZ1gXPlSq1Uv3p94Ey54IBmqK3SEMyFfpwaqCbKeTdgLrVzCFQCbSye4HqgPyfArS8tnyGa6L9j4P2h/ALRm4rawPweao/aNzJsxK+yjQ3EM7lc1aZ3cit7KvoGYaQVVlBqzeoAAAAASUVORK5CYII=) no-repeat 50%;
+        background-size: contain;
+        border: .04rem solid #3b7eff
+    }
+
+    .l_orderNews > .l_content .postOrderBtn {
+        width: 65%;
+        height: 1rem;
+        background: #3b7eff;
+        text-align: center;
+        line-height: 1rem;
+        color: #fff;
+        font-size: .5rem;
+        border-radius: .2rem;
+        margin: .5rem auto
+    }
+
+    .l_downTimerBox {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: rgba(0, 0, 0, .6);
+        z-index: 100
+    }
+
+    .l_downTimerBox > .l_content {
+        width: 93%;
+        margin-top: 1.2rem;
+        margin-left: 3.5%;
+        background: #151227;
+        overflow: hidden
+    }
+
+    .l_downTimerBox .l_orderTit {
+        width: 90%;
+        height: 1.2rem;
+        margin: 0 auto;
+        border-bottom: 1px solid #ccc;
+        position: relative
+    }
+
+    .l_downTimerBox .l_orderTit .l_orderTitTxt {
+        display: block;
+        width: 50%;
+        height: 100%;
+        margin: 0 auto;
+        text-align: center;
+        line-height: 1.2rem;
+        color: #fff;
+        font-size: .5rem
+    }
+
+    .l_downTimerBox .l_orderTit .l_choseOrder {
+        width: .7rem;
+        height: .7rem;
+        background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACoAAAAqCAMAAADyHTlpAAABAlBMVEVMaXH///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////9lJUEIAAAAVXRSTlMA+y8GSw9M+cUO1AeQgBSP9I7PN+z8tgUkMdWS8wja6j/uEzAENP60CbFXLZmurxWRMzXb7fYyLJzwPlhKuZO1EqeosvpWejx4Cg3QJT0mK4VaHZ3xlM7bewAAAhtJREFUOMt9lVd34jAQha8NrAtgjOkl9B4gQAghYdOT7X33/v+/sg8YkISNnuaMvnOkuaO5AqQVaSQn9tIwlvYk2YggfJXGSwqrOS6FgHq+R9qzUakVj7dKo5lN9vJ6AHiW1ugmzsXUecqlljpTyaLHXOVCzV5UcvSKcm5RZ20RdKtFjdmMmMhUmbeCK7DyrApssc7nQpgshWfW93c48/hyQsPIC72BH6d5GTuhNqxLpn09tVx3G3W+BLPdnLbV94H3fqp/9V5CBlH/Xvd8AIBSz3X8rSENkbVMftpGjtsrAVgzsduLmSJrmTS++3GKayB+w2uIbFQg3+02rnkTxy1t4cwDK5GAzVskD+eLrEIiwSSmHOGYVUlsOEWZbRyxG5WEzjKyVJ9ezCRVEg6zMBhXm/PnivylPgQaAahlkgfNBDRL54g0fpsq6zB7VNa29pjK6iyrYu1UUtkNp0oLDnoqbIJJubGi8jJrsyE9F7lHMZPGRz/+yX9xYM0UDu81Kvfiw36m/gJYsersp0BW6PNuCpwq5wBwx4q/1QnxAlR4BwBoa7k5Tq55Tmvvh9s6Ody1fTkDj8NCOFkY8utAMKKnThjZeRKMCMi47IfZW5+ubIVZ1rqBxqKaJvDNo1ZpqWBrptH7cWTwKY1uWjb4dDXI4AHoeZJ24k1/LBQe9beETTLw2wCA1bgpf0arE2pHGslJufn62iwff3H/AaKOVtk93dDvAAAAAElFTkSuQmCC) no-repeat;
+        -webkit-background-size: contain;
+        background-size: contain;
+        position: absolute;
+        top: 50%;
+        margin-top: -.35rem;
+        right: 0
+    }
+
+    .l_downTimerBox .l_downTimer {
+        width: 90%;
+        height: 6rem;
+        margin: 0 auto;
+        border-bottom: 1px solid #ccc
+    }
+
+    .l_downTimerBox .l_downTimer .l_content {
+        width: 4.6rem;
+        height: 4.6rem;
+        margin: .7rem auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative
+    }
+
+    .l_downTimerBox .l_downTimer .l_content .el-progress__text {
+        font-size: 1.5rem !important
+    }
+
+    .l_downTimerBox .l_downTimer .l_content .l_downTimeBox {
+        width: 4.6rem;
+        height: 4.6rem;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-left: -2.3rem;
+        margin-top: -2.3rem;
+        background: #fc1;
+        border-radius: 50%
+    }
+
+    .l_downTimerBox .l_downTimer .l_content .l_downTimeBox .l_downTimeInnerCircle {
+        width: 3rem;
+        height: 3rem;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-left: -1.5rem;
+        margin-top: -1.5rem;
+        background: #43affa;
+        border-radius: 50%;
+        text-align: center;
+        line-height: 3rem;
+        font-size: 1.2rem
+    }
+
+    .l_downTimerBox .l_downTimer .l_content .l_downTimeBox .l_downTimeLeftSemiCircle, .l_downTimerBox .l_downTimer .l_content .l_downTimeBox .l_downTimeRightSemiCircle {
+        width: 2.3rem;
+        height: 4.6rem;
+        position: absolute;
+        top: 0;
+        overflow: hidden;
+        box-sizing: border-box
+    }
+
+    .l_downTimerBox .l_downTimer .l_content .l_downTimeBox .l_downTimeLeftSemiCircle {
+        border-radius: 2.3rem 0 0 2.3rem;
+        left: 1px
+    }
+
+    .l_downTimerBox .l_downTimer .l_content .l_downTimeBox .l_downTimeLeftSemiCircle .l_downTimeLeftSemiCircleSlider {
+        width: 100%;
+        height: 100%;
+        border-radius: 2.3rem 0 0 2.3rem;
+        background: #fff;
+        transform-origin: 2.3rem 2.3rem;
+        transform: rotate(0deg)
+    }
+
+    .l_downTimerBox .l_downTimer .l_content .l_downTimeBox .l_downTimeRightSemiCircle {
+        border-radius: 0 2.3rem 2.3rem 0;
+        right: 0
+    }
+
+    .l_downTimerBox .l_downTimer .l_content .l_downTimeBox .l_downTimeRightSemiCircle .l_downTimeRightSemiCircleSlider {
+        width: 100%;
+        height: 100%;
+        border-radius: 0 2.3rem 2.3rem 0;
+        transform-origin: 0 2.3rem;
+        transform: rotate(0deg);
+        background: #fff
+    }
+
+    .l_downTimerBox .l_downTimer .l_content .l_downTimeSuccTxt {
+        width: 100%;
+        height: 4.6rem;
+        line-height: 4.6rem;
+        text-align: center;
+        font-size: .8rem
+    }
+
+    .l_downTimerBox .l_downTimerData {
+        width: 90%;
+        margin: 0 auto
+    }
+
+    .l_downTimerBox .l_downTimerData .l_content {
+        width: 100%
+    }
+
+    .l_downTimerBox .l_downTimerData .l_content .l_orderNewsUl {
+        width: 100%;
+        display: flex;
+        color: #fff
+    }
+
+    .l_downTimerBox .l_downTimerData .l_content .l_orderNewsUl li {
+        flex: 1;
+        text-align: center
+    }
+
+    .l_downTimerBox .l_downTimerData .l_content .l_orderNewsUl li p {
+        margin-top: .3rem;
+        font-size: .4rem
+    }
+
+    .l_downTimerBox .l_downTimerData .l_content .l_orderNewsUl li .l_orderDataTit {
+        color: #999
+    }
+
+    .l_downTimerBox .l_orderDataBtn {
+        width: 65%;
+        height: 1rem;
+        background: #3b7eff;
+        text-align: center;
+        font-size: .4rem;
+        color: #fff;
+        line-height: 1rem;
+        margin: .6rem auto;
+        border-radius: .2rem
+    }
+
+    .l_customMon {
+        width: 60%;
+        height: 3.733333rem;
+        position: absolute;
+        top: 50%;
+        left: 20%;
+        background: #fff;
+        margin-top: -2rem;
+        border-radius: .2rem;
+        box-shadow: .066667rem .066667rem .666667rem #999;
+        z-index: 101
+    }
+
+    .l_customMon .l_customMonTit {
+        height: .666667rem;
+        line-height: .666667rem;
+        font-size: .4rem;
+        text-indent: .666667rem;
+        margin-top: .266667rem
+    }
+
+    .l_customMon .l_customMonWir {
+        height: 1.333333rem
+    }
+
+    .l_customMon .l_customMonWir input {
+        width: 100%;
+        height: 100%;
+        font-size: .5rem;
+        text-align: center
+    }
+
+    .l_customMon .l_customMonBtn {
+        width: 100%;
+        height: 1.333333rem;
+        margin-top: .133333rem
+    }
+
+    .l_customMon .l_customMonBtn button {
+        width: 40%;
+        height: .666667rem;
+        margin-left: 5%;
+        margin-top: .333333rem;
+        border-radius: .133333rem;
+        background: #3b7eff;
+        color: #fff;
+        font-size: .4rem
+    }
+
+    .l_customMon .l_customMonBtn .l_choseBtn {
+        background: #999
+    }
+
+    .footer {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0
+    }</style>
+    
+    <style type="text/css">.t_header {
+        height: 1.2rem !important;
+        width: 100%;
+        background-color: #181f2f;
+        display: flex;
+        flex-direction: row;
+        z-index: 1000
+    }
+
+    .t_header span:first-child {
+        width: 10%;
+        position: relative
+    }
+
+    .t_header span:first-child:active {
+        opacity: .5
+    }
+
+    .t_header span:first-child img {
+        display: block;
+        width: .293333rem;
+        height: .493333rem;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%)
+    }
+
+    .t_header span:last-child {
+        flex: 1;
+        display: block;
+        color: #fff;
+        position: relative
+    }
+
+    .t_header span:last-child i {
+        font-size: .48rem;
+        position: absolute;
+        left: 46%;
+        top: 50%;
+        transform: translate(-50%, -50%)
+    }</style>
+    <style type="text/css"></style>
+
+    <style type="text/css">.f_box_mine {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        background: #111723
+    }
+
+    .f_box_mine .f_mine_box {
+        flex: 1;
+        overflow-y: auto
+    }
+
+    .f_box_mine .f_mine_box .f_mine {
+        height: 4.133333rem;
+        background-size: 100%;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        padding-top: .266666rem;
+        color: #fff
+    }
+
+    .f_box_mine .f_mine_box .f_mine .img_cion {
+        width: 100%;
+        height: 1.84rem;
+        position: relative
+    }
+
+    .f_box_mine .f_mine_box .f_mine .img_cion .f_mine_header {
+        display: block;
+        width: 1.84rem;
+        height: 1.84rem;
+        margin: .266666rem auto;
+        border-radius: .92rem;
+        border: none
+    }
+
+    .f_box_mine .f_mine_box .f_mine .img_cion i {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%)
+    }
+
+    .f_box_mine .f_mine_box .f_mine p:nth-child(2) span {
+        margin: 0 auto;
+        display: block;
+        width: 50%;
+        font-size: .48rem;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap
+    }
+
+    .f_box_mine .f_mine_box .f_mine p:nth-child(3) {
+        font-size: .32rem
+    }
+
+    .f_box_mine .f_mine_box .f_tab1 {
+        height: 1.866666rem;
+        display: flex;
+        flex-direction: row
+    }
+
+    .f_box_mine .f_mine_box .f_tab1 span {
+        flex: 1;
+        text-align: center
+    }
+
+    .f_box_mine .f_mine_box .f_tab1 span p:first-child {
+        font-size: .48rem;
+        margin-top: .43333rem;
+        color: #ff3d3d
+    }
+
+    .f_box_mine .f_mine_box .f_tab1 span p:nth-child(2) {
+        font-size: .32rem;
+        color: #7d5dd8
+    }
+
+    .f_box_mine .f_mine_box .f_tab1 span + span {
+        border-left: .026666rem solid #000100
+    }
+
+    .f_box_mine .f_mine_box .f_tab2 {
+        height: 1.6rem;
+        display: flex;
+        flex-direction: row;
+        border-top: .026667rem solid #000100;
+        border-bottom: .026667rem solid #000100
+    }
+
+    .f_box_mine .f_mine_box .f_tab2 span {
+        width: 42%;
+        height: 1.066666rem;
+        line-height: 1.066666rem;
+        border-radius: .133333rem;
+        margin: auto
+    }
+
+    .f_box_mine .f_mine_box .f_tab2 span p {
+        font-size: .4rem;
+        letter-spacing: .1rem;
+        text-indent: .1rem;
+        text-align: center;
+        color: #fff
+    }
+
+    .f_box_mine .f_mine_box .f_tab2 span:first-child {
+        background: #7d5dd8
+    }
+
+    .f_box_mine .f_mine_box .f_tab2 span:nth-child(2) {
+        background: #cd6f24
+    }
+
+    .f_box_mine .f_mine_box .f_table {
+        padding-bottom: 4rem
+    }
+
+    .f_box_mine .f_mine_box .f_table .el-col {
+        display: flex;
+        border-right: .026667rem solid #000100;
+        border-bottom: .026667rem solid #000100;
+        height: 2.4rem;
+        color: #fff
+    }
+
+    .f_box_mine .f_mine_box .f_table .el-col a {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center
+    }
+
+    .f_box_mine .f_mine_box .f_table .el-col img {
+        display: block;
+        width: .9rem;
+        height: .8rem;
+        margin-top: .2rem
+    }
+
+    .f_box_mine .f_mine_box .f_table .el-col p {
+        height: .8rem;
+        line-height: .8rem;
+        text-align: center;
+        margin-top: .066667rem;
+        font-size: .32rem
+    }
+
+    .f_box_mine .f_mine_box .f_table .el-col:last-child {
+        display: flex
+    }
+
+    .f_box_mine .f_mine_box .f_table .el-col:last-child > div {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center
+    }
+
+    .f_box_mine .f_mine_box .f_table .el-col:first-child {
+        border-left: 0 solid #000
+    }
+
+    .f_box_mine .el-button--text {
+        font-size: .32rem
+    }
+
+    .f_box_mine .el-dialog__wrapper .imgCropper .el-dialog {
+        width: 180%
+    }
+
+    .f_box_mine .el-dialog__wrapper .imgCropper .el-dialog .layer-header {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 99999;
+        background: #fff;
+        width: 100%;
+        height: .8rem;
+        padding: 0 .2rem;
+        box-sizing: border-box
+    }
+
+    .f_box_mine .el-dialog__wrapper .imgCropper .el-dialog .cancel, .f_box_mine .el-dialog__wrapper .imgCropper .el-dialog .confirm {
+        line-height: .8rem;
+        font-size: .28rem;
+        background: inherit;
+        border: 0;
+        outline: 0;
+        float: left
+    }
+
+    .f_box_mine .el-dialog__wrapper .imgCropper .el-dialog .confirm {
+        float: right
+    }
+
+    .f_box_mine .el-dialog__wrapper .imgCropper .el-dialog img {
+        position: inherit !important;
+        border-radius: inherit !important;
+        float: inherit !important
+    }
+
+    .f_box_mine .el-dialog {
+        opacity: .9;
+        width: 90%;
+        height: 60%;
+        background-color: #111723
+    }
+
+    .f_box_mine .el-dialog .el-dialog__header span {
+        font-size: .4rem;
+        color: #fff
+    }
+
+    .f_box_mine .el-dialog .el-dialog__header button {
+        font-size: .666667rem;
+        display: none
+    }
+
+    .f_box_mine .el-dialog .el-dialog__body {
+        height: 80%;
+        position: relative
+    }
+
+    .f_box_mine .el-dialog .el-dialog__body .layer-header {
+        position: absolute;
+        bottom: -5%;
+        left: 50%;
+        transform: translate(-50%);
+        height: 1.066667rem;
+        width: 6.666667rem
+    }
+
+    .f_box_mine .el-dialog .el-dialog__body .layer-header button {
+        height: 1.066667rem;
+        width: 2.666667rem;
+        background-color: skyblue;
+        color: #fff;
+        border-radius: .133333rem;
+        font-size: .4rem;
+        float: left
+    }
+
+    .f_box_mine .el-dialog .el-dialog__body .layer-header button:first-child {
+        float: right;
+        background-color: #ccc
+    }
+
+    .f_box_mine .el-dialog .el-dialog__body p:first-child {
+        text-align: center;
+        position: absolute !important;
+        top: 30%;
+        left: 50%;
+        transform: translate(-50%, -30%)
+    }
+
+    .f_box_mine .el-dialog .el-dialog__body p:first-child button {
+        height: 1.6rem;
+        width: 5.333333rem;
+        background-color: #cd6f24;
+        border-radius: .266667rem;
+        letter-spacing: .066667rem
+    }
+
+    .f_box_mine .el-dialog .el-dialog__body p:first-child button span {
+        font-size: .533333rem;
+        color: #fff
+    }
+
+    .f_box_mine .el-dialog .el-dialog__body p:nth-child(2) {
+        text-align: center;
+        position: absolute !important;
+        top: 60%;
+        left: 50%;
+        transform: translate(-50%, -50%)
+    }
+
+    .f_box_mine .el-dialog .el-dialog__body p:nth-child(2) button {
+        height: 1.6rem;
+        width: 5.333333rem;
+        background-color: #7d5dd8;
+        border-radius: .266667rem;
+        letter-spacing: .066667rem
+    }
+
+    .f_box_mine .el-dialog .el-dialog__body p:nth-child(2) button span {
+        font-size: .533333rem;
+        color: #fff
+    }
+
+    .f_box_mine .el-dialog .el-dialog__body .headerbody {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%)
+    }
+
+    .f_box_mine .el-dialog .el-dialog__body .headerbody .croppa-container {
+        height: 5.333333rem;
+        width: 5.333333rem;
+        border-radius: 50%
+    }
+
+    .f_box_mine .el-dialog .el-dialog__body .headerbody .croppa-container canvas {
+        height: 5.333333rem !important;
+        width: 5.333333rem !important;
+        border-radius: 50%
+    }
+
+    .f_box_mine .el-dialog .el-dialog__body .headerbody .croppa-container svg {
+        height: .666667rem;
+        width: .666667rem
+    }
+
+    .f_box_mine .file {
+        display: none
+    }
+
+    .f_box_mine .jun-empty {
+        height: 4.6rem;
+        width: 1px
+    }</style>
+    <style type="text/css">.sk-fading-circle {
+        position: absolute
+    }
+
+    .sk-fading-circle .sk-circle {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0
+    }
+
+    .sk-fading-circle .sk-circle .sk-circle-indicator {
+        display: block;
+        margin: 0 auto;
+        width: 15%;
+        height: 15%;
+        border-radius: 100%;
+        -webkit-animation: sk-circleFadeDelay 1s infinite ease-in-out both;
+        animation: sk-circleFadeDelay 1s infinite ease-in-out both
+    }
+
+    .sk-fading-circle .sk-circle2 {
+        -webkit-transform: rotate(30deg);
+        transform: rotate(30deg)
+    }
+
+    .sk-fading-circle .sk-circle3 {
+        -webkit-transform: rotate(60deg);
+        transform: rotate(60deg)
+    }
+
+    .sk-fading-circle .sk-circle4 {
+        -webkit-transform: rotate(90deg);
+        transform: rotate(90deg)
+    }
+
+    .sk-fading-circle .sk-circle5 {
+        -webkit-transform: rotate(120deg);
+        transform: rotate(120deg)
+    }
+
+    .sk-fading-circle .sk-circle6 {
+        -webkit-transform: rotate(150deg);
+        transform: rotate(150deg)
+    }
+
+    .sk-fading-circle .sk-circle7 {
+        -webkit-transform: rotate(180deg);
+        transform: rotate(180deg)
+    }
+
+    .sk-fading-circle .sk-circle8 {
+        -webkit-transform: rotate(210deg);
+        transform: rotate(210deg)
+    }
+
+    .sk-fading-circle .sk-circle9 {
+        -webkit-transform: rotate(240deg);
+        transform: rotate(240deg)
+    }
+
+    .sk-fading-circle .sk-circle10 {
+        -webkit-transform: rotate(270deg);
+        transform: rotate(270deg)
+    }
+
+    .sk-fading-circle .sk-circle11 {
+        -webkit-transform: rotate(300deg);
+        transform: rotate(300deg)
+    }
+
+    .sk-fading-circle .sk-circle12 {
+        -webkit-transform: rotate(330deg);
+        transform: rotate(330deg)
+    }
+
+    .sk-fading-circle .sk-circle2 .sk-circle-indicator {
+        -webkit-animation-delay: -.91667s;
+        animation-delay: -.91667s
+    }
+
+    .sk-fading-circle .sk-circle3 .sk-circle-indicator {
+        -webkit-animation-delay: -.83333s;
+        animation-delay: -.83333s
+    }
+
+    .sk-fading-circle .sk-circle4 .sk-circle-indicator {
+        -webkit-animation-delay: -.75s;
+        animation-delay: -.75s
+    }
+
+    .sk-fading-circle .sk-circle5 .sk-circle-indicator {
+        -webkit-animation-delay: -.66667s;
+        animation-delay: -.66667s
+    }
+
+    .sk-fading-circle .sk-circle6 .sk-circle-indicator {
+        -webkit-animation-delay: -.58333s;
+        animation-delay: -.58333s
+    }
+
+    .sk-fading-circle .sk-circle7 .sk-circle-indicator {
+        -webkit-animation-delay: -.5s;
+        animation-delay: -.5s
+    }
+
+    .sk-fading-circle .sk-circle8 .sk-circle-indicator {
+        -webkit-animation-delay: -.41667s;
+        animation-delay: -.41667s
+    }
+
+    .sk-fading-circle .sk-circle9 .sk-circle-indicator {
+        -webkit-animation-delay: -.33333s;
+        animation-delay: -.33333s
+    }
+
+    .sk-fading-circle .sk-circle10 .sk-circle-indicator {
+        -webkit-animation-delay: -.25s;
+        animation-delay: -.25s
+    }
+
+    .sk-fading-circle .sk-circle11 .sk-circle-indicator {
+        -webkit-animation-delay: -.16667s;
+        animation-delay: -.16667s
+    }
+
+    .sk-fading-circle .sk-circle12 .sk-circle-indicator {
+        -webkit-animation-delay: -.08333s;
+        animation-delay: -.08333s
+    }
+
+    @-webkit-keyframes sk-circleFadeDelay {
+        0%, 39%, to {
+            opacity: 0
+        }
+        40% {
+            opacity: 1
+        }
+    }
+
+    @keyframes sk-circleFadeDelay {
+        0%, 39%, to {
+            opacity: 0
+        }
+        40% {
+            opacity: 1
+        }
+    }
+
+    .croppa-container {
+        display: inline-block;
+        cursor: pointer;
+        position: relative;
+        font-size: 0;
+        -ms-flex-item-align: start;
+        align-self: flex-start;
+        background-color: #e6e6e6
+    }
+
+    .croppa-container, .croppa-container canvas {
+        -webkit-transition: all .3s;
+        transition: all .3s
+    }
+
+    .croppa-container:hover {
+        opacity: .7
+    }
+
+    .croppa-container.croppa--dropzone {
+        -webkit-box-shadow: inset 0 0 10px #333;
+        box-shadow: inset 0 0 10px #333
+    }
+
+    .croppa-container.croppa--dropzone canvas {
+        opacity: .5
+    }
+
+    .croppa-container.croppa--disabled-cc {
+        cursor: default
+    }
+
+    .croppa-container.croppa--disabled-cc:hover {
+        opacity: 1
+    }
+
+    .croppa-container.croppa--has-target {
+        cursor: move
+    }
+
+    .croppa-container.croppa--has-target:hover {
+        opacity: 1
+    }
+
+    .croppa-container.croppa--has-target.croppa--disabled-mz {
+        cursor: default
+    }
+
+    .croppa-container.croppa--disabled {
+        cursor: not-allowed
+    }
+
+    .croppa-container.croppa--disabled:hover {
+        opacity: 1
+    }
+
+    .croppa-container svg.icon-remove {
+        position: absolute;
+        background: #fff;
+        border-radius: 50%;
+        -webkit-filter: drop-shadow(-2px 2px 2px rgba(0, 0, 0, .7));
+        filter: drop-shadow(-2px 2px 2px rgba(0, 0, 0, .7));
+        z-index: 10;
+        cursor: pointer;
+        border: 2px solid #fff
+    }
+    .f_box_activity {
+        background: #111723;
+        color: #fff;
+        width: 100%;
+        text-align: center
+    }
+
+    .f_box_activity .f_isnull {
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -40%);
+        height: 5.6rem;
+        width: 4.906667rem;
+        z-index: 1000;
+        display: flex
+    }
+
+    .f_box_activity .f_isnull div {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column
+    }
+
+    .f_box_activity .f_isnull div img {
+        height: 4.6rem
+    }
+
+    .f_box_activity .f_isnull div span {
+        margin-top: 10%
+    }
+    .l_palyStepBox {
+        flex: 1;
+        display: flex;
+        flex-direction: column
+    }
+
+    .l_palyStepBox .block {
+        width: 100%;
+        height: 100%
+    }
+
+    .l_palyStepBox .block .el-carousel {
+        height: 100%
+    }
+
+    .l_palyStepBox .block .el-carousel .el-carousel__container {
+        height: 100% !important;
+        position: relative
+    }
+
+    .l_palyStepBox .block .el-carousel .el-carousel__arrow {
+        font-size: 85px
+    }
+
+    .l_palyStepBox .block .el-carousel .el-carousel__arrow--right {
+        right: 60px
+    }
+
+    .l_palyStepBox .block .el-carousel .el-carousel__indicators {
+        display: flex;
+        justify-content: center;
+        align-items: center
+    }
+
+    .l_palyStepBox .block .el-carousel__item img {
+        height: 100%;
+        width: 100%
+    }
+
+    .l_palyStepBox .block .el-carousel .el-carousel__arrow--right {
+        right: .6rem
+    }
+
+    .el-carousel__arrow {
+        display: flex;
+        justify-content: center;
+        align-items: center
+    }
+
+    .el-icon-arrow-left, .el-icon-arrow-right {
+        font-size: .8rem
+    }
+
+    .el-carousel__button {
+        width: .4rem
+    }</style>
+    <style type="text/css">@keyframes resizeanim {
+                               from {
+                                   opacity: 0;
+                               }
+                               to {
+                                   opacity: 0;
+                               }
+                           }
+
+    .resize-triggers {
+        animation: 1ms resizeanim;
+        visibility: hidden;
+        opacity: 0;
+    }
+
+    .resize-triggers, .resize-triggers > div, .contract-trigger:before {
+        content: " ";
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        overflow: hidden;
+        z-index: -1
+    }
+
+    .resize-triggers > div {
+        background: #eee;
+        overflow: auto;
+    }
+
+    .contract-trigger:before {
+        width: 200%;
+        height: 200%;
+    }
+    .f_box_motifypwd {
+        background: #111723;
+        color: #fff;
+        width: 100%;
+        text-align: center
+    }
+
+    .f_box_motifypwd .f_content {
+        display: flex;
+        flex-direction: column
+    }
+
+    .f_box_motifypwd .f_content div {
+        display: flex;
+        flex-direction: row;
+        height: 1.333333rem;
+        line-height: 1.333333rem;
+        font-size: .4rem;
+        border-bottom: .026667rem solid #666
+    }
+
+    .f_box_motifypwd .f_content div label {
+        flex: 1;
+        padding-left: .4rem;
+        text-align: left
+    }
+
+    .f_box_motifypwd .f_content div input {
+        flex: 2;
+        font-size: .4rem;
+        background: none;
+        padding-right: .4rem;
+        border: none;
+        outline: none;
+        color: #fff
+    }
+
+    .f_box_motifypwd .f_content div input ::-webit-input-placeholder {
+        color: #000
+    }
+
+    .f_box_motifypwd .f_content button {
+        margin: .4rem .266666rem;
+        height: 1.333333rem;
+        font-size: .4rem;
+        border-radius: .266666rem;
+        background: #c73131;
+        color: #fff
+    }
+
+    .f_box_motifypwd .f_content button:active {
+        background: #ff4d4d
+    }
+
+    .f_box_motifypwd .f_content .t_note {
+        border: none
+    }
+
+    .f_box_motifypwd .f_content .t_note p {
+        margin-left: .4rem;
+        color: red
+    }
+
+    .f_box_motifypwd .f_content .t_note p span {
+        color: red
+    }
+    .t_box {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        background-color: #222629;
+        position: relative
+    }
+
+    .t_box .header {
+        height: 1.4rem;
+        background-color: #181f2f;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center
+    }
+
+    .t_box .header span {
+        color: #fff;
+        font-size: .48rem
+    }
+
+    .t_box .jun-carousel {
+        height: 3.466667rem;
+        overflow: hidden
+    }
+
+    .t_box .jun-carousel .carousel-item {
+        height: 3.466667rem;
+        width: 100%;
+        background: #fff;
+        font-size: .8rem;
+        color: red
+    }
+
+    .t_box .jun-carousel .carousel-item .jun-son-img {
+        height: 100%;
+        width: 100%
+    }
+
+    .t_box .jun-carousel .el-carousel__container {
+        width: 90%;
+        margin: 0 auto
+    }
+
+    .t_box .jun-carousel .el-carousel__item h3 {
+        color: #475669;
+        font-size: 14px;
+        opacity: .75;
+        line-height: 200px;
+        margin: 0
+    }
+
+    .t_box .jun-carousel .el-carousel__item:nth-child(2n) {
+        background-color: #99a9bf
+    }
+
+    .t_box .jun-carousel .el-carousel__item:nth-child(odd) {
+        background-color: #d3dce6
+    }
+
+    .t_box .t_table {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        position: relative
+    }
+
+    .t_box .t_table .t_lineher {
+        height: 1.066667rem;
+        display: flex;
+        flex-direction: row
+    }
+
+    .t_box .t_table .t_lineher li {
+        font-size: .373333rem;
+        color: #fff;
+        text-align: center;
+        line-height: 1.066667rem
+    }
+
+    .t_box .t_table .t_lineher li:first-child {
+        flex: 1;
+        text-align: left;
+        text-indent: .8rem
+    }
+
+    .t_box .t_table .t_lineher li:nth-child(2) {
+        width: 2.4rem
+    }
+
+    .t_box .t_table .t_lineher li:nth-child(3) {
+        width: 2.6rem;
+        text-align: left;
+        text-indent: .533333rem
+    }
+
+    .t_box .t_table .t_con_home {
+        flex: 1;
+        overflow: scroll;
+        -webkit-overflow-scrolling: touch;
+        justify-content: center;
+        align-items: center
+    }
+
+    .t_box .t_table .t_con_home .jun-empty {
+        height: 1.55rem
+    }
+
+    .t_box .t_table .t_con_home ul {
+        height: 1.55rem;
+        width: 94%;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: row;
+        background-size: 100% 100%;
+        margin-bottom: .106667rem;
+        border-radius: .266667rem
+    }
+
+    .t_box .t_table .t_con_home ul li:first-child {
+        flex: 1;
+        display: flex;
+        flex-direction: row
+    }
+
+    .t_box .t_table .t_con_home ul li:first-child span {
+        width: 1.866667rem;
+        position: relative
+    }
+
+    .t_box .t_table .t_con_home ul li:first-child span img {
+        display: block;
+        width: 1.333333rem;
+        height: 1.333333rem;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%)
+    }
+
+    .t_box .t_table .t_con_home ul li:first-child div {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center
+    }
+
+    .t_box .t_table .t_con_home ul li:first-child div span {
+        width: 100%;
+        color: #fff;
+        font-size: .32rem;
+        text-align: left;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap
+    }
+
+    .t_box .t_table .t_con_home ul li:first-child div span:nth-child(2) {
+        line-height: .6rem;
+        color: #fff
+    }
+
+    .t_box .t_table .t_con_home ul li:first-child div span:last-child {
+        font-size: .266667rem;
+        color: #9b8ea5
+    }
+
+    .t_box .t_table .t_con_home ul li:nth-child(2) {
+        width: 2.4rem;
+        display: flex;
+        justify-content: center;
+        align-items: center
+    }
+
+    .t_box .t_table .t_con_home ul li:nth-child(2) span {
+        display: block;
+        height: .8rem;
+        width: 100%;
+        background-color: #26a848;
+        border-radius: .133333rem;
+        line-height: .8rem;
+        text-align: center;
+        color: #fff
+    }
+
+    .t_box .t_table .t_con_home ul li:nth-child(3) {
+        width: 1.66rem;
+        display: flex;
+        justify-content: center;
+        align-items: center
+    }
+
+    .t_box .t_table .t_con_home ul li:nth-child(3) span {
+        display: block;
+        width: 1.2rem;
+        height: .533333rem;
+        background-color: #d73741;
+        font-size: .3rem;
+        line-height: .533333rem;
+        text-align: center;
+        color: #fff;
+        border-radius: .133333rem
+    }
+
+    .t_box .t_table .t_con_home ul li:nth-child(4) {
+        width: .6rem;
+        display: flex;
+        justify-content: center;
+        align-items: center
+    }
+
+    .t_box .t_table .t_con_home ul li:nth-child(4) i {
+        display: block;
+        width: .213333rem;
+        height: .386667rem;
+        background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAdCAMAAACUsxyNAAAAUVBMVEVMaXH////////////////////////////////////////////////////////////////////////////////////////////////////////JzkR1AAAAGnRSTlMADr/Ga8ARamkLvsgMDWfDt0xoEsr1bAmgIGFaF2gAAABpSURBVBjTfdFHEoAgDEBREVHB3jX3P6hZwseR5ZuQWshxFskTkSqBXaWJ4QoqayybVWlj8SXFOGY2luIDa9XdZ+YxiZn4q3eUYVZZYnkU7p8I5mAV9sFOOQun5T64Me4023p2l+xyvO0LF6sLfF4IPUQAAAAASUVORK5CYII=) no-repeat;
+        background-size: cover
+    }
+
+    .l_NoviceStepBox {
+        height: 100%;
+        background: rgba(0, 0, 0, .8)
+    }
+
+    .l_NoviceStepBox, .l_NoviceStepShowBox {
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0
+    }
+
+    .l_NoviceStepShowBox {
+        height: 98%;
+        border: 5px solid #fff;
+        background: rgba(0, 0, 0, .1)
+    }
+
+    .l_NoviceStepShowBox .l_NoviceStepShowBoxTip {
+        width: 100%;
+        position: absolute;
+        top: -1.3rem;
+        text-indent: .5rem;
+        color: #fff;
+        font-size: .5rem
+    }
+
+    .l_NoviceStepShowBox .l_nextButton button {
+        width: 1.5rem;
+        height: .8rem;
+        border: 1px solid #fff;
+        border-radius: 5rem;
+        background: #009dff;
+        color: #fff;
+        font-size: .3rem;
+        position: absolute;
+        top: -2.5rem;
+        right: 10%
+    }
+
+    .l_NoviceStepShowBox .l_nextButton span {
+        width: 1.5rem;
+        height: 4px;
+        border-top: 4px dashed #fff;
+        transform: rotate(90deg);
+        position: absolute;
+        top: -.9rem;
+        right: 10%
+    }
+
+    div.l_NoviceStepBox.step0 {
+        position: absolute !important;
+        display: none
+    }
+
+    .l_NoviceStepBox {
+        display: none
+    }
+
+    .l_NoviceStepBox.step1 {
+        height: 93%;
+        display: none
+    }
+
+    .l_NoviceStepBox.step1.active, .l_NoviceStepBox.step2.active {
+        background: none;
+        border: 3px solid #fff
+    }
+
+    .l_NoviceStepBox.step1.active p, .l_NoviceStepBox.step2.active p {
+        width: 500px;
+        color: #fff;
+        position: absolute;
+        top: -120px;
+        left: 100%
+    }
+
+    .l_NoviceStepBox.step1.active p:first-of-type, .l_NoviceStepBox.step2.active p:first-of-type {
+        top: -120px
+    }
+
+    .l_NoviceStepBox.step1.active p:nth-of-type(2), .l_NoviceStepBox.step2.active p:nth-of-type(2) {
+        top: -80px
+    }
+
+    .l_NoviceStepBox.step1.active p:nth-of-type(3), .l_NoviceStepBox.step2.active p:nth-of-type(3) {
+        top: -40px
+    }
+
+    .l_NoviceStepBox.step4, .l_NoviceStepBox.step6 {
+        z-index: 10
+    }
+
+    .l_NoviceStepBox.l_NoviceStepShowBox.step7 {
+        height: 33.3%
+    }
+
+    .l_NoviceStepBox.l_NoviceStepShowBox.step8 {
+        height: 66.6%;
+        top: 33.3%
+    }
+
+    .skip, .step0, .step1, .step2, .step4, .step5, .step6, .step7, .step8 {
+        display: none
+    }
+
+    .skip {
+        position: absolute;
+        top: 1%;
+        right: 1%;
+        background: #000;
+        color: #fff;
+        padding: 20px 40px;
+        border: 1px solid #fff;
+        border-radius: 100px;
+        font-size: .3rem;
+        z-index: 1000
+    }</style>
+    <style type="text/css">.cover_box {
+        position: fixed;
+        height: 100%;
+        width: 100%;
+        z-index: 3009
+    }
+
+    .cover_box .t_cover {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        background-color: #666;
+        opacity: .5
+    }
+
+    .cover_box .t_announcement {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        height: 5.093333rem;
+        width: 8.026667rem;
+        border: 20px solid #fd6e77;
+        border-radius: 20px;
+        background-color: #fff
+    }
+
+    .cover_box .t_announcement .t_header_box .t_header {
+        position: absolute;
+        left: 20%;
+        top: -.733333rem;
+        height: .933333rem;
+        width: 4.32rem;
+        line-height: .933333rem;
+        text-align: center;
+        text-indent: 1.626667rem;
+        background: linear-gradient(#fd6e77, #d73741);
+        border-radius: .133333rem;
+        transform: skew(-30deg);
+        -webkit-transform: skew(-30deg);
+        -moz-transform: skew(-30deg);
+        -o-transform: skew(-30deg);
+        -ms-transform: skew(-30deg)
+    }
+
+    .cover_box .t_announcement .t_header_box h1 {
+        position: absolute;
+        top: -.16rem;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: #fff;
+        height: .933333rem;
+        text-align: center;
+        line-height: .933333rem;
+        font-size: .48rem;
+        font-weight: 500;
+        letter-spacing: .133333rem;
+        z-index: 3100
+    }
+
+    .cover_box .t_announcement .t_con {
+        height: 3.466667rem;
+        margin: 0 auto;
+        width: 90%;
+        margin-top: 1.066667rem;
+        overflow: scroll;
+        -webkit-overflow-scrolling: touch
+    }
+
+    .cover_box .t_announcement .t_con p {
+        word-wrap: break-word;
+        font-size: .4rem;
+        margin-bottom: .133333rem;
+        text-align: center
+    }
+
+    .cover_box .t_announcement .t_con p i {
+        display: block;
+        float: left;
+        background-color: #fd6e77;
+        width: .533333rem;
+        height: .533333rem;
+        line-height: .533333rem;
+        text-align: center;
+        border-radius: 50%;
+        color: #fff;
+        font-size: .373333rem;
+        margin-right: .133333rem;
+        margin-top: .026667rem
+    }
+
+    .cover_box img {
+        position: absolute;
+        top: 70.5%;
+        left: 50%;
+        transform: translate(-50%, -73%);
+        width: .986667rem;
+        height: 2.36rem
+    }</style>
+    <style type="text/css">.carousel {
+        box-sizing: content-box;
+        width: 100%;
+        overflow: hidden;
+        position: relative
+    }
+
+    .carousel-track {
+        height: 100%;
+        min-width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        white-space: nowrap;
+        display: table-cell;
+        font-size: 0
+    }
+
+    .carousel-item {
+        width: 100vw;
+        height: 100%;
+        overflow: hidden;
+        display: inline-block;
+        font-size: 16px
+    }
+
+    .carousel-indicators {
+        position: absolute;
+        height: 0;
+        bottom: 40px;
+        left: 0;
+        width: 100%;
+        text-align: center
+    }
+
+    .carousel-dot {
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        margin: 10px;
+        background: rgba(0, 0, 0, .5)
+    }
+
+    .carousel-dot.active {
+        background: red
+    }</style>
+    <style type="text/css"></style>
+</head>
+
+<body style="font-size: 16px;">
+<div class="tj-spinner-mask j_t_start" style="display: none;">
+    <img class="j_loading" src="/public/jpg/loading.gif" alt="">
+</div>
+<div id="app">
+    <div class="box"><!---->
+        <div class="jun-content">
+            <div class="l_body">
+                <div class="l_body" winnernum="0.00">
+                    <div class="l_headerNav">
+                        <div class="l_content">
+                            <div onclick="history.go(-1);" class="l_backArrow"></div>
+                            <div class="l_navTit">
+                                <ul>
+                                    <li class="l_leftTabTit"><span></span></li>
+                                    <li class="l_navTitTxt"><span>美国指数</span></li>
+                                    <li class="l_rightTabTit"><span></span></li>
+                                </ul>
+                            </div>
+                            <div class="l_withdrawalBtn"><a href="#/home/withdraw" class=""><p>提现</p></a></div>
+                        </div>
+                        <div class="l_NoviceStepBox step4"></div>
+                        <div class="l_NoviceStepBox step5"></div>
+                        <div class="l_NoviceStepBox step6"></div>
+                        <div class="l_NoviceStepBox step7"></div>
+                        <div class="l_NoviceStepBox step8"></div>
+                    </div>
+                    <div class="l_chartDataNav" style="background: rgb(255, 61, 61);">
+                        <div class="l_chartDataNavL">6706.55</div>
+                        <div class="l_chartDataNavR">
+                            <ul>
+                                <li>今开 : 6830.85</li>
+                                <li>最高 : 6948.37</li>
+                                <li>昨收 : 6828.59</li>
+                                <li>最低 : 6642.14</li>
+                            </ul>
+                        </div>
+                        <div class="l_NoviceStepBox step4"></div>
+                        <div class="l_NoviceStepBox step5"></div>
+                        <div class="l_NoviceStepBox step6"></div>
+                        <div class="l_NoviceStepBox step7"></div>
+                        <div class="l_NoviceStepBox step8"></div>
+                    </div>
+                    <div class="l_chart">
+                        <div id="test" data-highcharts-chart="5" style="width: 100%; height: 8rem;">
+                            <div id="highcharts-q6e7dgr-27" dir="ltr" class="highcharts-container "
+                                 style="position: relative; overflow: hidden; width: 387px; height: 320px; text-align: left; line-height: normal; z-index: 0; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);">
+                                <svg version="1.1" class="highcharts-root"
+                                     style="font-family:&quot;Lucida Grande&quot;, &quot;Lucida Sans Unicode&quot;, Arial, Helvetica, sans-serif;font-size:12px;"
+                                     xmlns="http://www.w3.org/2000/svg" width="387" height="320" viewBox="0 0 387 320">
+                                    <desc>Created with Highstock 6.0.4</desc>
+                                    <defs>
+                                        <clipPath id="highcharts-q6e7dgr-28">
+                                            <rect x="0" y="0" width="367" height="266" fill="none"></rect>
+                                        </clipPath>
+                                        <clipPath id="highcharts-q6e7dgr-30">
+                                            <rect x="0" y="0" width="367" height="266" fill="none"></rect>
+                                        </clipPath>
+                                        <linearGradient x1="0" x2="0" y1="0" y2="1" id="highcharts-q6e7dgr-31">
+                                            <stop offset="0" stop-color="#f9c3c9" stop-opacity="1"></stop>
+                                            <stop offset="1" stop-color="rgb(255,255,255)" stop-opacity="0.3"></stop>
+                                        </linearGradient>
+                                    </defs>
+                                    <rect fill="none" class="highcharts-background" x="0" y="0" width="387" height="320"
+                                          rx="0" ry="0"></rect>
+                                    <rect fill="none" class="highcharts-plot-background" x="10" y="10" width="367"
+                                          height="266"></rect>
+                                    <g class="highcharts-plot-lines-0">
+                                        <path fill="none" stroke="#808080" stroke-width="1" visibility="hidden"></path>
+                                    </g>
+                                    <g class="highcharts-grid highcharts-xaxis-grid ">
+                                        <path fill="none" class="highcharts-grid-line" d="M 16.5 10 L 16.5 276"
+                                              opacity="1"></path>
+                                        <path fill="none" class="highcharts-grid-line" d="M 24.5 10 L 24.5 276"
+                                              opacity="1"></path>
+                                        <path fill="none" class="highcharts-grid-line" d="M 31.5 10 L 31.5 276"
+                                              opacity="1"></path>
+                                        <path fill="none" class="highcharts-grid-line" d="M 38.5 10 L 38.5 276"
+                                              opacity="1"></path>
+                                        <path fill="none" class="highcharts-grid-line" d="M 46.5 10 L 46.5 276"
+                                              opacity="1"></path>
+                                        <path fill="none" class="highcharts-grid-line" d="M 53.5 10 L 53.5 276"
+                                              opacity="1"></path>
+                                        <path fill="none" class="highcharts-grid-line" d="M 60.5 10 L 60.5 276"
+                                              opacity="1"></path>
+                                        <path fill="none" class="highcharts-grid-line" d="M 68.5 10 L 68.5 276"
+                                              opacity="1"></path>
+                                        <path fill="none" class="highcharts-grid-line" d="M 75.5 10 L 75.5 276"
+                                              opacity="1"></path>
+                                        <path fill="none" class="highcharts-grid-line" d="M 82.5 10 L 82.5 276"
+                                              opacity="1"></path>
+                                        <path fill="none" class="highcharts-grid-line" d="M 90.5 10 L 90.5 276"
+                                              opacity="1"></path>
+                                        <path fill="none" class="highcharts-grid-line" d="M 97.5 10 L 97.5 276"
+                                              opacity="1"></path>
+                                        <path fill="none" class="highcharts-grid-line" d="M 104.5 10 L 104.5 276"
+                                              opacity="1"></path>
+                                        <path fill="none" class="highcharts-grid-line" d="M 112.5 10 L 112.5 276"
+                                              opacity="1"></path>
+                                        <path fill="none" class="highcharts-grid-line" d="M 119.5 10 L 119.5 276"
+                                              opacity="1"></path>
+                                        <path fill="none" class="highcharts-grid-line" d="M 126.5 10 L 126.5 276"
+                                              opacity="1"></path>
+                                        <path fill="none" class="highcharts-grid-line" d="M 134.5 10 L 134.5 276"
+                                              opacity="1"></path>
+                                        <path fill="none" class="highcharts-grid-line" d="M 141.5 10 L 141.5 276"
+                                              opacity="1"></path>
+                                        <path fill="none" class="highcharts-grid-line" d="M 148.5 10 L 148.5 276"
+                                              opacity="1"></path>
+                                        <path fill="none" class="highcharts-grid-line" d="M 156.5 10 L 156.5 276"
+                                              opacity="1"></path>
+                                        <path fill="none" class="highcharts-grid-line" d="M 163.5 10 L 163.5 276"
+                                              opacity="1"></path>
+                                        <path fill="none" class="highcharts-grid-line" d="M 170.5 10 L 170.5 276"
+                                              opacity="1"></path>
+                                        <path fill="none" class="highcharts-grid-line" d="M 178.5 10 L 178.5 276"
+                                              opacity="1"></path>
+                                        <path fill="none" class="highcharts-grid-line" d="M 185.5 10 L 185.5 276"
+                                              opacity="1"></path>
+                                        <path fill="none" class="highcharts-grid-line" d="M 192.5 10 L 192.5 276"
+                                              opacity="1"></path>
+                                        <path fill="none" class="highcharts-grid-line" d="M 200.5 10 L 200.5 276"
+                                              opacity="1"></path>
+                                        <path fill="none" class="highcharts-grid-line" d="M 207.5 10 L 207.5 276"
+                                              opacity="1"></path>
+                                        <path fill="none" class="highcharts-grid-line" d="M 215.5 10 L 215.5 276"
+                                              opacity="1"></path>
+                                        <path fill="none" class="highcharts-grid-line" d="M 222.5 10 L 222.5 276"
+                                              opacity="1"></path>
+                                        <path fill="none" class="highcharts-grid-line" d="M 229.5 10 L 229.5 276"
+                                              opacity="1"></path>
+                                        <path fill="none" class="highcharts-grid-line" d="M 237.5 10 L 237.5 276"
+                                              opacity="1"></path>
+                                        <path fill="none" class="highcharts-grid-line" d="M 244.5 10 L 244.5 276"
+                                              opacity="1"></path>
+                                        <path fill="none" class="highcharts-grid-line" d="M 251.5 10 L 251.5 276"
+                                              opacity="1"></path>
+                                        <path fill="none" class="highcharts-grid-line" d="M 259.5 10 L 259.5 276"
+                                              opacity="1"></path>
+                                        <path fill="none" class="highcharts-grid-line" d="M 266.5 10 L 266.5 276"
+                                              opacity="1"></path>
+                                        <path fill="none" class="highcharts-grid-line" d="M 273.5 10 L 273.5 276"
+                                              opacity="1"></path>
+                                        <path fill="none" class="highcharts-grid-line" d="M 281.5 10 L 281.5 276"
+                                              opacity="1"></path>
+                                        <path fill="none" class="highcharts-grid-line" d="M 288.5 10 L 288.5 276"
+                                              opacity="1"></path>
+                                        <path fill="none" class="highcharts-grid-line" d="M 295.5 10 L 295.5 276"
+                                              opacity="1"></path>
+                                        <path fill="none" class="highcharts-grid-line" d="M 303.5 10 L 303.5 276"
+                                              opacity="1"></path>
+                                        <path fill="none" class="highcharts-grid-line" d="M 310.5 10 L 310.5 276"
+                                              opacity="1"></path>
+                                        <path fill="none" class="highcharts-grid-line" d="M 317.5 10 L 317.5 276"
+                                              opacity="1"></path>
+                                        <path fill="none" class="highcharts-grid-line" d="M 325.5 10 L 325.5 276"
+                                              opacity="1"></path>
+                                        <path fill="none" class="highcharts-grid-line" d="M 332.5 10 L 332.5 276"
+                                              opacity="1"></path>
+                                        <path fill="none" class="highcharts-grid-line" d="M 339.5 10 L 339.5 276"
+                                              opacity="1"></path>
+                                        <path fill="none" class="highcharts-grid-line" d="M 347.5 10 L 347.5 276"
+                                              opacity="1"></path>
+                                        <path fill="none" class="highcharts-grid-line" d="M 354.5 10 L 354.5 276"
+                                              opacity="1"></path>
+                                        <path fill="none" class="highcharts-grid-line" d="M 361.5 10 L 361.5 276"
+                                              opacity="1"></path>
+                                        <path fill="none" class="highcharts-grid-line" d="M 369.5 10 L 369.5 276"
+                                              opacity="1"></path>
+                                        <path fill="none" class="highcharts-grid-line" d="M 376.5 10 L 376.5 276"
+                                              opacity="1"></path>
+                                        <path fill="none" class="highcharts-grid-line" d="M 9.5 10 L 9.5 276"
+                                              opacity="1"></path>
+                                    </g>
+                                    <g class="highcharts-grid highcharts-yaxis-grid ">
+                                        <path fill="none" class="highcharts-grid-line" d="M 10 241.5 L 377 241.5"
+                                              opacity="1"></path>
+                                        <path fill="none" class="highcharts-grid-line" d="M 10 126.5 L 377 126.5"
+                                              opacity="1"></path>
+                                        <path fill="none" class="highcharts-grid-line" d="M 10 10.5 L 377 10.5"
+                                              opacity="1"></path>
+                                    </g>
+                                    <rect fill="none" class="highcharts-plot-border" x="10" y="10" width="367"
+                                          height="266"></rect>
+                                    <g class="highcharts-axis highcharts-xaxis ">
+                                        <path fill="none" class="highcharts-tick" stroke="#ccc" stroke-width="1"
+                                              d="M 16.5 276 L 16.5 286" opacity="1"></path>
+                                        <path fill="none" class="highcharts-tick" stroke="#ccc" stroke-width="1"
+                                              d="M 24.5 276 L 24.5 286" opacity="1"></path>
+                                        <path fill="none" class="highcharts-tick" stroke="#ccc" stroke-width="1"
+                                              d="M 31.5 276 L 31.5 286" opacity="1"></path>
+                                        <path fill="none" class="highcharts-tick" stroke="#ccc" stroke-width="1"
+                                              d="M 38.5 276 L 38.5 286" opacity="1"></path>
+                                        <path fill="none" class="highcharts-tick" stroke="#ccc" stroke-width="1"
+                                              d="M 46.5 276 L 46.5 286" opacity="1"></path>
+                                        <path fill="none" class="highcharts-tick" stroke="#ccc" stroke-width="1"
+                                              d="M 53.5 276 L 53.5 286" opacity="1"></path>
+                                        <path fill="none" class="highcharts-tick" stroke="#ccc" stroke-width="1"
+                                              d="M 60.5 276 L 60.5 286" opacity="1"></path>
+                                        <path fill="none" class="highcharts-tick" stroke="#ccc" stroke-width="1"
+                                              d="M 68.5 276 L 68.5 286" opacity="1"></path>
+                                        <path fill="none" class="highcharts-tick" stroke="#ccc" stroke-width="1"
+                                              d="M 75.5 276 L 75.5 286" opacity="1"></path>
+                                        <path fill="none" class="highcharts-tick" stroke="#ccc" stroke-width="1"
+                                              d="M 82.5 276 L 82.5 286" opacity="1"></path>
+                                        <path fill="none" class="highcharts-tick" stroke="#ccc" stroke-width="1"
+                                              d="M 90.5 276 L 90.5 286" opacity="1"></path>
+                                        <path fill="none" class="highcharts-tick" stroke="#ccc" stroke-width="1"
+                                              d="M 97.5 276 L 97.5 286" opacity="1"></path>
+                                        <path fill="none" class="highcharts-tick" stroke="#ccc" stroke-width="1"
+                                              d="M 104.5 276 L 104.5 286" opacity="1"></path>
+                                        <path fill="none" class="highcharts-tick" stroke="#ccc" stroke-width="1"
+                                              d="M 112.5 276 L 112.5 286" opacity="1"></path>
+                                        <path fill="none" class="highcharts-tick" stroke="#ccc" stroke-width="1"
+                                              d="M 119.5 276 L 119.5 286" opacity="1"></path>
+                                        <path fill="none" class="highcharts-tick" stroke="#ccc" stroke-width="1"
+                                              d="M 126.5 276 L 126.5 286" opacity="1"></path>
+                                        <path fill="none" class="highcharts-tick" stroke="#ccc" stroke-width="1"
+                                              d="M 134.5 276 L 134.5 286" opacity="1"></path>
+                                        <path fill="none" class="highcharts-tick" stroke="#ccc" stroke-width="1"
+                                              d="M 141.5 276 L 141.5 286" opacity="1"></path>
+                                        <path fill="none" class="highcharts-tick" stroke="#ccc" stroke-width="1"
+                                              d="M 148.5 276 L 148.5 286" opacity="1"></path>
+                                        <path fill="none" class="highcharts-tick" stroke="#ccc" stroke-width="1"
+                                              d="M 156.5 276 L 156.5 286" opacity="1"></path>
+                                        <path fill="none" class="highcharts-tick" stroke="#ccc" stroke-width="1"
+                                              d="M 163.5 276 L 163.5 286" opacity="1"></path>
+                                        <path fill="none" class="highcharts-tick" stroke="#ccc" stroke-width="1"
+                                              d="M 170.5 276 L 170.5 286" opacity="1"></path>
+                                        <path fill="none" class="highcharts-tick" stroke="#ccc" stroke-width="1"
+                                              d="M 178.5 276 L 178.5 286" opacity="1"></path>
+                                        <path fill="none" class="highcharts-tick" stroke="#ccc" stroke-width="1"
+                                              d="M 185.5 276 L 185.5 286" opacity="1"></path>
+                                        <path fill="none" class="highcharts-tick" stroke="#ccc" stroke-width="1"
+                                              d="M 192.5 276 L 192.5 286" opacity="1"></path>
+                                        <path fill="none" class="highcharts-tick" stroke="#ccc" stroke-width="1"
+                                              d="M 200.5 276 L 200.5 286" opacity="1"></path>
+                                        <path fill="none" class="highcharts-tick" stroke="#ccc" stroke-width="1"
+                                              d="M 207.5 276 L 207.5 286" opacity="1"></path>
+                                        <path fill="none" class="highcharts-tick" stroke="#ccc" stroke-width="1"
+                                              d="M 215.5 276 L 215.5 286" opacity="1"></path>
+                                        <path fill="none" class="highcharts-tick" stroke="#ccc" stroke-width="1"
+                                              d="M 222.5 276 L 222.5 286" opacity="1"></path>
+                                        <path fill="none" class="highcharts-tick" stroke="#ccc" stroke-width="1"
+                                              d="M 229.5 276 L 229.5 286" opacity="1"></path>
+                                        <path fill="none" class="highcharts-tick" stroke="#ccc" stroke-width="1"
+                                              d="M 237.5 276 L 237.5 286" opacity="1"></path>
+                                        <path fill="none" class="highcharts-tick" stroke="#ccc" stroke-width="1"
+                                              d="M 244.5 276 L 244.5 286" opacity="1"></path>
+                                        <path fill="none" class="highcharts-tick" stroke="#ccc" stroke-width="1"
+                                              d="M 251.5 276 L 251.5 286" opacity="1"></path>
+                                        <path fill="none" class="highcharts-tick" stroke="#ccc" stroke-width="1"
+                                              d="M 259.5 276 L 259.5 286" opacity="1"></path>
+                                        <path fill="none" class="highcharts-tick" stroke="#ccc" stroke-width="1"
+                                              d="M 266.5 276 L 266.5 286" opacity="1"></path>
+                                        <path fill="none" class="highcharts-tick" stroke="#ccc" stroke-width="1"
+                                              d="M 273.5 276 L 273.5 286" opacity="1"></path>
+                                        <path fill="none" class="highcharts-tick" stroke="#ccc" stroke-width="1"
+                                              d="M 281.5 276 L 281.5 286" opacity="1"></path>
+                                        <path fill="none" class="highcharts-tick" stroke="#ccc" stroke-width="1"
+                                              d="M 288.5 276 L 288.5 286" opacity="1"></path>
+                                        <path fill="none" class="highcharts-tick" stroke="#ccc" stroke-width="1"
+                                              d="M 295.5 276 L 295.5 286" opacity="1"></path>
+                                        <path fill="none" class="highcharts-tick" stroke="#ccc" stroke-width="1"
+                                              d="M 303.5 276 L 303.5 286" opacity="1"></path>
+                                        <path fill="none" class="highcharts-tick" stroke="#ccc" stroke-width="1"
+                                              d="M 310.5 276 L 310.5 286" opacity="1"></path>
+                                        <path fill="none" class="highcharts-tick" stroke="#ccc" stroke-width="1"
+                                              d="M 317.5 276 L 317.5 286" opacity="1"></path>
+                                        <path fill="none" class="highcharts-tick" stroke="#ccc" stroke-width="1"
+                                              d="M 325.5 276 L 325.5 286" opacity="1"></path>
+                                        <path fill="none" class="highcharts-tick" stroke="#ccc" stroke-width="1"
+                                              d="M 332.5 276 L 332.5 286" opacity="1"></path>
+                                        <path fill="none" class="highcharts-tick" stroke="#ccc" stroke-width="1"
+                                              d="M 339.5 276 L 339.5 286" opacity="1"></path>
+                                        <path fill="none" class="highcharts-tick" stroke="#ccc" stroke-width="1"
+                                              d="M 347.5 276 L 347.5 286" opacity="1"></path>
+                                        <path fill="none" class="highcharts-tick" stroke="#ccc" stroke-width="1"
+                                              d="M 354.5 276 L 354.5 286" opacity="1"></path>
+                                        <path fill="none" class="highcharts-tick" stroke="#ccc" stroke-width="1"
+                                              d="M 361.5 276 L 361.5 286" opacity="1"></path>
+                                        <path fill="none" class="highcharts-tick" stroke="#ccc" stroke-width="1"
+                                              d="M 369.5 276 L 369.5 286" opacity="1"></path>
+                                        <path fill="none" class="highcharts-tick" stroke="#ccc" stroke-width="1"
+                                              d="M 377.5 276 L 377.5 286" opacity="1"></path>
+                                        <path fill="none" class="highcharts-tick" stroke="#ccc" stroke-width="1"
+                                              d="M 9.5 276 L 9.5 286" opacity="1"></path>
+                                        <path fill="none" class="highcharts-axis-line" stroke="#4a4a4a" stroke-width="1"
+                                              d="M 10 276.5 L 377 276.5"></path>
+                                    </g>
+                                    <g class="highcharts-axis highcharts-yaxis ">
+                                        <path fill="none" class="highcharts-axis-line" d="M 377 10 L 377 276"></path>
+                                    </g>
+                                    <g class="highcharts-series-group">
+                                        <g class="highcharts-series highcharts-series-0 highcharts-areaspline-series highcharts-color-0 "
+                                           transform="translate(10,10) scale(1 1)"
+                                           clip-path="url(#highcharts-q6e7dgr-30)">
+                                            <path fill="url(#highcharts-q6e7dgr-31)"
+                                                  d="M 3.67 48.86058783131844 C 3.67 48.86058783131844 8.074000000000002 54.08656646353674 11.01 64.53852372797368 C 13.946000000000002 74.99048099241065 15.414000000000001 98.50738483739366 18.35 101.12037415350323 C 21.286 103.73336346961281 22.754 103.73336346961281 25.69 103.73336346961281 C 28.625999999999998 103.73336346961281 30.094 98.50738483739579 33.03 98.50738483739579 C 35.965999999999994 98.50738483739579 37.434 137.70222457903492 40.37 137.70222457903492 C 43.306 137.70222457903492 44.774 99.02998270061646 47.71 85.44243825684802 C 50.646 71.8548938130796 52.114 69.76450236019278 55.05 69.76450236019278 C 57.98599999999999 69.76450236019278 59.45399999999999 73.94528526596721 62.39 85.44243825684802 C 65.326 96.93959124772879 66.79400000000001 127.2502673145967 69.73 127.2502673145967 C 72.666 127.2502673145967 74.13399999999999 77.60347030852145 77.07 77.60347030852145 C 80.006 77.60347030852145 81.474 80.2164596246289 84.41 80.2164596246289 C 87.346 80.2164596246289 88.814 41.021619882989796 91.75 41.021619882989796 C 94.686 41.021619882989796 96.154 51.47357714742802 99.09 51.47357714742802 C 102.026 51.47357714742802 103.494 46.24759851520889 106.43 46.24759851520889 C 109.36600000000001 46.24759851520889 110.83400000000002 70.80969808663669 113.77 93.2814062051767 C 116.70599999999999 115.75311432371683 118.174 142.92820321125402 121.11 158.60613910790926 C 124.046 174.2840750045645 125.51399999999998 174.2840750045645 128.45 174.2840750045645 C 131.386 174.2840750045645 132.85399999999998 171.1484878252326 135.79 169.05809637234537 C 138.726 166.96770491945813 140.19400000000002 163.83211774012835 143.13 163.83211774012835 C 146.06599999999997 163.83211774012835 147.534 181.0778472264489 150.47 195.18798953343884 C 153.406 209.29813184042877 154.874 234.38282927507797 157.81 234.38282927507797 C 160.746 234.38282927507797 162.214 216.6145019255355 165.15 200.41396816565793 C 168.086 184.2134344057804 169.554 163.8321177401263 172.49 153.38016047569016 C 175.42600000000002 142.92820321125402 176.894 142.92820321125402 179.83 142.92820321125402 C 182.766 142.92820321125402 184.234 150.76717115958058 187.17 150.76717115958058 C 190.106 150.76717115958058 191.57399999999998 145.5411925273615 194.51 145.5411925273615 C 197.446 145.5411925273615 198.914 221.31788269453227 201.85 221.31788269453227 C 204.786 221.31788269453227 206.254 195.18798953343884 209.19 195.18798953343884 C 212.12599999999998 195.18798953343884 213.594 220.27268696808923 216.53 229.15685064286095 C 219.46599999999998 238.04101431763257 220.93400000000003 235.95062286474408 223.87 239.60880790729706 C 226.80599999999998 243.26699294985002 228.27399999999997 247.44777585562574 231.21 247.44777585562574 C 234.14600000000002 247.44777585562574 235.61400000000003 247.44777585562574 238.55 244.8347865395162 C 241.48600000000002 242.22179722340664 242.954 206.6851425243213 245.89 187.34902158511227 C 248.82599999999996 168.01290064590324 250.29399999999995 148.15418184347104 253.23 148.15418184347104 C 256.166 148.15418184347104 257.634 192.5750002173293 260.57 195.18798953343884 C 263.50600000000003 197.8009788495484 264.974 195.18798953343884 267.91 197.8009788495484 C 270.846 200.41396816565793 272.314 213.4789147462036 275.25 213.4789147462036 C 278.186 213.4789147462036 279.654 213.4789147462036 282.59 213.4789147462036 C 285.526 213.4789147462036 286.99399999999997 166.9677049194579 289.93 148.15418184347104 C 292.866 129.3406587674845 294.334 119.41129936627013 297.27 119.41129936627013 C 300.206 119.41129936627013 301.674 129.86325663070625 304.61 129.86325663070625 C 307.546 129.86325663070625 309.014 124.63727799848884 311.95 122.0242886823797 C 314.88599999999997 119.41129936627057 316.354 116.79831005016058 319.29 116.79831005016058 C 322.226 116.79831005016058 323.694 176.89706432067405 326.63 176.89706432067405 C 329.566 176.89706432067405 331.034 176.89706432067405 333.97 176.89706432067405 C 336.90600000000006 176.89706432067405 338.374 198.84617457599134 341.31 210.86592543009405 C 344.246 222.88567628419673 345.71399999999994 228.11165491641577 348.65 236.99581859118751 C 351.58599999999996 245.87998226595906 353.054 255.2867438039523 355.99 255.2867438039523 C 358.92600000000004 255.2867438039523 363.33 216.09190406231318 363.33 216.09190406231318 L 363.33 266 C 363.33 266 358.92600000000004 266 355.99 266 C 353.054 266 351.58599999999996 266 348.65 266 C 345.71399999999994 266 344.246 266 341.31 266 C 338.374 266 336.90600000000006 266 333.97 266 C 331.034 266 329.566 266 326.63 266 C 323.694 266 322.226 266 319.29 266 C 316.354 266 314.88599999999997 266 311.95 266 C 309.014 266 307.546 266 304.61 266 C 301.674 266 300.206 266 297.27 266 C 294.334 266 292.866 266 289.93 266 C 286.99399999999997 266 285.526 266 282.59 266 C 279.654 266 278.186 266 275.25 266 C 272.314 266 270.846 266 267.91 266 C 264.974 266 263.50600000000003 266 260.57 266 C 257.634 266 256.166 266 253.23 266 C 250.29399999999995 266 248.82599999999996 266 245.89 266 C 242.954 266 241.48600000000002 266 238.55 266 C 235.61400000000003 266 234.14600000000002 266 231.21 266 C 228.27399999999997 266 226.80599999999998 266 223.87 266 C 220.93400000000003 266 219.46599999999998 266 216.53 266 C 213.594 266 212.12599999999998 266 209.19 266 C 206.254 266 204.786 266 201.85 266 C 198.914 266 197.446 266 194.51 266 C 191.57399999999998 266 190.106 266 187.17 266 C 184.234 266 182.766 266 179.83 266 C 176.894 266 175.42600000000002 266 172.49 266 C 169.554 266 168.086 266 165.15 266 C 162.214 266 160.746 266 157.81 266 C 154.874 266 153.406 266 150.47 266 C 147.534 266 146.06599999999997 266 143.13 266 C 140.19400000000002 266 138.726 266 135.79 266 C 132.85399999999998 266 131.386 266 128.45 266 C 125.51399999999998 266 124.046 266 121.11 266 C 118.174 266 116.70599999999999 266 113.77 266 C 110.83400000000002 266 109.36600000000001 266 106.43 266 C 103.494 266 102.026 266 99.09 266 C 96.154 266 94.686 266 91.75 266 C 88.814 266 87.346 266 84.41 266 C 81.474 266 80.006 266 77.07 266 C 74.13399999999999 266 72.666 266 69.73 266 C 66.79400000000001 266 65.326 266 62.39 266 C 59.45399999999999 266 57.98599999999999 266 55.05 266 C 52.114 266 50.646 266 47.71 266 C 44.774 266 43.306 266 40.37 266 C 37.434 266 35.965999999999994 266 33.03 266 C 30.094 266 28.625999999999998 266 25.69 266 C 22.754 266 21.286 266 18.35 266 C 15.414000000000001 266 13.946000000000002 266 11.01 266 C 8.074000000000002 266 3.67 266 3.67 266"
+                                                  class="highcharts-area"></path>
+                                            <path fill="none"
+                                                  d="M 3.67 48.86058783131844 C 3.67 48.86058783131844 8.074000000000002 54.08656646353674 11.01 64.53852372797368 C 13.946000000000002 74.99048099241065 15.414000000000001 98.50738483739366 18.35 101.12037415350323 C 21.286 103.73336346961281 22.754 103.73336346961281 25.69 103.73336346961281 C 28.625999999999998 103.73336346961281 30.094 98.50738483739579 33.03 98.50738483739579 C 35.965999999999994 98.50738483739579 37.434 137.70222457903492 40.37 137.70222457903492 C 43.306 137.70222457903492 44.774 99.02998270061646 47.71 85.44243825684802 C 50.646 71.8548938130796 52.114 69.76450236019278 55.05 69.76450236019278 C 57.98599999999999 69.76450236019278 59.45399999999999 73.94528526596721 62.39 85.44243825684802 C 65.326 96.93959124772879 66.79400000000001 127.2502673145967 69.73 127.2502673145967 C 72.666 127.2502673145967 74.13399999999999 77.60347030852145 77.07 77.60347030852145 C 80.006 77.60347030852145 81.474 80.2164596246289 84.41 80.2164596246289 C 87.346 80.2164596246289 88.814 41.021619882989796 91.75 41.021619882989796 C 94.686 41.021619882989796 96.154 51.47357714742802 99.09 51.47357714742802 C 102.026 51.47357714742802 103.494 46.24759851520889 106.43 46.24759851520889 C 109.36600000000001 46.24759851520889 110.83400000000002 70.80969808663669 113.77 93.2814062051767 C 116.70599999999999 115.75311432371683 118.174 142.92820321125402 121.11 158.60613910790926 C 124.046 174.2840750045645 125.51399999999998 174.2840750045645 128.45 174.2840750045645 C 131.386 174.2840750045645 132.85399999999998 171.1484878252326 135.79 169.05809637234537 C 138.726 166.96770491945813 140.19400000000002 163.83211774012835 143.13 163.83211774012835 C 146.06599999999997 163.83211774012835 147.534 181.0778472264489 150.47 195.18798953343884 C 153.406 209.29813184042877 154.874 234.38282927507797 157.81 234.38282927507797 C 160.746 234.38282927507797 162.214 216.6145019255355 165.15 200.41396816565793 C 168.086 184.2134344057804 169.554 163.8321177401263 172.49 153.38016047569016 C 175.42600000000002 142.92820321125402 176.894 142.92820321125402 179.83 142.92820321125402 C 182.766 142.92820321125402 184.234 150.76717115958058 187.17 150.76717115958058 C 190.106 150.76717115958058 191.57399999999998 145.5411925273615 194.51 145.5411925273615 C 197.446 145.5411925273615 198.914 221.31788269453227 201.85 221.31788269453227 C 204.786 221.31788269453227 206.254 195.18798953343884 209.19 195.18798953343884 C 212.12599999999998 195.18798953343884 213.594 220.27268696808923 216.53 229.15685064286095 C 219.46599999999998 238.04101431763257 220.93400000000003 235.95062286474408 223.87 239.60880790729706 C 226.80599999999998 243.26699294985002 228.27399999999997 247.44777585562574 231.21 247.44777585562574 C 234.14600000000002 247.44777585562574 235.61400000000003 247.44777585562574 238.55 244.8347865395162 C 241.48600000000002 242.22179722340664 242.954 206.6851425243213 245.89 187.34902158511227 C 248.82599999999996 168.01290064590324 250.29399999999995 148.15418184347104 253.23 148.15418184347104 C 256.166 148.15418184347104 257.634 192.5750002173293 260.57 195.18798953343884 C 263.50600000000003 197.8009788495484 264.974 195.18798953343884 267.91 197.8009788495484 C 270.846 200.41396816565793 272.314 213.4789147462036 275.25 213.4789147462036 C 278.186 213.4789147462036 279.654 213.4789147462036 282.59 213.4789147462036 C 285.526 213.4789147462036 286.99399999999997 166.9677049194579 289.93 148.15418184347104 C 292.866 129.3406587674845 294.334 119.41129936627013 297.27 119.41129936627013 C 300.206 119.41129936627013 301.674 129.86325663070625 304.61 129.86325663070625 C 307.546 129.86325663070625 309.014 124.63727799848884 311.95 122.0242886823797 C 314.88599999999997 119.41129936627057 316.354 116.79831005016058 319.29 116.79831005016058 C 322.226 116.79831005016058 323.694 176.89706432067405 326.63 176.89706432067405 C 329.566 176.89706432067405 331.034 176.89706432067405 333.97 176.89706432067405 C 336.90600000000006 176.89706432067405 338.374 198.84617457599134 341.31 210.86592543009405 C 344.246 222.88567628419673 345.71399999999994 228.11165491641577 348.65 236.99581859118751 C 351.58599999999996 245.87998226595906 353.054 255.2867438039523 355.99 255.2867438039523 C 358.92600000000004 255.2867438039523 363.33 216.09190406231318 363.33 216.09190406231318"
+                                                  class="highcharts-graph" stroke="#ef4b4f" stroke-width="1"
+                                                  stroke-linejoin="round" stroke-linecap="round"></path>
+                                            <path fill="none"
+                                                  d="M -21.33 48.86058783131844 L 3.67 48.86058783131844 C 3.67 48.86058783131844 8.074000000000002 54.08656646353674 11.01 64.53852372797368 C 13.946000000000002 74.99048099241065 15.414000000000001 98.50738483739366 18.35 101.12037415350323 C 21.286 103.73336346961281 22.754 103.73336346961281 25.69 103.73336346961281 C 28.625999999999998 103.73336346961281 30.094 98.50738483739579 33.03 98.50738483739579 C 35.965999999999994 98.50738483739579 37.434 137.70222457903492 40.37 137.70222457903492 C 43.306 137.70222457903492 44.774 99.02998270061646 47.71 85.44243825684802 C 50.646 71.8548938130796 52.114 69.76450236019278 55.05 69.76450236019278 C 57.98599999999999 69.76450236019278 59.45399999999999 73.94528526596721 62.39 85.44243825684802 C 65.326 96.93959124772879 66.79400000000001 127.2502673145967 69.73 127.2502673145967 C 72.666 127.2502673145967 74.13399999999999 77.60347030852145 77.07 77.60347030852145 C 80.006 77.60347030852145 81.474 80.2164596246289 84.41 80.2164596246289 C 87.346 80.2164596246289 88.814 41.021619882989796 91.75 41.021619882989796 C 94.686 41.021619882989796 96.154 51.47357714742802 99.09 51.47357714742802 C 102.026 51.47357714742802 103.494 46.24759851520889 106.43 46.24759851520889 C 109.36600000000001 46.24759851520889 110.83400000000002 70.80969808663669 113.77 93.2814062051767 C 116.70599999999999 115.75311432371683 118.174 142.92820321125402 121.11 158.60613910790926 C 124.046 174.2840750045645 125.51399999999998 174.2840750045645 128.45 174.2840750045645 C 131.386 174.2840750045645 132.85399999999998 171.1484878252326 135.79 169.05809637234537 C 138.726 166.96770491945813 140.19400000000002 163.83211774012835 143.13 163.83211774012835 C 146.06599999999997 163.83211774012835 147.534 181.0778472264489 150.47 195.18798953343884 C 153.406 209.29813184042877 154.874 234.38282927507797 157.81 234.38282927507797 C 160.746 234.38282927507797 162.214 216.6145019255355 165.15 200.41396816565793 C 168.086 184.2134344057804 169.554 163.8321177401263 172.49 153.38016047569016 C 175.42600000000002 142.92820321125402 176.894 142.92820321125402 179.83 142.92820321125402 C 182.766 142.92820321125402 184.234 150.76717115958058 187.17 150.76717115958058 C 190.106 150.76717115958058 191.57399999999998 145.5411925273615 194.51 145.5411925273615 C 197.446 145.5411925273615 198.914 221.31788269453227 201.85 221.31788269453227 C 204.786 221.31788269453227 206.254 195.18798953343884 209.19 195.18798953343884 C 212.12599999999998 195.18798953343884 213.594 220.27268696808923 216.53 229.15685064286095 C 219.46599999999998 238.04101431763257 220.93400000000003 235.95062286474408 223.87 239.60880790729706 C 226.80599999999998 243.26699294985002 228.27399999999997 247.44777585562574 231.21 247.44777585562574 C 234.14600000000002 247.44777585562574 235.61400000000003 247.44777585562574 238.55 244.8347865395162 C 241.48600000000002 242.22179722340664 242.954 206.6851425243213 245.89 187.34902158511227 C 248.82599999999996 168.01290064590324 250.29399999999995 148.15418184347104 253.23 148.15418184347104 C 256.166 148.15418184347104 257.634 192.5750002173293 260.57 195.18798953343884 C 263.50600000000003 197.8009788495484 264.974 195.18798953343884 267.91 197.8009788495484 C 270.846 200.41396816565793 272.314 213.4789147462036 275.25 213.4789147462036 C 278.186 213.4789147462036 279.654 213.4789147462036 282.59 213.4789147462036 C 285.526 213.4789147462036 286.99399999999997 166.9677049194579 289.93 148.15418184347104 C 292.866 129.3406587674845 294.334 119.41129936627013 297.27 119.41129936627013 C 300.206 119.41129936627013 301.674 129.86325663070625 304.61 129.86325663070625 C 307.546 129.86325663070625 309.014 124.63727799848884 311.95 122.0242886823797 C 314.88599999999997 119.41129936627057 316.354 116.79831005016058 319.29 116.79831005016058 C 322.226 116.79831005016058 323.694 176.89706432067405 326.63 176.89706432067405 C 329.566 176.89706432067405 331.034 176.89706432067405 333.97 176.89706432067405 C 336.90600000000006 176.89706432067405 338.374 198.84617457599134 341.31 210.86592543009405 C 344.246 222.88567628419673 345.71399999999994 228.11165491641577 348.65 236.99581859118751 C 351.58599999999996 245.87998226595906 353.054 255.2867438039523 355.99 255.2867438039523 C 358.92600000000004 255.2867438039523 363.33 216.09190406231318 363.33 216.09190406231318 L 388.33 216.09190406231318"
+                                                  stroke-linejoin="round" visibility="visible"
+                                                  stroke="rgba(192,192,192,0.0001)" stroke-width="51"
+                                                  class="highcharts-tracker"></path>
+                                        </g>
+                                        <g class="highcharts-markers highcharts-series-0 highcharts-areaspline-series highcharts-color-0  highcharts-tracker"
+                                           transform="translate(10,10) scale(1 1)"></g>
+                                    </g>
+                                    <text x="194" text-anchor="middle" class="highcharts-title"
+                                          style="color:#333333;font-size:18px;fill:#333333;" y="24"></text>
+                                    <text x="194" text-anchor="middle" class="highcharts-subtitle"
+                                          style="color:#666666;fill:#666666;" y="24"></text>
+                                    <g class="highcharts-axis-labels highcharts-xaxis-labels ">
+                                        <text x="13.67"
+                                              style="color:#4a4a4a;cursor:default;font-size:14px;fill:#4a4a4a;"
+                                              text-anchor="start" transform="translate(0,0)" y="298" opacity="1">13:33
+                                        </text>
+                                        <text x="0" style="color:#4a4a4a;cursor:default;font-size:14px;fill:#4a4a4a;"
+                                              text-anchor="start" transform="translate(0,0)" y="-9999">13:34
+                                        </text>
+                                        <text x="0" style="color:#4a4a4a;cursor:default;font-size:14px;fill:#4a4a4a;"
+                                              text-anchor="start" transform="translate(0,0)" y="-9999">13:35
+                                        </text>
+                                        <text x="0" style="color:#4a4a4a;cursor:default;font-size:14px;fill:#4a4a4a;"
+                                              text-anchor="start" transform="translate(0,0)" y="-9999">13:36
+                                        </text>
+                                        <text x="0" style="color:#4a4a4a;cursor:default;font-size:14px;fill:#4a4a4a;"
+                                              text-anchor="start" transform="translate(0,0)" y="-9999">13:37
+                                        </text>
+                                        <text x="0" style="color:#4a4a4a;cursor:default;font-size:14px;fill:#4a4a4a;"
+                                              text-anchor="start" transform="translate(0,0)" y="-9999">13:38
+                                        </text>
+                                        <text x="0" style="color:#4a4a4a;cursor:default;font-size:14px;fill:#4a4a4a;"
+                                              text-anchor="start" transform="translate(0,0)" y="-9999">13:39
+                                        </text>
+                                        <text x="0" style="color:#4a4a4a;cursor:default;font-size:14px;fill:#4a4a4a;"
+                                              text-anchor="start" transform="translate(0,0)" y="-9999">13:40
+                                        </text>
+                                        <text x="0" style="color:#4a4a4a;cursor:default;font-size:14px;fill:#4a4a4a;"
+                                              text-anchor="start" transform="translate(0,0)" y="-9999">13:41
+                                        </text>
+                                        <text x="0" style="color:#4a4a4a;cursor:default;font-size:14px;fill:#4a4a4a;"
+                                              text-anchor="start" transform="translate(0,0)" y="-9999">13:42
+                                        </text>
+                                        <text x="87.07"
+                                              style="color:#4a4a4a;cursor:default;font-size:14px;fill:#4a4a4a;"
+                                              text-anchor="start" transform="translate(0,0)" y="298" opacity="1">13:43
+                                        </text>
+                                        <text x="0" style="color:#4a4a4a;cursor:default;font-size:14px;fill:#4a4a4a;"
+                                              text-anchor="start" transform="translate(0,0)" y="-9999">13:44
+                                        </text>
+                                        <text x="0" style="color:#4a4a4a;cursor:default;font-size:14px;fill:#4a4a4a;"
+                                              text-anchor="start" transform="translate(0,0)" y="-9999">13:45
+                                        </text>
+                                        <text x="0" style="color:#4a4a4a;cursor:default;font-size:14px;fill:#4a4a4a;"
+                                              text-anchor="start" transform="translate(0,0)" y="-9999">13:46
+                                        </text>
+                                        <text x="0" style="color:#4a4a4a;cursor:default;font-size:14px;fill:#4a4a4a;"
+                                              text-anchor="start" transform="translate(0,0)" y="-9999">13:47
+                                        </text>
+                                        <text x="0" style="color:#4a4a4a;cursor:default;font-size:14px;fill:#4a4a4a;"
+                                              text-anchor="start" transform="translate(0,0)" y="-9999">13:48
+                                        </text>
+                                        <text x="0" style="color:#4a4a4a;cursor:default;font-size:14px;fill:#4a4a4a;"
+                                              text-anchor="start" transform="translate(0,0)" y="-9999">13:49
+                                        </text>
+                                        <text x="0" style="color:#4a4a4a;cursor:default;font-size:14px;fill:#4a4a4a;"
+                                              text-anchor="start" transform="translate(0,0)" y="-9999">13:50
+                                        </text>
+                                        <text x="0" style="color:#4a4a4a;cursor:default;font-size:14px;fill:#4a4a4a;"
+                                              text-anchor="start" transform="translate(0,0)" y="-9999">13:51
+                                        </text>
+                                        <text x="0" style="color:#4a4a4a;cursor:default;font-size:14px;fill:#4a4a4a;"
+                                              text-anchor="start" transform="translate(0,0)" y="-9999">13:52
+                                        </text>
+                                        <text x="160.47"
+                                              style="color:#4a4a4a;cursor:default;font-size:14px;fill:#4a4a4a;"
+                                              text-anchor="start" transform="translate(0,0)" y="298" opacity="1">13:53
+                                        </text>
+                                        <text x="0" style="color:#4a4a4a;cursor:default;font-size:14px;fill:#4a4a4a;"
+                                              text-anchor="start" transform="translate(0,0)" y="-9999">13:54
+                                        </text>
+                                        <text x="0" style="color:#4a4a4a;cursor:default;font-size:14px;fill:#4a4a4a;"
+                                              text-anchor="start" transform="translate(0,0)" y="-9999">13:55
+                                        </text>
+                                        <text x="0" style="color:#4a4a4a;cursor:default;font-size:14px;fill:#4a4a4a;"
+                                              text-anchor="start" transform="translate(0,0)" y="-9999">13:56
+                                        </text>
+                                        <text x="0" style="color:#4a4a4a;cursor:default;font-size:14px;fill:#4a4a4a;"
+                                              text-anchor="start" transform="translate(0,0)" y="-9999">13:57
+                                        </text>
+                                        <text x="0" style="color:#4a4a4a;cursor:default;font-size:14px;fill:#4a4a4a;"
+                                              text-anchor="start" transform="translate(0,0)" y="-9999">13:58
+                                        </text>
+                                        <text x="0" style="color:#4a4a4a;cursor:default;font-size:14px;fill:#4a4a4a;"
+                                              text-anchor="start" transform="translate(0,0)" y="-9999">13:59
+                                        </text>
+                                        <text x="0" style="color:#4a4a4a;cursor:default;font-size:14px;fill:#4a4a4a;"
+                                              text-anchor="start" transform="translate(0,0)" y="-9999">14:00
+                                        </text>
+                                        <text x="0" style="color:#4a4a4a;cursor:default;font-size:14px;fill:#4a4a4a;"
+                                              text-anchor="start" transform="translate(0,0)" y="-9999">14:01
+                                        </text>
+                                        <text x="0" style="color:#4a4a4a;cursor:default;font-size:14px;fill:#4a4a4a;"
+                                              text-anchor="start" transform="translate(0,0)" y="-9999">14:02
+                                        </text>
+                                        <text x="233.87"
+                                              style="color:#4a4a4a;cursor:default;font-size:14px;fill:#4a4a4a;"
+                                              text-anchor="start" transform="translate(0,0)" y="298" opacity="1">14:03
+                                        </text>
+                                        <text x="0" style="color:#4a4a4a;cursor:default;font-size:14px;fill:#4a4a4a;"
+                                              text-anchor="start" transform="translate(0,0)" y="-9999">14:04
+                                        </text>
+                                        <text x="0" style="color:#4a4a4a;cursor:default;font-size:14px;fill:#4a4a4a;"
+                                              text-anchor="start" transform="translate(0,0)" y="-9999">14:05
+                                        </text>
+                                        <text x="0" style="color:#4a4a4a;cursor:default;font-size:14px;fill:#4a4a4a;"
+                                              text-anchor="start" transform="translate(0,0)" y="-9999">14:06
+                                        </text>
+                                        <text x="0" style="color:#4a4a4a;cursor:default;font-size:14px;fill:#4a4a4a;"
+                                              text-anchor="start" transform="translate(0,0)" y="-9999">14:07
+                                        </text>
+                                        <text x="0" style="color:#4a4a4a;cursor:default;font-size:14px;fill:#4a4a4a;"
+                                              text-anchor="start" transform="translate(0,0)" y="-9999">14:08
+                                        </text>
+                                        <text x="0" style="color:#4a4a4a;cursor:default;font-size:14px;fill:#4a4a4a;"
+                                              text-anchor="start" transform="translate(0,0)" y="-9999">14:09
+                                        </text>
+                                        <text x="0" style="color:#4a4a4a;cursor:default;font-size:14px;fill:#4a4a4a;"
+                                              text-anchor="start" transform="translate(0,0)" y="-9999">14:10
+                                        </text>
+                                        <text x="0" style="color:#4a4a4a;cursor:default;font-size:14px;fill:#4a4a4a;"
+                                              text-anchor="start" transform="translate(0,0)" y="-9999">14:11
+                                        </text>
+                                        <text x="0" style="color:#4a4a4a;cursor:default;font-size:14px;fill:#4a4a4a;"
+                                              text-anchor="start" transform="translate(0,0)" y="-9999">14:12
+                                        </text>
+                                        <text x="307.27"
+                                              style="color:#4a4a4a;cursor:default;font-size:14px;fill:#4a4a4a;"
+                                              text-anchor="start" transform="translate(0,0)" y="298" opacity="1">14:13
+                                        </text>
+                                        <text x="0" style="color:#4a4a4a;cursor:default;font-size:14px;fill:#4a4a4a;"
+                                              text-anchor="start" transform="translate(0,0)" y="-9999">14:14
+                                        </text>
+                                        <text x="0" style="color:#4a4a4a;cursor:default;font-size:14px;fill:#4a4a4a;"
+                                              text-anchor="start" transform="translate(0,0)" y="-9999">14:15
+                                        </text>
+                                        <text x="0" style="color:#4a4a4a;cursor:default;font-size:14px;fill:#4a4a4a;"
+                                              text-anchor="start" transform="translate(0,0)" y="-9999">14:16
+                                        </text>
+                                        <text x="0" style="color:#4a4a4a;cursor:default;font-size:14px;fill:#4a4a4a;"
+                                              text-anchor="start" transform="translate(0,0)" y="-9999">14:17
+                                        </text>
+                                        <text x="0" style="color:#4a4a4a;cursor:default;font-size:14px;fill:#4a4a4a;"
+                                              text-anchor="start" transform="translate(0,0)" y="-9999">14:18
+                                        </text>
+                                        <text x="0" style="color:#4a4a4a;cursor:default;font-size:14px;fill:#4a4a4a;"
+                                              text-anchor="start" transform="translate(0,0)" y="-9999">14:19
+                                        </text>
+                                        <text x="0" style="color:#4a4a4a;cursor:default;font-size:14px;fill:#4a4a4a;"
+                                              text-anchor="start" transform="translate(0,0)" y="-9999">14:20
+                                        </text>
+                                        <text x="0" style="color:#4a4a4a;cursor:default;font-size:14px;fill:#4a4a4a;"
+                                              text-anchor="start" transform="translate(0,0)" y="-9999">14:21
+                                        </text>
+                                        <text x="0" style="color:#4a4a4a;cursor:default;font-size:14px;fill:#4a4a4a;"
+                                              text-anchor="start" transform="translate(0,0)" y="-9999">14:22
+                                        </text>
+                                    </g>
+                                    <g class="highcharts-axis-labels highcharts-yaxis-labels ">
+                                        <text x="377" style="color:#333;cursor:default;font-size:16px;fill:#333;"
+                                              text-anchor="end" transform="translate(0,0)" y="244" opacity="1">
+                                            <tspan>6700</tspan>
+                                        </text>
+                                        <text x="377" style="color:#333;cursor:default;font-size:16px;fill:#333;"
+                                              text-anchor="end" transform="translate(0,0)" y="128" opacity="1">
+                                            <tspan>6750</tspan>
+                                        </text>
+                                        <text x="377" style="color:#333;cursor:default;font-size:16px;fill:#333;"
+                                              text-anchor="end" transform="translate(0,0)" y="13" opacity="1">
+                                            <tspan>6800</tspan>
+                                        </text>
+                                    </g>
+                                </svg>
+                            </div>
+                        </div>
+                        <div id="l_spot" class="l_spot" style="left: 369.33px; top: 221.092px;"><span
+                                class="l_bigSpot"></span> <span class="l_centerSpot"></span> <span
+                                class="l_smallSpot"></span></div>
+                        <div id="showKlineVal" class="l_showKlineVal" style="display: none;">
+                            <div>加载中...</div>
+                        </div>
+                        <div class="l_NoviceStepBox step4"></div>
+                        <div class="l_NoviceStepBox step5"></div>
+                        <div class="l_NoviceStepBox step6"></div>
+                        <div class="l_NoviceStepBox step7"></div>
+                        <div class="l_NoviceStepBox step8"></div>
+                    </div>
+                    <div class="l_chartNav">
+                        <ul>
+                            <li data-type="0" class="active">分时</li>
+                            <li data-type="1" class="">1分钟</li>
+                            <li data-type="5" class="">5分钟</li>
+                            <li data-type="15" class="">15分钟</li>
+                            <li data-type="30" class="">30分钟</li>
+                        </ul>
+                        <div class="l_NoviceStepBox step5"></div>
+                        <div class="l_NoviceStepBox step6"></div>
+                        <div class="l_NoviceStepBox step7"></div>
+                        <div class="l_NoviceStepBox step8"></div>
+                    </div>
+                    <div class="l_orderNews" style="display: none;">
+                        <div class="l_content">
+                            <div class="l_orderTit"><span class="l_orderTitTxt">订单确定</span> <span
+                                    class="l_choseOrder"></span></div>
+                            <div class="l_orderTime">
+                                <div class="l_orderTimeTit">到期时间</div>
+                                <div class="l_orderTimeListBox">
+                                    <ul class="l_orderTimeUl"></ul>
+                                </div>
+                            </div>
+                            <div class="l_orderMoney">
+                                <div class="l_orderMoneyTit">投资金额</div>
+                                <div class="l_orderMoneyCon">
+                                    <div class="l_orderMonProgressBar">
+                                        <div id="l_orderMonProgressBarL" class="l_orderMonProgressBarL"><span
+                                                id="l_orderMonProgressBarBall" class="l_orderMonProgressBarBall"></span>
+                                            <span class="l_orderMonProgressBarBallSlider"></span></div>
+                                        <div class="l_orderMonProgressBarR">50</div>
+                                    </div>
+                                    <div class="l_orderMonCustom">自定义</div>
+                                </div>
+                            </div>
+                            <div class="l_allMon">
+                                <div class="l_allMonTxt">¥ 5.30</div>
+                                <div class="l_serviceCharge">手续费 : 2 / 单</div>
+                            </div>
+                            <div class="jun-money-select"><h6>选择金额(元)：</h6>
+                                <ul class="jun-money-box"></ul>
+                            </div>
+                            <div class="l_orderNewsData">
+                                <ul>
+                                    <li><p>名称</p>
+                                        <p>美国指数</p></li>
+                                    <li><p>方向</p>
+                                        <p class="">加载中..</p></li>
+                                    <li><p>现价</p>
+                                        <p class="proOrdPrice l_riseColor"> 6706.55</p> <span
+                                                class="buyStateArrow"></span></li>
+                                    <li><p>金额</p>
+                                        <p class="l_orderMon">50</p></li>
+                                </ul>
+                            </div>
+                            <div class="postOrderBtn">确定</div>
+                        </div>
+                    </div>
+                    <div class="l_downTimerBox" style="display: none;">
+                        <div class="l_content">
+                            <div class="l_orderTit"><span class="l_orderTitTxt">美国指数</span> <span
+                                    class="l_choseOrder"></span></div>
+                            <div class="l_downTimer">
+                                <div>
+                                    <div class="l_content">
+                                        <div class="l_downTimeBox">
+                                            <div class="l_downTimeLeftSemiCircle"><span
+                                                    class="l_downTimeLeftSemiCircleSlider"></span></div>
+                                            <div class="l_downTimeRightSemiCircle"><span
+                                                    class="l_downTimeRightSemiCircleSlider"></span></div>
+                                            <div class="l_downTimeInnerCircle">
+                                                30
+                                            </div>
+                                        </div>
+                                        <div class="l_downTimeSuccTxt l_fffColor" style="display: none;">
+                                            请稍后
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="l_downTimerData">
+                                <div class="l_content">
+                                    <ul class="l_orderNewsUl">
+                                        <li><p class="l_orderDataTit">方向</p>
+                                            <p class="">加载中..</p></li>
+                                        <li><p class="l_orderDataTit">金额(元)</p>
+                                            <p class="l_buyMon l_riseColor">¥ </p></li>
+                                        <li><p class="l_orderDataTit">执行价</p>
+                                            <p></p></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="l_orderDataBtn">继续交易</div>
+                        </div>
+                    </div>
+                    <div class="l_customMon" style="display: none;">
+                        <div class="l_customMonTit">请输入</div>
+                        <div class="l_customMonWir"><input type="text" placeholder="金额"></div>
+                        <div class="l_customMonBtn">
+                            <button class="l_choseBtn">取消</button>
+                            <button>确定</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="l_slide">
+                    <div class="l_userNews">
+                        <ul>
+                            <li class="l_firm"><span class="l_firmTxt">实<br>盘</span></li>
+                            <li class="l_userMon"><p class="l_userAbleMon">0.00</p>
+                                <p class="l_userAbleTit">可用赢家券(¥)</p></li>
+                            <li class="l_verticalLine"></li>
+                            <li class="l_userMon"><p class="l_userAbleMon">5.30</p>
+                                <p class="l_userAbleTit">账户净值(¥)</p></li>
+                            <li class="l_rechargeBtnBox"><span class="l_firmArrowBox"></span> <span
+                                    class="l_rechargeBtn"><a href="#/home/pay" class="">充值</a></span></li>
+                        </ul>
+                        <div class="l_NoviceStepBox step5"></div>
+                        <div class="l_NoviceStepBox step6"></div>
+                    </div>
+                    <div class="l_salesVolume">
+                        <div class="l_buyData">
+                            <div class="l_content">
+                                <div class="l_progressBar l_progressBarL"><span data-time="44"
+                                                                                class="l_AllProgressBar l_buyProgressBar"
+                                                                                style="left: 44%;"></span></div>
+                                <span class="l_salesVolumeTxt l_salesVolumeTxtL l_riseColor">56%</span></div>
+                        </div>
+                        <div class="l_salesVolumeTit">买卖量</div>
+                        <div class="l_buyData">
+                            <div class="l_content">
+                                <div class="l_progressBar l_progressBarR"><span data-time="-56"
+                                                                                class="l_AllProgressBar l_sellProgressBar"
+                                                                                style="left: -56%;"></span></div>
+                                <span class="l_salesVolumeTxt l_salesVolumeTxtR l_fallColor">44%</span></div>
+                        </div>
+                        <div class="l_NoviceStepBox step6"></div>
+                    </div>
+                    <div class="l_btnBox">
+                        <div class="l_content">
+                            <div data-type="1" class="l_riseBtn l_btn"><span data-type="1">买涨</span></div>
+                            <div data-type="0" class="l_fallBtn l_btn"><span data-type="0">买跌</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {include file="footer" /}<!----></div>
+</div>
+<script type="text/javascript">
+    script.onload = function () {
+        document.querySelector('.j_t_start').style.display = 'none';
+    }
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,197 @@
+{include file="head" /}
+
+{include file="menu" /}
+
+<!--main content start-->
+      <section id="main-content">
+
+          
+      <section class="wrapper">
+      <div class="col-sm-8">
+          <aside class="profile-info col-lg-12">
+          <section class="panel">
+              <hr>
+              <div class="panel-body bio-graph-info">
+                  <form class="form-horizontal" role="form" action="" method="post" id="formid">
+				  
+                      <div class="form-group" style="display:none">
+                          <label class="col-lg-3 control-label">结算时间段必赢：</label>
+                          <div class="col-lg-8">
+                                <input type="text" class="form-control" name="time1" placeholder="起始时间，如00:00" value="{$time1}" style="width:160px;display:inline" />
+                                 - 
+                                <input type="text" class="form-control" name="time2" placeholder="结束时间，如23:59" value="{$time2}" style="width:160px;display:inline" />
+                                <div class="alert alert-block alert-danger fade in" style="margin:10px 0 0 0 ">
+                                       <strong>说明：</strong> 时间设置在 00:00 ~ 23:59，不能跨天，注意区分半角全角符号。
+                                  </div>
+                          </div>
+                          <label class="col-lg-3 control-label"></label>
+                      </div>
+            
+                      <div class="form-group">
+                          <label class="col-lg-3 control-label">指定客户亏损：</label>
+                          <div class="col-lg-8">
+                                <textarea name="to_loss"  class="form-control" cols="30" rows="6">{$to_loss?$to_loss:''}</textarea>
+                                <div class="alert alert-block alert-danger fade in" style="margin:10px 0 0 0 ">
+                                       <strong>说明：</strong> 此处设置会员ID（如：8888），多个用户用|符号分开（如：8888|9999）设置之后该会员所有订单都会亏损，请谨慎操作。如停止该功能请在上面留空或者填0，并提交。
+                                  </div>
+                          </div>
+                          <label class="col-lg-3 control-label"></label>
+                      </div>
+
+                      <div class="form-group">
+                          <label class="col-lg-3 control-label">指定客户赢利：</label>
+                          <div class="col-lg-8">
+                                <textarea name="to_win"  class="form-control" cols="30" rows="6">{$to_win?$to_win:''}</textarea>
+                                <div class="alert alert-block alert-danger fade in" style="margin:10px 0 0 0 ">
+                                       <strong>说明：</strong> 此处设置会员ID（如：8888），多个用户用|符号分开（如：8888|9999）设置之后该会员所有订单都会赢利，请谨慎操作。如停止该功能请在上面留空或者填0，并提交。
+                                  </div>
+                          </div>
+                          <label class="col-lg-3 control-label"></label>
+                      </div>
+
+                      <div class="form-group" style="display:none">
+                          <label class="col-lg-3 control-label">总止盈止损%：</label>
+                          <div class="col-lg-8">
+                                <input type="text" class="form-control" name="min_yk" placeholder="请填写最小止盈止损" value="{$min_yk}" style="width:160px;display:inline" />
+                                 - 
+                                <input type="text" class="form-control" name="max_yk" placeholder="请填写最大止盈止损" value="{$max_yk}" style="width:160px;display:inline" />
+                          </div>
+                          <label class="col-lg-3 control-label"></label>
+                      </div>
+
+                      <div class="form-group">
+                          <label class="col-lg-3 control-label">时间1止盈止损%：</label>
+                          <div class="col-lg-8">
+                                <input type="text" class="form-control" name="min_yk1" placeholder="请填写最小止盈止损" value="{$min_yk1}" style="width:160px;display:inline" />
+                                 - 
+                                <input type="text" class="form-control" name="max_yk1" placeholder="请填写最大止盈止损" value="{$max_yk1}" style="width:160px;display:inline" />
+                          </div>
+                          <label class="col-lg-3 control-label"></label>
+                      </div>
+
+                      <div class="form-group">
+                          <label class="col-lg-3 control-label">时间2止盈止损%：</label>
+                          <div class="col-lg-8">
+                                <input type="text" class="form-control" name="min_yk2" placeholder="请填写最小止盈止损" value="{$min_yk2}" style="width:160px;display:inline" />
+                                 - 
+                                <input type="text" class="form-control" name="max_yk2" placeholder="请填写最大止盈止损" value="{$max_yk2}" style="width:160px;display:inline" />
+                          </div>
+                          <label class="col-lg-3 control-label"></label>
+                      </div>
+
+                      <div class="form-group">
+                          <label class="col-lg-3 control-label">时间3止盈止损%：</label>
+                          <div class="col-lg-8">
+                                <input type="text" class="form-control" name="min_yk3" placeholder="请填写最小止盈止损" value="{$min_yk3}" style="width:160px;display:inline" />
+                                 - 
+                                <input type="text" class="form-control" name="max_yk3" placeholder="请填写最大止盈止损" value="{$max_yk3}" style="width:160px;display:inline" />
+                          </div>
+                          <label class="col-lg-3 control-label"></label>
+                      </div>
+
+                      <div class="form-group" style="display:none">
+                          <label class="col-lg-3 control-label">客户盈亏%：</label>
+                          <div class="col-lg-8">
+                                <input type="text" class="form-control" name="min_gain" placeholder="请填写最小客户盈亏" value="{$min_gain}" style="width:160px;display:inline" />
+                                 - 
+                                <input type="text" class="form-control" name="max_gain" placeholder="请填写最大客户盈亏" value="{$max_gain}" style="width:160px;display:inline" />
+                                <div class="alert alert-block alert-danger fade in" style="margin:10px 0 0 0 ">
+                                       <strong>说明：</strong> 客户盈亏最大为10，不要超过10 ！<br/>
+                                       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 若下注100，止盈止损为6，客户盈亏随机为8，则计算公式为：8/100*6/10*100=4.8。<br/>
+                                       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 若下注100，止盈止损为10，客户盈亏随机为8，则计算公式为：8/100*10/10*100=8。<br/>
+                                  </div>
+                          </div>
+                          <label class="col-lg-3 control-label"></label>
+                      </div>
+
+                      <div class="form-group" style="display:none">
+                          <label class="col-lg-3 control-label">盈亏百分百：</label>
+                          <div class="col-lg-8">
+                                <label><input type="radio" name="special_yk" id="special_yk" value="1" {if $special_yk==1}checked{/if} /> 开启</label>
+                                <label><input type="radio" name="special_yk" id="special_yk" value="0" {if $special_yk==0}checked{/if} /> 关闭</label>
+                                <div class="alert alert-block alert-danger fade in" style="margin:10px 0 0 0 ">
+                                       <strong>说明：</strong> 指定的客户 96%~99% 全输全赢。
+                                  </div>
+                          </div>
+                          <label class="col-lg-3 control-label"></label>
+                      </div>
+
+                      <div class="form-group">
+                          <label class="col-lg-3 control-label">最小风控值：</label>
+                          <div class="col-lg-8">
+                                <input type="text" class="form-control" name="min_price" placeholder="请填写最小风控值" value="{$min_price?$min_price:''}">
+                                <div class="alert alert-block alert-danger fade in" style="margin:10px 0 0 0 ">
+                                       <strong>说明：</strong> 下单达到此金额，则会受到下面风控影响。
+                                  </div>
+                          </div>
+                          <label class="col-lg-3 control-label"></label>
+                      </div>
+
+                      <div class="form-group">
+                          <label class="col-lg-3 control-label">风控概率：</label>
+                          <div class="col-lg-8">
+                                <input type="text" class="form-control" name="chance" placeholder="请填写客户ID" value="{$chance?$chance:''}"/>
+                                <div class="alert alert-block alert-danger fade in" style="margin:10px 0 0 0 ">
+                                       <strong>说明：</strong> 输入金额区间，在金额区间之内会根据此概率盈亏。不在此区间则不受风控影响<br>
+                                       <strong>格式：</strong> 区间开始-区间结束:客户赢利概率|　　符号必须为英文符号，如0-100:50|100-200:30
+                                  </div>
+                          </div>
+                          <label class="col-lg-3 control-label"></label>
+                      </div>
+
+                      <hr/>
+
+                      <div class="form-group" style="display:none">
+                          <label class="col-lg-3 control-label">未指定客户盈亏%：</label>
+                          <div class="col-lg-8">
+                                <input type="text" class="form-control" name="min_lost" placeholder="请填写最小未指定客户盈亏" value="{$min_lost}" style="width:160px;display:inline" />
+                                 - 
+                                <input type="text" class="form-control" name="max_lost" placeholder="请填写最大未指定客户盈亏" value="{$max_lost}" style="width:160px;display:inline" />
+                                <div class="alert alert-block alert-danger fade in" style="margin:10px 0 0 0 ">
+                                       <strong>说明：</strong> 未指定客户盈亏 最大不超过止盈止损上限 ！<br/>
+                                       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 若下注100元，未指定客户盈亏为2%，则客户输赢不超过2元。<br/>
+                                  </div>
+                          </div>
+                          <label class="col-lg-3 control-label"></label>
+                      </div>
+                      
+                      <input type="hidden" name="id" value="{$id?$id:''}">
+                                  
+                      <div class="form-group">
+                          <div class="col-lg-offset-2 col-lg-10">
+                              <input type="submit" class="btn btn-success" onclick="return editrisk(this.form)" value="提交"/>
+                          </div>
+                      </div>
+                  </form>
+              </div>
+          </section>
+          
+      </aside>
+      </div>
+
+      </section>
+
+
+
+
+      
+
+
+
+      <!--main content end-->
+  </section>
+
+{include file="foot" /}
+<script>
+
+function editrisk(form) {
+  
+  var formurl = "{:Url('goods/addrisk')}"
+    var data = $('#formid').serialize();
+    var locurl = "{:Url('goods/risk')}";
+    WPpost(formurl,data,locurl);
+    return false;
+}
+
+
+</script>

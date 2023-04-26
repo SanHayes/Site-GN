@@ -1,0 +1,162 @@
+
+<!DOCTYPE html>
+<html data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta name="full-screen" content="yes">
+    <meta name="x5-fullscreen" content="true">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    
+    <link rel="stylesheet"  href="/mobile/css/weui.css">
+    <link rel="stylesheet" href="/mobile/css/jquery-weui.min.css">
+    <script src="/mobile/js/2461f3.js"></script>
+</head>
+<body>
+
+<title>银行卡管理</title>
+<link rel="stylesheet" href="/mobile/css/c96bb6.css">
+
+<div class="collection">
+
+    <!-- title开始 -->
+    <div class="topPart  flex align-items">
+        <i id="goBack" class="iconfont  icon-back1 pl pr "></i>
+        <div class="flex justify-center align-items box">收款方式管理</div>
+    </div>
+    <!-- title结束 -->
+    <div class="show ">
+        {volist name="bankcards" id="vo" key='k'}
+        <div class="info pa color6 borderRadius flex column  font16">
+            <div class="tableTr box flex justify-between" >
+                <span class="tableTd " >姓名:</span>
+                <span class="tableTd" >{$vo.accntnm}</span>
+            </div >
+            <div class="tableTr box flex justify-between" >
+                <span class="tableTd" >银行卡号:</span>
+                <span class="tableTd" >{:substr($vo['accntno'],0,6).str_pad('*',strlen($vo['accntno'])-10,'*').substr($vo['accntno'],-4)}</span>
+            </div >
+            <!--<div class="tableTr box flex justify-between" >-->
+            <!--    <span class="tableTd" >银行名称:</span>-->
+            <!--    <span class="tableTd" >中国农业银行</span>-->
+            <!--</div >-->
+            <!--<div class="tableTr box flex justify-between align-items" >-->
+            <!--    <span class="tableTd" >开户网点:</span>-->
+            <!--    <span class="tableTd smallLinghtHeight ml"  >中国农业银行</span>-->
+            <!--</div>-->
+        </div>
+        {/volist}
+    </div>
+    {if count($bankcards) > 0 &&  $userinfo.card_delete_count < $card_delete_count}
+    <div style="display: flex;justify-content: center;padding: 20px 10% 0 10%;">
+        <button id="card-reset" class="weui-btn" style="background: #ff571e;">解除银行卡</button>
+    </div>
+    {/if}
+
+    <div  class="<?php if (count($bankcards) != 0) { echo 'hidden'; } ?>  add">
+        <div>
+            <div class="empty fontDetail flex column align-items justify-center ">
+                <i class="icon-shuaqiaqiapianyinhangqia iconfont fontMain img"></i>
+                <div class=" font14 pa">请添加收款方式</div>
+            </div>
+            <div class="ripple btnWrap">
+                <a  data-url="{:url('/apk/index/add_bank')}"   href="javascript:;" class="forJsClick    weui-btn  bgUseable">
+                    添加
+                </a>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+{include file="nav" /}
+<!-- loading遮罩层开始 -->
+<div id="loading" class="hidden">
+    <div class="mloading">
+        <div class="flex align-items justify-center loadingWrap">
+            <i class="weui-loading"></i>
+        </div>
+    </div>
+</div>
+<!-- loading遮罩层结束 -->
+<div id="loadingNotTuochClose" class="hidden">
+    <div class="mloadingNoTouch">
+        <div class="flex align-items justify-center loadingWrap">
+            <i class="weui-loading"></i>
+        </div>
+    </div>
+</div>
+<!-- body 最后 -->
+<script src="/mobile/js/jquery.min.js"></script>
+<script src="/mobile/js/jquery-weui.min.js"></script>
+<script>
+    $(document).ready(function (e) {
+        //链接 点击
+        $('.forJsClick').on('click', function (e) {
+            e.preventDefault()
+            e.stopPropagation()
+            var url = $(this).data('url')
+            if (url) {
+                setTimeout(function () {
+                    window.location.href = url;
+
+                }, 300)
+            }
+        })
+        //弹窗关闭
+        $('.footerItem').each(function (e) {
+
+            var url = $(this).data('url')
+            url = url && url.replace('./', '')
+            if (window.location.href.indexOf(url) > -1) {
+                $(this).addClass('on')
+            }
+        })
+        //遮罩层可以关闭
+        $('.loadingWrap').on('click', function () {
+            $('#loading').addClass('hidden')
+        })
+        //返回
+        $('#goBack').on('click', function () {
+            window.history.back()
+        })
+        var browser = {
+            versions: function () {
+                var u = navigator.userAgent, app = navigator.appVersion;
+                return {     //移动终端浏览器版本信息
+                    mobile: !!u.match(/AppleWebKit.*Mobile.*/), //是否为移动终端
+                };
+            }(),
+        }
+
+        if (!browser.versions.mobile) {
+            $('body').addClass('plantPc')
+        }
+
+        var url = "{:Url('/apk/index/card_reset')}";
+        $("#card-reset").on("click", function () {
+            var _loading = $('#loadingNotTuochClose');
+            _loading.removeClass('hidden');
+            _loading.addClass('show');
+            $.post(url, {}, function (res) {
+                _loading.removeClass('show');
+                _loading.addClass('hidden');
+                $.toast(res.data, "text");
+                setTimeout(function () {
+                    window.location.reload();
+                }, 1000);
+            });
+        });
+    });
+</script>
+<!-- 如果使用了某些拓展插件还需要额外的JS -->
+</body>
+</html>

@@ -1,0 +1,121 @@
+
+<!DOCTYPE html>
+<html data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta name="full-screen" content="yes">
+    <meta name="x5-fullscreen" content="true">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link rel="shortcut icon" href="" type="image/x-icon">
+    <link rel="stylesheet" type="" href="/pc/css/bootstrap.min.css">
+    <link rel="stylesheet" type="" href="/pc/css/bootstrapValidator.css">
+</head>
+<body>
+<style type="text/css">
+    .dialog{
+        display: none
+    }
+</style>
+<title>交易明细</title>
+
+<link rel="stylesheet" href="/pc/css/0f1a58.css">
+<link rel="stylesheet" href="/pc/css/bootstrap-table.min.css">
+<header id="header" class=" bgMainDark">
+    <div class=" logoNavWrap d-flex align-items-center flex align-items justify-between">
+        <h1 class="logo mr-auto ml"><a href="javascript:viod(0)"  class="forJsClick" data-url="/index/index/home"> <img alt="logo" src="{$conf['web_logo']}" /> </a></h1>
+        {include file="nav" /}
+    </div>
+</header><!-- End Header -->
+<main class="main">
+
+    <div class="container">
+        <h3 class="hoverMainColor" >持仓记录 </h3>
+        <!-- ======= table ======= -->
+        <table class="table-responsive table table-bordered table-hover" id="table">
+            <thead class="">
+            <tr>
+                <th style="" data-field="product_name">
+                    <div class="th-inner ">名称</div>
+                    <div class="fht-cell"></div>
+                </th>
+                <th style="" data-field="style_name">
+                    <div class="th-inner ">类型</div>
+                    <div class="fht-cell"></div>
+                </th>
+                <th style="" data-field="money">
+                    <div class="th-inner ">金额</div>
+                    <div class="fht-cell"></div>
+                </th>
+                <!--<th style="text-align: center; " data-field="endprofit">-->
+                <!--    <div class="th-inner ">时间</div>-->
+                <!--    <div class="fht-cell"></div>-->
+                <!--</th>-->
+                <th style="text-align: center; " data-field="fee">
+                    <div class="th-inner ">手续费</div>
+                    <div class="fht-cell"></div>
+                </th>
+                <th style="text-align: center; " data-field="buyprice">
+                    <div class="th-inner ">建仓点位</div>
+                    <div class="fht-cell"></div>
+                </th>
+                <th style="text-align: center; " data-field="create_time">
+                    <div class="th-inner ">下单时间</div>
+                    <div class="fht-cell"></div>
+                </th>
+                <th style="text-align: center; " data-field="pingTime">
+                    <div class="th-inner ">剩余时间</div>
+                    <div class="fht-cell"></div>
+                </th>
+            </tr>
+            </thead>
+            <tbody>
+            {volist name="hold" id="vo" key='k'}
+            <tr class="hoverPointer" data-index="0">
+                <td>{$vo.ptitle}</td>
+                <td><?php if ($vo['ostyle'] == 0) { echo '买涨'; } else { echo '买跌'; } ?></td>
+                <td>{$vo.fee}</td>
+                <!--<td style="text-align: center; ">{$vo.time}</td>-->
+                <td style="text-align: center; ">0</td>
+                <td style="text-align: center; ">{$vo.buyprice}</td>
+                <td style="text-align: center; ">{$vo.buytime}</td>
+                <!--<td style="text-align: center; ">{$vo.selltime}</td>-->
+                <td style="text-align: center; ">
+                    {if $vo.pingcang_type == 1}
+                    <div class="time">待平仓</div>
+                    {else/}
+                    <div class="time" data-time="{$vo.time}">--</div>
+                    {/if}
+                </td>
+            </tr>
+            {/volist}
+            </tbody>
+        </table>
+        <!-- table结束 -->
+    </div>
+
+</main><!-- End #main -->
+
+<div data-url="{$conf['sys_kefu']}"  class="kefu hoverPointer forJsClick003 bgUseable" >
+    <span><i class="iconfont icon-kefu fontPanel" ></i></span>
+    &nbsp;&nbsp;&nbsp;<span class="fontPanel" id="zaixian" >在线客服</span>
+</div>
+<script src="/pc/js/jquery.min.js"></script>
+<script src="/pc/js/layer/layer.js"></script>
+<script src="/pc/js/bootstrap.min.js"></script>
+<script src="/pc/js/bootstrap-table.min.js"></script>
+<script src="/pc/js/bootstrap-table-zh-CN.min.js"></script>
+<script>
+    var  _detailurl = "/oerfa/detail.html", _record_url = "/index/order/hold";
+</script>
+<script src="/pc/js/fde4e3.js"></script>
+<script src="/pc/js/4b3859.js?v=1.0"></script>
+</body>
+</html>

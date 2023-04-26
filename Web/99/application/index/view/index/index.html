@@ -1,0 +1,145 @@
+
+{include file="head" /}
+
+<body ng-app="starter" ng-controller="AppCtrl" class="grade-a platform-browser platform-win32 platform-ready">
+
+
+<ion-nav-bar class="bar-stable headerbar nav-bar-container" nav-bar-transition="ios" nav-bar-direction="none" nav-swipe="">
+<div class="nav-bar-block" nav-bar="cached"><ion-header-bar class="bar-stable headerbar bar bar-header" align-title="center"><div class="title title-center hangqing header-item" style="transition-duration: 0ms; transform: translate3d(-176.414px, 0px, 0px); opacity: 0;"></div><div class="buttons buttons-right" style="transition-duration: 0ms; opacity: 0;"></div></ion-header-bar></div><div class="nav-bar-block" nav-bar="active"><ion-header-bar class="bar-stable headerbar bar bar-header" align-title="center"><div class="buttons buttons-left" style="transition-duration: 0ms;"></div><div class="title hangqing title-center header-item" style="transition-duration: 0ms; transform: translate3d(0px, 0px, 0px);">商品行情</div></ion-header-bar></div></ion-nav-bar>
+<ion-nav-view class="view-container" nav-view-transition="ios" nav-view-direction="enter" nav-swipe=""><ion-tabs class="tabs-icon-top navbar pane tabs-bottom tabs-standard" abstract="true" nav-view="active" style="opacity: 1; transform: translate3d(0%, 0px, 0px);">
+	
+<ion-nav-view name="tab-qoute" class="view-container tab-content" nav-view="active" nav-view-transition="ios" nav-view-direction="none" nav-swipe="">
+    <ion-view view-title="" hide-nav-bar="false" class="pane" state="tab.qoute" nav-view="active" style="opacity: 1; transform: translate3d(0%, 0px, 0px);">
+    <ion-content style="top: 0px;" class="content-background scroll-content ionic-scroll scroll-content-false  has-header has-tabs" scroll="false">
+
+        <div class="slide-qoute slider" delegate-handle="slide-qoute" on-slide-changed="slide_change($index)" show-pager="false" style="visibility: visible;overflow:scroll"><div class="slider-slides" ng-transclude="" style="width: 100%;">
+            <!-- ngRepeat: c in category_list --><ion-slide ng-repeat="c in category_list" class="slider-slide" data-index="0" style="width: 100%; left: 0px; transition-duration: 300ms; transform: translate(0px, 0px) translateZ(0px);">
+				
+				<!--
+				<marquee style="background: gray; height: 30px; line-height: 30px; color: white; font-size: 16px;">
+				{foreach $notices as $k=>$vo}
+				{:nl2br($vo['content'])}
+				{/foreach}
+				</marquee>
+				-->
+
+                <div class="qoute-view">
+                    <div class="qoute-view-header">
+                        <ul>
+                            <li class="shangpinmingcheng">商品名称</li>
+                            <li class="xianjia">现价</li>
+                            <li class="zuidi">最低</li>
+                            <li class="zuigao">最高</li>
+                        </ul>
+                    </div>
+                    <div class="qoute-view-content" style="height:560px">
+                        <ion-scroll class="scroll-view ionic-scroll scroll-y"><div class="scroll" style="transform: translate3d(0px, 0px, 0px) scale(1);">
+                            
+						<!-- {volist name="pro" id="vo"} -->
+                            <ul onclick="parent.location='{:url('goods/goods',array('pid'=>$vo['pid'],'token'=>$token))}';"  id="pid{$vo.pid}">
+                                <li>
+                                    <a href="javascript:;" class="ng-binding prtitle"></a>
+                                </li>
+                                <li>
+                                    <a  href="javascript:;" class="ng-binding rise-value now-value">
+                                        
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;" class="ng-binding rise rise-low">
+                                        
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;" class="ng-binding rise rise-high">
+                                        
+                                    </a>
+                                </li>
+                            </ul>
+						<!-- {/volist} -->
+
+                        </div>
+                        
+                        {if $conf.sys_robot==1}
+						<div class="order-p" id="J_order" style="display:none;">
+							<div class="order-item">
+								<i class="iconfont icon--5 rujin" style="color:#ecb540"></i> <span class="order-phone" style="color:#999"></span> &nbsp;<span class="order-rs" style="color:red"></span>
+							</div>
+						</div>
+						<script>
+						var order_list;
+						var order_index = 0;
+						var max_rand = 50;
+						function order_show(){
+							if(order_list != null && $("#J_order").is(":hidden")){
+								if(order_index>=max_rand){
+									order_index = 0;
+								}
+								$("#J_order").find(".order-phone").html(order_list[order_index]['phone']);
+								$("#J_order").find(".order-rs").html('赢利+'+order_list[order_index]['price']+'元');
+								$("#J_order").show();
+								window.setTimeout(function(){
+									$("#J_order").hide();
+								},1500);
+								order_index++;
+							}
+						}
+						function order_start(){
+							var rand = Math.ceil(Math.random()*100);
+							if(rand>=80){
+								if(order_list!=null){
+									order_show();
+								}
+							}
+						}
+						$(document).ready(function(){
+							$.ajax({
+								type: "GET",
+								contentType: "application/json;charset=utf-8",
+								url: "/index/index/ajax_order",
+								data: null,
+								dataType: "json",
+								complete: function () { },
+								success: function (result) {
+									order_list = result;
+								},
+								error: function (result, status) { }
+							});
+							/*
+							$.get("/index/index/ajax_order",null,function(data){
+								order_list = data;
+							});
+							*/
+							window.setInterval(order_start,1000);
+						});
+						</script>
+                        {/if}
+                        </ion-scroll>
+                    </div>
+                </div>
+            </ion-slide>
+
+        </div>
+        </div>
+    </ion-content>
+</ion-view></ion-nav-view></ion-tabs></ion-nav-view>
+
+
+
+
+{if $notices}
+{include file="index:notice" /}
+{/if}
+{if $caijin}
+{include file="index:caijin" /}
+{/if}
+
+<!--这里是添加的脚步-->
+<div class="box">
+{include file="footer" /}
+</div>
+
+</body>
+</html>
+
+<script src="__HOME__/js/lk/index.js">ajaxpro()</script>

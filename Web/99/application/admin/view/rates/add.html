@@ -1,0 +1,139 @@
+{include file="head" /}
+
+{include file="menu" /}
+
+
+<!--main content start-->
+      <section id="main-content">
+          <section class="wrapper">
+              
+            
+          <div class="row">
+                  <div class="col-sm-12">
+                      <aside class="profile-info col-lg-10">
+
+                      <form class="form-horizontal" role="form" id="formid" method="post">
+						  <section class="panel">
+							  
+							  <div class="panel-body bio-graph-info">
+								  <h1> {$item['pid']?'编辑产品':'添加产品'}</h1>
+									  
+								  <input type="hidden" name="pid" value="{$item.pid}"/>
+								  <input type="hidden" name="type" value="2"/>
+
+								  <div class="form-group">
+									  <label class="col-lg-2 control-label">产品期限</label>
+									  <div class="col-lg-5">
+										  <input type="text" class="form-control" value="{$item.days}"  placeholder="请填写产品期限" name="days" required style="display: inline-block; width: 75%;"/> 天
+									  </div>
+								  </div>
+
+								  <!--
+								  <div class="form-group">
+									  <label class="col-lg-2 control-label">产品类型</label>
+									  <div class="col-lg-4">
+										  <select name="type" class="selectpicker show-tick form-control" required>
+												<option value="">请选择分类</option>
+												<option {if isset($item) && $item['type'] == 1}selected{/if} value="1">分红</option>
+												<option {if isset($item) && $item['type'] == 2}selected{/if} value="2">利率</option>
+										  </select>
+									  </div>
+								  </div>
+								  -->
+							
+								  <div class="form-group">
+									  <label class="col-lg-2 control-label">产品利率</label>
+									  <div class="col-lg-4">
+									  		<input type="text" class="form-control" value="{$item.rates}"  placeholder="请填写产品利息" name="rates" required style="display: inline-block; width: 75%;"/> %
+									  		<!--
+											<div class="input-group">
+												<input type="text" class="form-control" value="{$item.rates}"  placeholder="请填写产品利息" name="rates" required/>
+											</div>
+											<div class="alert alert-block alert-danger fade in" style="margin:10px 0 0 0 ">
+												 <strong>注意：</strong> 当产品类型为分红，单位是元，当产品类型是利率，单位是%
+											</div>
+											-->
+									  </div>
+								  </div>
+
+								  <div class="form-group">
+									  <label class="col-lg-2 control-label">起投金额</label>
+									  <div class="col-lg-5">
+										  <input type="text" class="form-control" value="{$item.min}"  placeholder="请填写起投金额" name="min" required style="display: inline-block; width: 75%;"/> 元
+									  </div>
+								  </div>
+
+								  <div class="form-group">
+									  <label class="col-lg-2 control-label">产品状态</label>
+									  <div class="col-lg-4">
+										  <select name="state" class="selectpicker show-tick form-control" required>
+												<option value="">请选择分类</option>
+												<option {if isset($item) && $item['state'] == 1}selected{/if} value="1">启用</option>
+												<option {if isset($item) && $item['state'] == 2}selected{/if} value="2">停用</option>
+										  </select>
+									  </div>
+								  </div>
+								
+								  <div class="form-group">
+									  <div class="col-lg-offset-2 col-lg-10">
+										  <input type="submit" class="btn btn-success" onclick="return editpro(this.form)" value="提交"/>
+									  </div>
+								  </div>
+							</div>
+
+						</section>
+						</form>
+                      
+                  </aside>
+                  </div>
+
+          </div>
+
+          </section>
+      </section>
+      <!--main content end-->
+  </section>
+
+
+{include file="foot" /}
+
+<script>
+function editpro(form){
+	var days = form.days.value;
+	var type = form.type.value;
+	var min = form.min.value;
+	var rates = form.rates.value;
+	var state = form.state.value;
+
+	if(!days){
+		layer.msg('请输入产品期限'); 
+		return false;
+	}
+
+	if(!type){
+		layer.msg('请选择产品类型'); 
+		return false;
+	}
+
+	if(!rates){
+		layer.msg('请输入产品利息'); 
+		return false;
+	}
+
+	if(!min){
+		layer.msg('请输入起投金额'); 
+		return false;
+	}
+
+	if(!state){
+		layer.msg('请选择产品状态'); 
+		return false;
+	}
+
+	var formurl = "{:Url('rates/add')}"
+	var data	= $('#formid').serialize();
+	var locurl	= "{:Url('admin/rates/invest')}";
+	WPpost(formurl, data, locurl);
+	return false;
+}
+</script>

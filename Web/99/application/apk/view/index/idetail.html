@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta name="full-screen" content="yes">
+    <meta name="x5-fullscreen" content="true">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    
+    <link rel="stylesheet"  href="/mobile/css/weui.css">
+    <link rel="stylesheet" href="/mobile/css/jquery-weui.min.css">
+    <script src="/mobile/js/2461f3.js"></script>
+</head>
+<body>
+<title>利息宝</title>
+<link rel="stylesheet" href="/mobile/css/1823a4.css">
+<div class="lixibaoForm">
+    <!-- title开始 -->
+    <div class="topPart  flex align-items">
+        <i id="goBack" class="iconfont  icon-back1 pl pr "></i>
+        <div class="flex justify-center align-items box">利息宝</div>
+    </div>
+    <!-- title结束 -->
+    <!-- tab开始 -->
+    <table id="tabHold">
+        <tbody>
+        <tr>
+            <td class="tFirst" >用户余额:</td>
+            <td class="tSecond" >{$userinfo.usermoney}</td>
+        </tr>
+        <tr>
+            <td class="tFirst" >投资期限:</td>
+            <td class="tSecond" >{$item.days}天</td>
+        </tr>
+        <tr>
+            <td class="tFirst" >投资收益:</td>
+            <td class="tSecond" >{$item.rates}%</td>
+        </tr>
+        <tr>
+            <td class="tFirst" >起投金额:</td>
+            <td class="tSecond" >{$item.min}元</td>
+        </tr>
+        <tr>
+            <td class="tFirst" >回款时间:</td>
+            <td class="tSecond" >{:date('Y-m-d H:i',strtotime('+'.$item['days'].' day +2 minute'))}</td>
+        </tr>
+        <tr>
+            <td class="tFirst" >投资金额:</td>
+            <td class="tSecond" >
+                <input id="money" placeholder="请输入金额" />
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <div  id="submit"  class="ma ripple pa borderRadius" >
+        确认提交
+    </div>
+    <!-- tab结束 -->
+</div>
+{include file="nav" /}
+<!-- loading遮罩层开始 -->
+<div id="loading" class="hidden">
+    <div class="mloading">
+        <div class="flex align-items justify-center loadingWrap">
+            <i class="weui-loading"></i>
+        </div>
+    </div>
+</div>
+<!-- loading遮罩层结束 -->
+<!-- loading遮罩层,点击不能关闭开始 -->
+<div id="loadingNotTuochClose" class="hidden">
+    <div class="mloadingNoTouch">
+        <div class="flex align-items justify-center loadingWrap">
+            <i class="weui-loading"></i>
+        </div>
+    </div>
+</div>
+<!-- loading遮罩层结束 -->
+<!-- body 最后 -->
+<script src="/mobile/js/jquery.min.js"></script>
+<script src="/mobile/js/jquery-weui.min.js"></script>
+<script>
+    var _investurl = "{:url('/apk/index/doinvest')}";
+    var _detailurl = "{:url('/apk/index/userinvest')}";
+    var _id = "{$item.pid}";
+    $(document).ready(function (e) {
+        //链接 点击
+        $('.forJsClick').on('click', function (e) {
+            e.preventDefault()
+            e.stopPropagation()
+            var url = $(this).data('url')
+            if (url) {
+                setTimeout(function () {
+                    window.location.href = url;
+                }, 300)
+            }
+        })
+        //弹窗关闭
+        $('.footerItem').each(function (e) {
+
+            var url = $(this).data('url')
+            url = url && url.replace('./', '')
+            if (window.location.href.indexOf(url) > -1) {
+                $(this).addClass('on')
+            }
+        })
+        //遮罩层可以关闭
+        $('.loadingWrap').on('click', function () {
+            $('#loading').addClass('hidden')
+        })
+        //返回
+        $('#goBack').on('click', function () {
+            window.history.back()
+        })
+        var browser = {
+            versions: function () {
+                var u = navigator.userAgent, app = navigator.appVersion;
+                return {     //移动终端浏览器版本信息
+                    mobile: !!u.match(/AppleWebKit.*Mobile.*/), //是否为移动终端
+                };
+            }(),
+        }
+
+        if (!browser.versions.mobile) {
+            //pc
+            $('body').addClass('plantPc')
+        }
+    });
+</script>
+<!-- 如果使用了某些拓展插件还需要额外的JS -->
+<script src="/mobile/js/fb4938.js"></script>
+</body>
+</html>

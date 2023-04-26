@@ -1,0 +1,64 @@
+{include file="headafk" /}
+<body style="font-size: 16px;">
+<div class="tj-spinner-mask j_t_start" style="display: none;">
+    <img class="j_loading" src="/public/jpg/loading.gif" alt="">
+</div>
+<form action="{:Url('/apk/login/login')}"  method="post">
+    <div id="app">
+        <div class="t_box_login"
+             style="background-image: url('/public/jpg/background.png'); background-repeat: no-repeat;">
+            <div class="t_logo"><img src="{$conf['web_logo']}" alt=""
+                                     data-src="{$conf['web_logo']}" lazy="loaded"></div>
+            <div class="login_box">
+                <ul>
+                    <li><i></i> <input type="text" placeholder="请输入用户名"  name="username" maxlength="16" value=""/></li>
+                    <li><i></i> <input type="password" placeholder="请输入密码" name="pwd" maxlength="16" value=""/></li>
+                    <li><input type="button" value="登陆" onclick="checkform(this.form);"/></li>
+                    <li><input type="button" value="会员注册" id="reg"/></li>
+                </ul>
+                <p style="padding: 0 10% 50px 10%">
+                    <a href="javascript:;" onclick="alert('忘记密码请联系客服！')" style="float:left">忘记密码？</a>
+                    <a href="{$conf.sys_kefu}" target="_blank" style="float:right">在线客服</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</form>
+<script type="text/javascript">
+    $(function () {
+        $('#reg').click(
+            function(){
+                window.location.href="{:url('/apk/login/register')}";
+            }
+        )
+    })
+
+	function checkform(form){
+		var username = form.username.value;
+		var upwd = form.pwd.value;
+		if(!username){
+			layer.msg('请输入用户名');
+			return false; 
+		}
+
+		if(username.length<5 || username.length>16){
+			layer.msg('用户名为5-16位数字或字母组成');
+			return false; 
+		}
+
+
+		if(!/^[A-Za-z0-9]{5,16}$/.test(username)){
+			layer.msg('用户名为5-16位数字或字母组成');
+			return false; 
+		}
+
+		if (!upwd) {
+			layer.msg('请输入登录密码'); 
+			return false;
+		}
+		return form.submit();
+	}
+</script>
+
+</body>
+</html>

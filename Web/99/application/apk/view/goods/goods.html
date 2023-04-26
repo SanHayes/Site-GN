@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta name="full-screen" content="yes">
+    <meta name="x5-fullscreen" content="true">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    
+    <link rel="stylesheet"  href="/mobile/css/weui.css">
+    <link rel="stylesheet" href="/mobile/css/jquery-weui.min.css">
+    <script src="/mobile/js/2461f3.js"></script>
+</head>
+<body>
+
+<title>详情</title>
+<link rel="stylesheet" href="/mobile/css/93f82f.css">
+<div class="detailPage bgMain">
+    <!-- detailTopPart开始 -->
+    <div class="detailTopPart flex  align-items ">
+        <div class="box flex column rightPart pr">
+            <table class=" table ">
+                <tr>
+                    <td colspan="3">
+                        <div class="des fontTitle" >
+                            <img src="{$pro.img}" class="tImg "  />
+                            {$pro.ptitle}
+                        </div>
+                    </td>
+                </tr>
+                <tr class="fontDetail" >
+                    <td  class="titleWrap"  rowspan="3"  id="jk" data-price="1820.23">
+                        <div   class="title fontDanger font18 price"><span class="price_ct"></span><span class="dirc"></span></div>
+                    </td>
+                    <td class="textright" >最高:</td>
+                    <td class="textright">{$pro.High}</td>
+                </tr>
+                <tr class="fontDetail">
+                    <td class="textright">最低:</td>
+                    <td class="textright">{$pro.Low}</td>
+                </tr>
+                <tr class="fontDetail">
+                </tr>
+            </table>
+        </div>
+    </div>
+    <!-- detailTopPart结束 -->
+    <!-- nav开始 -->
+    <div class="nav flex fontTitle">
+        <div class="fistItem mr pl pr ">
+            <span data-index="stock" class="kItem  on">K线</span>
+            <span data-index="line" class="kItem">走势</span>
+        </div>
+        <div class="navItem on" data-index="1M">
+            1M        </div>
+        <div class="navItem " data-index="5M">
+            5M        </div>
+        <div class="navItem " data-index="15M">
+            15M        </div>
+        <div class="navItem " data-index="30M">
+            30M        </div>
+        <div class="navItem " data-index="1H">
+            1H        </div>
+        <div class="navItem " data-index="1D">
+            1D        </div>
+    </div>
+    <!-- nav结束 -->
+    <div id="container">
+        <div id="ecKx" ></div>
+        <div class="txt1">
+            <span class="a"></span>
+            <span class="b"></span>
+            <span class="c"></span>
+            <span class="d"></span>
+            <span class="e"></span>
+        </div>
+        <div class="txt2 hidden">
+            <span class="a DIFF"><i></i></span>
+            <span class="b DEA"><i></i></span>
+            <span class="c MACD"><i></i></span>
+        </div>
+    </div>
+    <!-- 按钮开始 -->
+    <div class="order flex justify-around">
+        <a href="javascript:;" data-type="1" class="weui-btn  buyDownForJS bgSuccess ">买跌</a>
+        <a href="javascript:;" data-type="0" class="weui-btn  buyUpForJS bgDanger ">买涨</a>
+    </div>
+    <!-- 按钮结束 -->
+    <!-- 下单弹窗开始 -->
+    <div id="orderDialog" class="hidden">
+        <div class="glass"></div>
+        <div class="content fontTitle ">
+            <div class="title fontButtonTitle ">
+                <div class="flex justify-center pa">订单确认
+                </div> <span data-id="orderDialog" class="close pa">X</span>
+            </div>
+            <div class="pa">
+                <div>
+                    <div class="flex justify-between fontDetail">
+                        <div><span>现价:</span> <span class="fontDanger newprice">{$pro.price}</span> </div>
+                        <div><span>类型:</span> <span class="fontSuccess typename"></span> </div>
+                    </div>
+                    <div class="flex justify-between">
+                        <div><span>余额:</span> <span class="pay_mymoney">{$userinfo.usermoney}元</span> </div>
+                        <div class="charge"><span>手续费:</span> <span class="fontSuccess vlp">{$conf.web_poundage}</span>%</div>
+                    </div>
+                </div>
+                <div>
+                    平仓时间
+                </div>
+                <div class="moneyWrap">
+                    <div class="flex justify-between">
+                        {volist name="$protime" id="vo" key='k'}
+                        <div data-value="{$vo * 60}" class="box moneyItem jsForTimeItem ripple <?php if ($k == 1) { echo 'on'; } ?>" data-shouyi="{$vo * 60}">{$vo * 60}秒</div>
+                        {/volist}
+                    </div>
+                </div>
+                <div>投资金额</div>
+                <div class="moneyWrap">
+                    {volist name="pay_choose_arr" id="vo" key='k'}
+                    {if $k % 3 == 1 || $k == 1}
+                    <div class="flex justify-between">
+                        {/if}
+                        <div data-value="{$vo}" class="box moneyItem jsForMoneyItem ripple {if $k == 1}on{/if}">{$vo}</div>
+                        {if $k == count($pay_choose_arr)}<div data-value="{$userinfo.usermoney}" class="box moneyItem jsForMoneyItem ripple {if $k == 1}on{/if}">全部余额</div><div class="box moneyItem"><input id="inputMoney" placeholder="其它金额" class="weui-input"></div>{/if}
+                        {if $k % 3 == 0 || $k == count($pay_choose_arr)}
+                    </div>
+                    {/if}
+                    {/volist}
+                </div>
+                <div class="current  ma fonb "><span id="showMoney">{$pay_choose_arr[0]}</span>元</div>
+                <div class="ripple btnWrap">
+                    <a id="submit" href="javascript:;" class="forJsClick weui-btn   ma weui-btn_primary">确定</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 下单弹窗结束 -->
+<!-- 下单成功开始 -->
+<div id="orderSuccess" class=" hidden">
+    <div class="glass"></div>
+    <div class="content  fontDetail ">
+        <div class="title fontButtonTitle">
+            <div class="flex justify-center pa">订单</div>
+            <span data-id="orderSuccess" class="close closeForjs pa">X</span>
+        </div>
+        <input type="hidden" name="oid">
+        <div class="pa">
+            <table class=" fontDetail table pa">
+                <tr>
+                    <td>买入价: <span class="pay_order_buypricee"></span> </td>
+                    <td>类型:<span class="fontSuccess typename">买跌</span></td>
+                </tr>
+                <tr>
+                    <td>实时价: <span class="fontDanger newprice">1820.23</span> </td>
+                    <td>金额:<span class="fontSuccess pay_order_price">¥<i></i></span></td>
+                </tr>
+            </table>
+            <div>平仓倒计时</div>
+            <div data-time="600" class="flex justify-center" id="countDown">--</div>
+        </div>
+        <div class=" flex justify-around">
+            {if $conf['sys_pingcang']==1}
+            <!--<button class="weui-btn endOrder ml mr">手动平仓</button>-->
+            {else/}
+            <!--<a href="javascript:;" class="weui-btn continueOrder  ml mr ">继续下单</a>-->
+            {/if}
+            <a href="javascript:;" class="weui-btn continueOrder  ml mr ">继续下单</a>
+        </div>
+        <div></div>
+    </div>
+</div>
+<div id="orderEnd" class="hidden">
+    <div class="glass"></div>
+    <div class="content  fontDetail ">
+        <div class="title fontButtonTitle">
+            <div class="flex justify-center pa">到期结算完成</div>
+            <span data-id="orderSuccess" class="close closeForjs pa">X</span>
+        </div>
+        <div class="pa">
+            <table class=" fontDetail table pa">
+                <tr>
+                    <td>买入价: <span class="pay_order_buypricee"></span> </td>
+                    <td>类型:<span class="fontSuccess typename">买跌</span></td>
+                </tr>
+                <tr>
+                    <td>成交价: <span class="fontDanger endprice">1820.23</span> </td>
+                    <td>金额:<span class="fontSuccess pay_order_price">¥<i></i></span></td>
+                </tr>
+            </table>
+        </div>
+        <p style="text-align: center;font-size: 40px;">￥<b class="ploss"></b></p>
+        <div class=" flex justify-around">
+            <a href="javascript:;" class="weui-btn continueOrder  ml mr ">继续下单</a>
+        </div>
+        <div></div>
+    </div>
+</div>
+<!-- 下单成功 结束-->
+<!-- 下单失败提示开始 -->
+<div id="orderError" class="hidden">
+    <div class="glass"></div>
+    <div class="content  fontDetail ">
+        <div class="title fontButtonTitle">
+            <div class="flex justify-center pa">
+            </div> <span data-id="orderError" class="close pa">X</span>
+        </div>
+        <div class="msg"><i class="weui-icon-warn"></i><span></span></div>
+        <div class=" flex justify-around">
+            <a style="flex:1" href="javascript:;" class="weui-btn  errorBack  ml mr">返回</a>
+        </div>
+        <div>
+        </div>
+    </div>
+</div>
+<!-- 下单失败提示结束-->
+{include file="nav" /}
+<!-- loading遮罩层开始 -->
+<div id="loading" class="hidden">
+    <div class="mloading">
+        <div class="flex align-items justify-center loadingWrap">
+            <i class="weui-loading"></i>
+        </div>
+    </div>
+</div>
+<!-- loading遮罩层结束 -->
+<!-- loading遮罩层,点击不能关闭开始 -->
+<div id="loadingNotTuochClose" class="hidden">
+    <div class="mloadingNoTouch">
+        <div class="flex align-items justify-center loadingWrap">
+            <i class="weui-loading"></i>
+        </div>
+    </div>
+</div>
+<!-- loading遮罩层结束 -->
+<!-- body 最后 -->
+<script src="/mobile/js/jquery-1.9.1.min.js"></script>
+<script src="/mobile/js/jquery-weui.min.js"></script>
+<script src="/mobile/js/base64.js"></script>
+<script src="/mobile/js/echarts.js"></script>
+<script>
+    var Vtype = "1M";
+    var order_type = 0;
+    var kdata_url = "{:url('/apk/api/getkdata')}";
+    var prodata_url = "{:url('/apk/api/getprodata')}";
+    var _getdataurl = "{:url('/apk/goods/ajaxpro/pid/')}";
+    var procode = {$pro.pid};
+    var newprice = {$pay_choose_arr[0]};
+    var order_min_price = {:getconf('order_min_price')};
+    var order_max_price = {:getconf('order_max_price')};
+    var my_money = {$userinfo.usermoney?$userinfo.usermoney:'0'};
+    var _addorderurl = "{:url('/apk/order/addorder')}";
+    var _endorderurl = "{:url('/apk/order/pcorder')}";
+    var web_poundage = 0;
+    var isopen = "{$isopen}";
+    $(document).ready(function (e) {
+        //链接 点击
+        $('.forJsClick').on('click', function (e) {
+            e.preventDefault()
+            e.stopPropagation()
+            var url = $(this).data('url')
+            if (url) {
+                setTimeout(function () {
+                    window.location.href = url;
+
+                }, 300)
+            }
+        })
+        //弹窗关闭
+        $('.footerItem').each(function (e) {
+
+            var url = $(this).data('url')
+            url = url && url.replace('./', '')
+            if (window.location.href.indexOf(url) > -1) {
+                $(this).addClass('on')
+            }
+        })
+        //遮罩层可以关闭
+        $('.loadingWrap').on('click', function () {
+            $('#loading').addClass('hidden')
+        })
+        //返回
+        $('#goBack').on('click', function () {
+            window.history.back()
+        })
+        var browser = {
+            versions: function () {
+                var u = navigator.userAgent, app = navigator.appVersion;
+                return {     //移动终端浏览器版本信息
+                    mobile: !!u.match(/AppleWebKit.*Mobile.*/), //是否为移动终端
+                };
+            }(),
+        }
+        if (!browser.versions.mobile) {
+            //pc
+            $('body').addClass('plantPc')
+        }
+    });
+</script>
+<!-- 如果使用了某些拓展插件还需要额外的JS -->
+<script src="/mobile/js/4d341a.js"></script>
+</body>
+</html>

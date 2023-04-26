@@ -1,0 +1,70 @@
+{include file="head" /}
+
+{include file="menu" /}
+
+
+<!--main content start-->
+      <section id="main-content">
+          <section class="wrapper">
+              
+            
+          <div class="row">
+                  <div class="col-sm-12">
+                      <aside class="profile-info col-lg-10">
+
+                      <form class="form-horizontal" role="form" id="formid" method="post">
+						  <section class="panel">
+							  
+							  <div class="panel-body bio-graph-info">
+								  <h1> {$item['id']?'编辑常用语':'添加常用语'}</h1>									  
+								  <input type="hidden" name="id" value="{$item.id}"/>
+
+								  <div class="form-group">
+									  <label class="col-lg-2 control-label">内容</label>
+									  <div class="col-lg-5">
+										  <textarea name="content" style="margin: 0px; width: 520px; height: 200px;" required>{$item.content}</textarea>
+									  </div>
+								  </div>
+
+								  <div class="form-group">
+									  <label class="col-lg-2 control-label">状态</label>
+									  <div class="col-lg-4">
+										  <select name="state" class="selectpicker show-tick form-control" required>
+												<option {if isset($item) && $item['state'] == 1}selected{/if} value="1">启用</option>
+												<option {if isset($item) && $item['state'] == 0}selected{/if} value="0">停用</option>
+										  </select>
+									  </div>
+								  </div>
+								
+								  <div class="form-group">
+									  <div class="col-lg-offset-2 col-lg-10">
+										  <input type="submit" class="btn btn-success" onclick="return editpro(this.form)" value="提交"/>
+									  </div>
+								  </div>
+							</div>
+
+						</section>
+						</form>
+                      
+                  </aside>
+                  </div>
+
+          </div>
+
+          </section>
+      </section>
+      <!--main content end-->
+  </section>
+
+
+{include file="foot" /}
+
+<script>
+function editpro(form){
+	var formurl = "{:Url('wadd')}"
+	var data	= $('#formid').serialize();
+	var locurl	= "{:Url('words')}";
+	WPpost(formurl, data, locurl);
+	return false;
+}
+</script>

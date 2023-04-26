@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html data-theme="dark">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport"
+		  content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta content="yes" name="apple-mobile-web-app-capable">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+	<meta content="black" name="apple-mobile-web-app-status-bar-style">
+	<meta name="full-screen" content="yes">
+	<meta name="x5-fullscreen" content="true">
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	<link rel="shortcut icon" href="" type="image/x-icon">
+	<link rel="stylesheet" type="" href="/pc/css/bootstrap.min.css">
+	<link rel="stylesheet" type="" href="/pc/css/bootstrapValidator.css">
+</head>
+<body>
+<style type="text/css">
+	.dialog{
+		display: none
+	}
+</style>
+<title>在线充值</title>
+<link rel="stylesheet" href="/pc/css/f890b7.css">
+<header id="header" class=" bgMainDark">
+	<div class="logoNavWrap d-flex align-items-center flex align-items justify-between">
+		<h1 class="logo mr-auto ml">
+			<a href="javascript:viod(0)"  class="forJsClick" data-url="/home/index/home">
+				<img alt="logo" src="{$conf['web_logo']}">
+			</a>
+		</h1>
+		{include file="nav" /}
+	</div>
+</header><!-- End Header -->
+<main class="main">
+	<div class="container">
+		<!-- ======= mForm ======= -->
+		<section class="mForm   fontDetail ">
+			<h3 class="fontTitle">在线充值</h3>
+			<div class="fontDetail">在线充值,立刻到账</div>
+			<form class=" fontDetail  " role="form">
+				<div class="form-group">
+					<label for="name" class=" control-label">收款人姓名:</label>
+					<div class="">
+						<input type="text" class="form-control" disabled id="name" name="name" value="{$sysbank.username}" placeholder="请输入收款人姓名">
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="bank" class=" control-label">银行名称:</label>
+					<div class="">
+						<input type="text" class="form-control" disabled id="bank" value="{$sysbank.bank_name}" name="bank" placeholder="银行名称">
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="subBranch" class=" control-label">支行名称:</label>
+					<div class="">
+						<input type="text" class="form-control" disabled id="subBranch" value="{$sysbank.bank_addr}" name="subBranch" placeholder="支行名称">
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="no" class=" control-label">银行卡号:</label>
+					<div class="">
+						<input type="text" class="form-control" disabled id="no" value="{$sysbank.card_no}" name="no" placeholder="银行卡号">
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="remark" class=" control-label">备注:</label>
+					<div class="">
+						<input type="text" class="form-control" id="remark" name="remark" placeholder="请输入充值姓名">
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="" class=" control-label">金额:</label>
+					<div class="moneyWrap">
+						{volist name="reg_push" id="vo" key='k'}
+						{if $k % 3 == 1 || $k == 1}
+						<div class="flex justify-between">
+							{/if}
+							<div class="box moneyItem jsForMoneyItem ripple {if $k == 1}on{/if}">{$vo}</div>
+							{if $k == count($reg_push)}<div class="box moneyItem"><input id="inputMoney" placeholder="其它金额" class="weui-input" /></div>{/if}
+							{if $k % 3 == 0 || $k == count($reg_push)}
+						</div>
+						{/if}
+						{/volist}
+					</div>
+					<!-- <textarea class="" placeholder=""></textarea> -->
+					<div class="current pa ma fonb fontDetail "><span id="showMoney">{$reg_push[0]}</span>元</div>
+				</div>
+				<div class="form-group">
+					<div class="">
+						<button id="btn" class="btn ripple btn-lg  btn-primary">提交</button>
+					</div>
+				</div>
+			</form>
+		</section>
+		<!-- mForm结束 -->
+	</div>
+</main><!-- End #main -->
+<div data-url="{$conf['sys_kefu']}" class="kefu hoverPointer forJsClick003 bgUseable">
+	<span><i class="iconfont icon-kefu fontPanel" ></i></span>
+	<span class="fontPanel" id="zaixian" >在线客服</span>
+</div>
+<script src="/pc/js/jquery.min.js"></script>
+<script src="/pc/js/layer/layer.js"></script>
+<script src="/pc/js/bootstrap.min.js"></script>
+<script src="/pc/js/bootstrapValidator.js"></script>
+<script>
+	var _payurl = "{:url('/home/index/paysubmit')}";
+	var _recordurl = "{:url('/home/index/accountrecord')}";
+</script>
+<script src="/pc/js/fde4e3.js"></script>
+<script src="/pc/js/59acca.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,59 @@
+.buy{
+	overflow:hidden;
+}
+.buy p {
+	margin: 0;
+}
+.buy .b-label{
+    float: left;
+    width: 25%;
+    color: #888;
+	margin-left:5%;
+	line-height: 32px;
+}
+.buy .num-list{
+    width:32%;
+    float: left;
+    border: 1px solid #dedede;
+    border-radius: 5px;
+    background: #fff;
+}
+.buy .pay-left,.buy .pay-right{
+    width: 30%;
+    height: 25px;
+    color: #60646f;
+    text-align: center;
+    line-height: 25px;
+    cursor: pointer;
+}
+.buy .pay-left{
+    float: left;
+    border-right: 1px solid #d2d2d2;
+    background:url(../img/minus.png) center no-repeat;
+    background-size: 12px 3px;
+}
+.buy .pay-right{
+    float:right;
+    border-left: 1px solid #d2d2d2;
+    background:url(../img/add.png) center no-repeat;
+    background-size: 12px 11px;
+}
+
+.buy .num-in{
+    width: 40%;
+    background:0 transparent;
+    border: 0;
+    float: left;
+    color: #555;
+	height: 20px;
+    text-align: center;
+    border-radius: 0;
+}
+.buy .num-in-lu{
+	width: 80%;
+    background:0 transparent;
+    border: 0;
+    float: left;
+    color: #555;
+    border-radius: 0;
+}

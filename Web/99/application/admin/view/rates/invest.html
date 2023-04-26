@@ -1,0 +1,75 @@
+{include file="head" /}
+
+{include file="menu" /}
+
+<!--main content start-->
+<section id="main-content">
+    <section class="wrapper">
+        <br>
+        <div class="row">
+            <div class="col-lg-10">
+                <section class="panel">
+                    <header class="panel-heading">
+                        <h4 class="left">利息产品</h4>
+                        <a href="{:url('rates/add')}"><button type="button" class="btn btn-primary right">添加产品</button></a>
+                        <br><br>
+                    </header>
+                    <table class="table table-striped table-advance table-hover">
+                        <thead class="ordertable">
+                        <tr>
+                            <th>编号</th>
+                            <th>期限</th>
+                            <th>类型</th>
+                            <th>利息</th>
+                            <th>起投</th>
+                            <th>状态</th>
+                            <th>操作</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                            <!-- {volist name="list" id="vo"} -->
+                            <tr>
+                                <td>{$vo.pid}</td>
+                                <td>{$vo.days}天</td>
+                                <td>{if $vo.type == 1} 分红 {else /} 利率 {/if}</td>
+                                <td>{if $vo.type == 1} {$vo.rates}元 {else /} {$vo.rates}% {/if}</td>
+                                <td>{$vo.min}元</td>
+                                <td>{if $vo.state == 1} 启用 {else /} 停用 {/if}</td>
+                                <td>
+                                      <a class="btn btn-primary btn-xs" href="{:url('rates/add',array('pid'=>$vo['pid']))}" title="点击编辑"><i class="icon-pencil"></i></a>
+                                      <a class="btn btn-danger btn-xs" onclick="deleteinfo('{$vo.pid}')" title="点击删除"><i class="icon-trash"></i></a>
+                                  </td>
+                              </tr>
+                              <!-- {/volist} -->
+                         </tbody>
+                    </table>
+                </section>
+                </form>
+            </div>
+        </div>
+
+
+
+    </section>
+</section>
+<!--main content end-->
+</section>
+
+{include file="foot" /}
+<script>
+    //delete info
+    function deleteinfo(pid){
+        layer.open({
+            content: '确定删除吗',
+            yes: function(index){
+                //do something
+                var url = "{:url('rates/delete')}"+"?pid="+pid;
+                var locurl = "{:Url('admin/rates/invest')}"
+                WPget(url,locurl);
+            }
+        });
+    }
+
+
+
+</script>

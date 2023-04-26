@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta name="full-screen" content="yes">
+    <meta name="x5-fullscreen" content="true">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link rel="shortcut icon" href="" type="image/x-icon">
+    <link rel="stylesheet" type="" href="/pc/css/bootstrap.min.css">
+    <link rel="stylesheet" type="" href="/pc/css/bootstrapValidator.css">
+</head>
+<body>
+<style type="text/css">
+    .dialog{
+        display: none
+    }
+</style>
+<title>提现</title>
+<link rel="stylesheet" href="/pc/css/5fa5f0.css">
+<header id="header" class=" bgMainDark">
+    <div class=" logoNavWrap d-flex align-items-center flex align-items justify-between">
+        <h1 class="logo mr-auto ml">
+            <a href="javascript:viod(0)" class="forJsClick" data-url="/index/index.html">
+                <img alt="logo" src="{$conf['web_logo']}">
+            </a>
+        </h1>
+        {include file="nav" /}
+    </div>
+</header><!-- End Header -->
+<main class="main">
+
+    <div class="container">
+        <!-- ======= mForm ======= -->
+        <section class="mForm   fontDetail ">
+            <h3 class="fontTitle">提现</h3>
+            <!--<div class="fontDetail">提现立刻到账</div>-->
+            <form class=" fontDetail  " role="form">
+                <div class="form-group">
+                    <label for="remain" class=" control-label">用户余额:</label>
+                    <div class="">
+                        {if $conf.sys_yue_benjin==2}
+                        <input disabled type="text" value="{$userinfo.usermoney}" class="form-control" id="remain" name="remain" placeholder="用户余额">
+                        {else/}
+                        <input disabled type="text" value="<?php echo $userinfo['usermoney']-$userinfo['freeze']>=0?$userinfo['usermoney']-$userinfo['freeze']:0;?>" class="form-control" id="remain" name="remain" placeholder="用户余额">
+                        {/if}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="withdrawalMoney" class=" control-label">提现金额:</label>
+                    <div class="">
+                        <input type="text" class="form-control" id="withdrawalMoney" name="withdrawalMoney" placeholder="提现金额">
+                    </div>
+                </div>
+                {if $conf.reg_par>0}
+                <div class="form-group">
+                    <label class=" control-label">手续费:</label>
+                    <div class="">
+                        <input type="text" class="form-control" disabled value="{$conf.reg_par|default=0}%" placeholder="手续费">
+                    </div>
+                </div>
+                {/if}
+                <div class="form-group">
+                    <label for="no" class=" control-label">实际到账:</label>
+                    <div class="">
+                        <input type="text" class="form-control" id="sjdz" value="0.00" disabled placeholder="实际到账">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="" class=" control-label">银行卡号:</label>
+                    <div class="">
+                        <input type="text" class="form-control" id="bankcardno" value="{:substr($bankinfo['accntno'],0,6).str_pad('*',strlen($bankinfo['accntno'])-10,'*').substr($bankinfo['accntno'],-4)}" disabled placeholder="银行卡号">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="" class=" control-label">姓名:</label>
+                    <div class="">
+                        <input type="text" class="form-control" disabled value="{$userinfo['nickname']}" placeholder="姓名">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="withdrawalPwd" class=" control-label">提现密码:</label>
+                    <div class="">
+                        <input class="form-control" type="password" id="withdrawalPwd" name="withdrawalPwd" placeholder="提现密码">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="">
+                        <button id="btn" class="btn btn-lg ripple btn-primary">提交</button>
+                    </div>
+                </div>
+            </form>
+        </section>
+        <!-- mForm结束 -->
+        <!-- 没有银行卡展示下面 -->
+        <section class="hidden addCard flex fontDetail  column align-items justify-center">
+            请添加银行卡
+            <div class="plus">+</div>
+        </section>
+    </div>
+</main><!-- End #main -->
+<div data-url="{$conf['sys_kefu']}"  class="kefu hoverPointer forJsClick003 bgUseable" >
+    <span><i class="iconfont icon-kefu fontPanel" ></i></span>
+    &nbsp;&nbsp;&nbsp;<span class="fontPanel" id="zaixian" >在线客服</span>
+</div>
+<!-- body 最后 -->
+<script src="/pc/js/jquery.min.js"></script>
+<script src="/pc/js/layer/layer.js"></script>
+<script src="/pc/js/bootstrap.min.js"></script>
+<script src="/pc/js/bootstrapValidator.js"></script>
+<script>
+    var _txfee = "0.02";
+    var _withdrawurl = "{:url('/home/index/withdraw')}", _jump_url = "{:url('/home/index/withdrawrecord')}";
+    var bankid = '{$bankinfo.id}';
+</script>
+<script src="/pc/js/fde4e3.js"></script>
+<script src="/pc/js/9123ce.js"></script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+{include file="head" /}
+
+{include file="menu" /}
+
+<!--main content start-->
+<section id="main-content">
+    <section class="wrapper">
+
+        <div class="row">
+            <div class="col-lg-10">
+                <section class="panel">
+                    <header class="panel-heading">
+                        <h4 class="left">常用语</h4>
+                        <a href="{:url('wadd')}"><button type="button" class="btn btn-primary right">添加常用语</button></a>
+                        <br><br>
+                    </header>
+                    <table class="table table-striped table-advance table-hover">
+                        <thead class="ordertable">
+                        <tr>
+                            <th>ID</th>
+                            <th>内容</th>
+                            <th>状态</th>
+                            <th>操作</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+						<!-- {volist name="list" id="vo"} -->
+							<tr>
+								<td>{$vo.id}</td>
+								<td>{$vo.content}</td>
+								<td>{if $vo['state']==1}启用{else/}停用{/if}</td>
+								<td>
+                                      <a class="btn btn-primary btn-xs" href="{:url('wadd',array('id'=>$vo['id']))}" title="点击编辑"><i class="icon-pencil"></i></a>
+                                      <a class="btn btn-danger btn-xs" onclick="deleteinfo('{$vo.id}')" title="点击删除"><i class="icon-trash"></i></a>
+								</td>
+							</tr>
+						<!-- {/volist} -->
+                         </tbody>
+                    </table>
+                </section>
+                </form>
+            </div>
+        </div>
+
+
+
+    </section>
+</section>
+<!--main content end-->
+</section>
+
+{include file="foot" /}
+<script>
+//delete info
+function deleteinfo(id){
+	layer.open({
+		content: '确定删除吗',
+		yes: function(index){
+			var url = "{:url('wdel')}"+"?id="+id;
+			var locurl = "{:Url('admin/kefu/words')}"
+			WPget(url,locurl);
+		}
+	});
+}
+</script>

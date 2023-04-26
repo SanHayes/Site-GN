@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta name="full-screen" content="yes">
+    <meta name="x5-fullscreen" content="true">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link rel="shortcut icon" href="" type="image/x-icon">
+    <link rel="stylesheet" type="" href="/pc/css/bootstrap.min.css">
+    <link rel="stylesheet" type="" href="/pc/css/bootstrapValidator.css">
+</head>
+<body>
+<style type="text/css">
+    .dialog{
+        display: none
+    }
+</style>
+<title>充值记录</title>
+<link rel="stylesheet" href="/pc/css/00b8c5.css">
+<link rel="stylesheet" href="/pc/css/bootstrap-table.min.css">
+<header id="header" class=" bgMainDark">
+    <div class=" logoNavWrap d-flex align-items-center flex align-items justify-between">
+        <h1 class="logo mr-auto ml">
+            <a href="javascript:viod(0)" class="forJsClick" data-url="/home/index/home.html">
+                <img alt="logo" src="{$conf['web_logo']}">
+            </a>
+        </h1>
+        {include file="nav" /}
+    </div>
+</header><!-- End Header -->
+<main class="main">
+    <div class="container">
+        <h3>充值记录 </h3>
+        <!-- ======= table ======= -->
+        <table class="table-responsive table table-bordered table-hover" id="table">
+            <thead class="">
+            <tr>
+                <th style="text-align: center; " data-field="money">
+                    <div class="th-inner ">金额</div>
+                    <div class="fht-cell"></div>
+                </th>
+                <th style="text-align: center; " data-field="status_name">
+                    <div class="th-inner ">状态</div>
+                    <div class="fht-cell"></div>
+                </th>
+                <th style="text-align: center; " data-field="create_time">
+                    <div class="th-inner ">申请时间</div>
+                    <div class="fht-cell"></div>
+                </th>
+                <th style="text-align: center; " data-field="remark">
+                    <div class="th-inner ">类型</div>
+                    <div class="fht-cell"></div>
+                </th>
+                <th style="text-align: center; " data-field="check_time">
+                    <div class="th-inner ">审核时间</div>
+                    <div class="fht-cell"></div>
+                </th>
+                <th style="text-align: center; " data-field="sys_remark">
+                    <div class="th-inner ">系统备注</div>
+                    <div class="fht-cell"></div>
+                </th>
+            </tr>
+            </thead>
+            <tbody>
+            {volist name="dealhis" id="vo" key='k'}
+            <tr class="hoverPointer" data-index="0">
+                <td style="text-align: center; ">¥{$vo['money']}</td>
+                <td style="text-align: center; ">{$vo['is_verify']}</td>
+                <td style="text-align: center; ">{$vo['utime']}</td>
+                <td style="text-align: center; ">{$vo['typedesc']}</td>
+                <td style="text-align: center; ">{$vo['cltime']}</td>
+                <td style="text-align: center; ">{$vo['remarks']}</td>
+            </tr>
+            {/volist}
+            </tbody>
+        </table>
+        <!-- table结束 -->
+    </div>
+</main><!-- End #main -->
+<div data-url="{$conf['sys_kefu']}"  class="kefu hoverPointer forJsClick003 bgUseable" >
+    <span><i class="iconfont icon-kefu fontPanel" ></i></span>
+    &nbsp;&nbsp;&nbsp;<span class="fontPanel" id="zaixian" >在线客服</span>
+</div>
+<script src="/pc/js/jquery.min.js"></script>
+<script src="/pc/js/layer/layer.js"></script>
+<script src="/pc/js/bootstrap.min.js"></script>
+<script src="/pc/js/bootstrap-table.min.js"></script>
+<script src="/pc/js/bootstrap-table-zh-CN.min.js"></script>
+<script>
+    var   _record_url = "/pyafb/rgebda.html";
+</script>
+<script src="/pc/js/fde4e3.js"></script>
+<script src="/pc/js/be05c3.js"></script>
+</body>
+</html>

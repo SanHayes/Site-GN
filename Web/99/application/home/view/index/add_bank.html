@@ -1,0 +1,202 @@
+
+<!DOCTYPE html>
+<html data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta name="full-screen" content="yes">
+    <meta name="x5-fullscreen" content="true">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link rel="shortcut icon" href="" type="image/x-icon">
+    <link rel="stylesheet" type="" href="/pc/css/bootstrap.min.css">
+    <link rel="stylesheet" type="" href="/pc/css/bootstrapValidator.css">
+</head>
+<body>
+<style type="text/css">
+    .dialog{
+        display: none
+    }
+</style>
+<title>添加银行卡</title>
+<link rel="stylesheet" href="/pc/css/5fa5f0.css">
+<header id="header" class=" bgMainDark">
+    <div class=" logoNavWrap d-flex align-items-center flex align-items justify-between">
+        <h1 class="logo mr-auto ml">
+            <a href="javascript:viod(0)" class="forJsClick" data-url="/index/index.html">
+                <img alt="logo" src="{$conf['web_logo']}">
+            </a>
+        </h1>
+        {include file="nav" /}
+    </div>
+</header><!-- End Header -->
+<main class="main">
+
+    <div class="container">
+        <!-- ======= mForm ======= -->
+        <section class="mForm   fontDetail ">
+            <h3 class="fontTitle">提现</h3>
+            <!--<div class="fontDetail">提现立刻到账</div>-->
+            <form class=" fontDetail  " role="form">
+                <div class="form-group">
+                    <label for="accntnm" class=" control-label">姓名:</label>
+                    <div class="">
+                        <input type="text" class="form-control" id="accntnm" name="accntnm" value="{$user.nickname}" placeholder="姓名">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="bankno">卡号:</label>
+                    <div class="">
+                        <input type="text" class="form-control" id="bankno" name="bankno" value="" placeholder="卡号">
+                    </div>
+                </div>
+                {if $conf.bankcard_id}
+                <div class="form-group">
+                    <label class="control-label" for="bankno">身份证号:</label>
+                    <div class="">
+                        <input type="text" class="form-control" id="scard" name="scard" value="" placeholder="身份证号码">
+                    </div>
+                </div>
+                {/if}
+                <div class="form-group">
+                    <label class=" control-label" for="bankname">所属银行:</label>
+                    <div class="">
+                        <input type="text" class="form-control" id="bankname" name="bankname" value="" placeholder="所属银行">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class=" control-label" for="banksmall">所属分行:</label>
+                    <div class="">
+                        <input type="text" class="form-control" id="banksmall" name="banksmall" value="" placeholder="所属分行">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="">
+                        <button id="btn" class="btn btn-lg ripple btn-primary">提交</button>
+                    </div>
+                </div>
+            </form>
+        </section>
+        <!-- mForm结束 -->
+        <!-- 没有银行卡展示下面 -->
+        <section class="hidden addCard flex fontDetail  column align-items justify-center">
+            请添加银行卡
+            <div class="plus">+</div>
+        </section>
+    </div>
+</main><!-- End #main -->
+<div data-url="{$conf['sys_kefu']}"  class="kefu hoverPointer forJsClick003 bgUseable" >
+    <span><i class="iconfont icon-kefu fontPanel" ></i></span>
+    &nbsp;&nbsp;&nbsp;<span class="fontPanel" id="zaixian" >在线客服1</span>
+</div>
+<!-- body 最后 -->
+<script src="/pc/js/jquery.min.js"></script>
+<script src="/pc/js/layer/layer.js"></script>
+<script src="/pc/js/bootstrap.min.js"></script>
+<script src="/pc/js/bootstrapValidator.js"></script>
+<script>
+    var _txfee = "0.02";
+    var _withdrawurl = "{:url('/index/index/add_bank')}", _jump_url = "{:url('/index/index/bankcard')}";
+    var bankid = '5';
+</script>
+<script src="/pc/js/fde4e3.js"></script>
+<script>
+    var page = {
+        init: function init() {
+            var remain = $.trim($('#remain').val());
+            $('form').bootstrapValidator({
+                //默认提示
+                message: 'This value is not valid', // 表单框里右侧的icon
+                submitHandler: function submitHandler(validator, form, submitButton) {
+                    // 表单提交成功时会调用此方法
+                    // validator: 表单验证实例对象
+                    // form jq对象 指定表单对象
+                    // submitButton jq对象 指定提交按钮的对象
+                },
+                fields: {
+                    accntnm: {
+                        message: '姓名验证失败',
+                        validators: {
+                            notEmpty: {
+                                message: '姓名不能为空',
+                            },
+                        },
+                    },
+                    bankno: {
+                        message: '卡号验证失败',
+                        validators: {
+                            notEmpty: {
+                                message: '卡号不能为空',
+                            },
+                        },
+                    },
+                    scard: {
+                        message: '身份证号验证失败',
+                        validators: {
+                            notEmpty: {
+                                message: '身份证号不能为空',
+                            },
+                        },
+                    },
+                    bankname: {
+                        message: '所属银行验证失败',
+                        validators: {
+                            notEmpty: {
+                                message: '所属银行不能为空',
+                            },
+                        },
+                    },
+                    banksmall: {
+                        message: '所属分行验证失败',
+                        validators: {
+                            notEmpty: {
+                                message: '所属分行不能为空',
+                            },
+                        },
+                    },
+                },
+            }); //提交验证
+            //输入金额变化实际到账金额
+            $('#btn').click(function () {
+                $('form').data('bootstrapValidator').validate();
+                //非submit按钮点击后进行验证，如果是submit则无需此句直接验证
+                if ($('form').data('bootstrapValidator').isValid()) {
+                    //获取验证结果，如果成功，执行下面代码
+                    var accntnm = $.trim($('#accntnm').val());
+                    var bankno = $.trim($('#bankno').val());
+                    var bankname = $.trim($('#bankname').val());
+                    var banksmall = $.trim($('#banksmall').val());
+                    var scard = $.trim($('#scard').val());
+                    var _data = {
+                        accntnm: accntnm,
+                        bankno: bankno,
+                        bankname: bankname,
+                        banksmall: banksmall,
+                        scard: scard,
+                    };
+                    showLoading();
+                    $.post("", _data, function (res) {
+                        if (res.type != 1) {
+                            hiddenLoading();
+                            showError(res.data);
+                        } else {
+                            showSuccess(res.data);
+                            setTimeout(function () {
+                                window.location.href = "{:url('/home/index/bankcard')}";
+                            }, 1500);
+                        }
+                    });
+                }
+            });
+        },
+    };
+    $(function () {
+        page.init();
+    });
+</script>
+</body>
+</html>

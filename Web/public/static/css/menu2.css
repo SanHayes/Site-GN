@@ -1,0 +1,92 @@
+
+    .box .footer {
+        background-color: #181f2f;
+        height: 1.4rem;
+        display: flex;
+        flex-direction: row;
+        z-index: 100
+    }
+
+    .box .footer > div {
+        flex: 1;
+        display: flex;
+        position: relative
+    }
+
+    .box .footer > div a {
+        flex: 1;
+        display: flex;
+        flex-direction: column
+    }
+
+    .box .footer > div a i {
+        display: block;
+        width: .53rem;
+        height: .53rem;
+        background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAsBAMAAADsqkcyAAAALVBMVEVMaXH///////////////////////////////////////////////////////9xAJ22AAAADnRSTlMAgMBAENCgYHDgMPCQILIKCroAAAEQSURBVCjPY2CAAZ99r48wYACWuHfvnjpgCLu+m175LgRT8XMGhjoM5a7vChgY2NGVgxVjKgcrxlSu9wxC5z1CFmV7l4DGgCh6hslCUYOsHFkJgo1iIIJzDsV6vTcQGs2xUC+gew3qYYyAgCjHCDawcnbMQAYpX/cSI0pY5j1miNuFGYGrnzK8E8AUZnzH8E5R4gKqIG+j0DsGvXfvHqMK271794jBTUnzGaqw3CSlFJBJ4CBhaVJS0gA7Sg5iG0S47h0QPMcQ1gsUFDz6CF2Y5R2YcEATZgYJM7wzGH7CelDhl6jC8yDCXO8akIU53i2AprqHxsYWEOFmY2O5R/B0AQJgYRCApRuWPGThbaDABQDDBJmy5kqoCwAAAABJRU5ErkJggg==) no-repeat;
+        background-size: cover;
+        margin: 0 auto;
+        margin-top: .173333rem
+    }
+
+    .box .footer > div a span {
+        flex: 1;
+        text-align: center;
+        color: #fff;
+        font-size: .293333rem;
+        margin-top: .1rem
+    }
+
+    .box .footer > div .router-link-exact-active span {
+        color: #b08dff
+    }
+
+    .box .footer div:first-child .router-link-exact-active i {
+        background: url("/public/jpg/xtx/sy.png") no-repeat;
+        background-size: contain;
+        -webkit-background-size: contain
+    }
+
+    .box .footer div:nth-child(2) i {
+        background: url("/public/jpg/xtx/cz.png") no-repeat;
+        background-size: cover
+    }
+
+    .box .footer div:nth-child(2) .router-link-exact-active i {
+        background: url("/public/jpg/xtx/cz2.png") no-repeat;
+        background-size: contain;
+        -webkit-background-size: contain
+    }
+
+    .box .footer div:nth-child(4) i {
+        background: url("/public/jpg/xtx/chicang.png") no-repeat;
+        background-size: cover
+    }
+
+    .box .footer div:nth-child(4) .router-link-exact-active i {
+        background: url("/public/jpg/xtx/chicang2.png") no-repeat;
+        background-size: contain;
+        -webkit-background-size: contain
+    }
+
+    .box .footer div:nth-child(5) i {
+        background: url("/public/jpg/xtx/mine.png") no-repeat;
+        background-size: cover
+    }
+
+    .box .footer div:nth-child(5) .router-link-exact-active i {
+        background: url("/public/jpg/xtx/mine2.png") no-repeat;
+        background-size: contain;
+        -webkit-background-size: contain
+    }
+
+    .box .footer div:nth-child(3) i {
+        background: url("/public/jpg/xtx/kefu.png") no-repeat;
+        background-size: cover
+    }
+
+    .box .footer div:nth-child(3) .router-link-exact-active i {
+        background: url("/public/jpg/xtx/kefu.png") no-repeat;
+        background-size: contain;
+        -webkit-background-size: contain
+    }

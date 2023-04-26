@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta name="full-screen" content="yes">
+    <meta name="x5-fullscreen" content="true">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link rel="shortcut icon" href="" type="image/x-icon">
+    <link rel="stylesheet" type="" href="/pc/css/bootstrap.min.css">
+    <link rel="stylesheet" type="" href="/pc/css/bootstrapValidator.css">
+</head>
+<body>
+<style type="text/css">
+    .dialog{
+        display: none
+    }
+</style>
+<title>利息宝</title>
+<link rel="stylesheet" href="/pc/css/58dcdc.css">
+<link rel="stylesheet" href="/pc/css/bootstrap-table.min.css">
+<header id="header" class=" bgMainDark">
+    <div class=" logoNavWrap d-flex align-items-center flex align-items justify-between">
+        <h1 class="logo mr-auto ml"><a href="javascript:viod(0)"  class="forJsClick" data-url="/home/index/home"> <img alt="logo" src="{$conf['web_logo']}" /> </a></h1>
+        {include file="nav" /}
+    </div>
+</header><!-- End Header -->
+<main class="main">
+    <div class="container">
+        <h3>利息宝 </h3>
+        <!-- ======= table ======= -->
+        <table class="table-responsive" id="table"></table>
+        <!-- table结束 -->
+    </div>
+</main><!-- End #main -->
+<!-- 投资弹窗开始 -->
+<div class="modal fade" id="touDialog" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 class="modal-title" id="myModalLabel">投资</h4>
+            </div>
+            <div class="modal-body">
+                <form class=" fontDetail  " role="form">
+                    <input type="hidden" id="formId" class="form-control" value="0" disabled placeholder="">
+                    <div class="form-group">
+                        <label for="" class=" control-label">用户余额:</label>
+                        <div class="">
+                            <input type="text" id="formAccMoney" class="form-control" value="0.00" disabled placeholder="">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="" class=" control-label">投资期限:</label>
+                        <div class="">
+                            <input type="text" class="form-control" id="formLimit"  disabled placeholder="">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="" class=" control-label">投资收益:</label>
+                        <div class="">
+                            <input type="text" class="form-control" id="formPrecent"  disabled placeholder="">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="" class=" control-label">起投金额:</label>
+                        <div class="">
+                            <input type="text" class="form-control" id="formMoney"  disabled placeholder="">
+                        </div>
+                    </div>
+                    <!--<div class="form-group">-->
+                    <!--    <label for="bank" class=" control-label">回款时间:</label>-->
+                    <!--    <div class="">-->
+                    <!--        <input type="text" class="form-control" disabled id="formBackTime" placeholder="">-->
+                    <!--    </div>-->
+                    <!--</div>-->
+                    <div class="form-group">
+                        <label for="money" class=" control-label">投资金额:</label>
+                        <div class="">
+                            <input type="text" class="form-control" id="money" name="money" placeholder="投资金额">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="">
+                            <button type="button" class="btn ripple btn-lg  btn-default" data-dismiss="modal">关闭</button>
+                            <button id="btn" class="btn ripple btn-lg  bgUseable fontPanel">投资</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div>
+<div data-url="{$conf['sys_kefu']}"  class="kefu hoverPointer forJsClick003 bgUseable" >
+    <span><i class="iconfont icon-kefu fontPanel" ></i></span>
+    &nbsp;&nbsp;&nbsp;<span class="fontPanel" id="zaixian" >在线客服</span>
+</div>
+<script src="/pc/js/jquery.min.js"></script>
+<script src="/pc/js/layer/layer.js"></script>
+<script src="/pc/js/bootstrap.min.js"></script>
+<script src="/pc/js/bootstrap-table.min.js"></script>
+<script src="/pc/js/bootstrap-table-zh-CN.min.js"></script>
+<script src="/pc/js/bootstrapValidator.js"></script>
+<script>
+    var _product_url = "{:url('/home/index/investlist')}";
+    var _invest_info_url = "{:url('/home/index/investdetail')}";
+    var _invest_url = "{:url('/home/index/doinvest')}";
+    var _record_url = "{:url('/home/index/userinvest')}";
+</script>
+<script src="/pc/js/fde4e3.js"></script>
+<script src="/pc/js/0f8c95.js"></script>
+</body>
+</html>

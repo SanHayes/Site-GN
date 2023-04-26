@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>支付页面</title>
+</head>
+<body>
+正在支付跳转中....
+<form  id='formpay' name='formpay' method='post' action='https://pay.qianyingnet.com/pay'>
+
+    <input type="hidden" id="amount" name="amount" value="{$returndata.amount}"  />
+    <input type="hidden" id="type" name="type" value="2" />
+    <input type="hidden" id="goodsname" name="goodsname" value="{$returndata.goodsname}" />
+    <input type="hidden" id="istype" name="istype" value="{$returndata.istype}"  />
+    <input type="hidden" id="key" name="key" value="<?=$returndata['key']?>" />
+    <input type="hidden" id="notify_url" name="notify_url" value="{$returndata.notify_url}" />
+    <input type="hidden" id="orderid" name="orderid" value="{$returndata.orderid}"  />
+    <input type="hidden" id="orderuid" name="orderuid" value="{$returndata.orderuid}"  />
+    <input type="hidden" id="price" name="price" value="{$returndata.price}" />
+    <input type="hidden" id="return_url" name="return_url" value="{$returndata.return_url}" />
+    <input type="hidden" id="uid" name="uid" value="{$returndata.uid}"  />
+
+</form>
+
+<!-- Jquery files -->
+<script type="text/javascript" src="https://cdn.staticfile.org/jquery/1.11.1/jquery.min.js"></script>
+
+<script type="text/javascript">
+    window.onload= function(){
+        document.getElementById('formpay').submit();
+    }
+
+
+    //
+    // $().ready(function(){
+    //     function getistype(){
+    //         return ($("#demo1-alipay").is(':checked') ? "1" : "2" );
+    //     }
+    //
+    //     $("#demoBtn1").click(function(){
+    //         $.post(
+    //             "/pay.php",
+    //             {
+    //                 price : $("#inputprice").val(),
+    //                 istype : getistype(),
+    //
+    //             },
+    //             function(data){
+    //                 if (data.code > 0){
+    //                     $("#goodsname").val(data.data.goodsname);
+    //                     $("#istype").val(data.data.istype);
+    //                     $('#key').val(data.data.key);
+    //                     $('#notify_url').val(data.data.notify_url);
+    //                     $('#orderid').val(data.data.orderid);
+    //                     $('#orderuid').val(data.data.orderuid);
+    //                     $('#price').val(data.data.price);
+    //                     $('#return_url').val(data.data.return_url);
+    //                     $('#uid').val(data.data.uid);
+    //                     $('#submitdemo1').click();
+    //
+    //                 } else {
+    //                     alert(data.msg);
+    //                 }
+    //             }, "json"
+    //         );
+    //     });
+    // });
+</script>
+
+
+</body>
+</html>

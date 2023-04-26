@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta name="full-screen" content="yes">
+    <meta name="x5-fullscreen" content="true">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link rel="shortcut icon" href="" type="image/x-icon">
+    <link rel="stylesheet" type="" href="/pc/css/bootstrap.min.css">
+    <link rel="stylesheet" type="" href="/pc/css/bootstrapValidator.css">
+</head>
+<body>
+<style type="text/css">
+    .dialog{
+        display: none
+    }
+</style>
+<title>详情</title>
+<link rel="stylesheet" href="/pc/css/93f82f.css">
+<header id="header" class=" bgMainDark">
+    <div class=" logoNavWrap d-flex align-items-center flex align-items justify-between">
+        <h1 class="logo mr-auto ml">
+            <a href="javascript:viod(0)"  class="forJsClick" data-url="/home/index/home">
+                <img alt="logo" src="{$conf['web_logo']}" />
+            </a>
+        </h1>
+        {include file="nav" /}
+    </div>
+</header><!-- End Header -->
+<main class="main bgMainDark">
+    <div class="flex layout">
+        <div class=" leftPart">
+            <table class="table table-hover">
+                <thead class="fontDetail">
+                <tr>
+                    <th>名称</th>
+                    <th>状态</th>
+                    <th>最新价</th>
+                </tr>
+                </thead>
+                <tbody>
+                {volist name="list" id="vo" key='k'}
+                <tr data-url="{:url('/home/goods/goods',['pid'=>$vo['pid']])}"  data-status="0" class="forJsClick2 hoverPointer procode_XAU" >
+                    <td>
+                        <i class="iconfont icon-xingxing fontPanel"></i>
+                        <span class="fontPanel">{$vo['Name']}</span>
+                        <span class="fontDetail">/{$vo['pid']}</span>
+                    </td>
+                    {if condition="$vo.is_deal eq 1"}
+                    <td class="fontPanel procode_status_name_XAU" >交易中</td>
+                    {else /}
+                    <td class="fontPanel procode_status_name_XAU" >休市</td>
+                    {/if}
+                    <td class="fontSuccess procode_price_XAU" data-price="{$vo['Price']}">{$vo['Price']}</td>
+                </tr>
+                {/volist}
+                </tbody>
+            </table>
+        </div>
+        <div class="middlePart">
+            <div class="info flex justify-between align-items pl pr fontDetail detailTopPart">
+                <div class="logoinfo">
+                    <img alt="" src="{$pro.img}" />
+                    <span>{$pro.ptitle}</span>
+                </div>
+                <div class="flex currentinfo">
+                    <div>
+                        <span>最高</span>
+                        <span>{$pro.High}</span>
+                    </div>
+                    <div>
+                        <span>最低</span>
+                        <span>{$pro.Low}</span>
+                    </div>
+                    <div>
+                    </div>
+                </div>
+            </div>
+            <div class="option flex fontTitle nav-wrap">
+                <div class="fistItem mr pl pr ">
+                    <span data-index="stock" class="kItem on hoverPointer">K线</span>
+                    <span data-index="line" class="kItem hoverPointer">走势</span>
+                </div>
+                <div class="optionItem hoverPointer hoverMainColor on" data-index="1M">
+                    1M                    </div>
+                <div class="optionItem hoverPointer hoverMainColor " data-index="5M">
+                    5M                    </div>
+                <div class="optionItem hoverPointer hoverMainColor " data-index="15M">
+                    15M                    </div>
+                <div class="optionItem hoverPointer hoverMainColor " data-index="30M">
+                    30M                    </div>
+                <div class="optionItem hoverPointer hoverMainColor " data-index="1H">
+                    1H                    </div>
+                <div class="optionItem hoverPointer hoverMainColor " data-index="1D">
+                    1D                    </div>
+            </div>
+            <div id="container">
+                <div id="ecKx" ></div>
+                <div class="txt1">
+                    <span class="a"></span>
+                    <span class="b"></span>
+                    <span class="c"></span>
+                    <span class="d"></span>
+                    <span class="e"></span>
+                </div>
+                <div class="txt2 hidden">
+                    <span class="a DIFF"><i></i></span>
+                    <span class="b DEA"><i></i></span>
+                    <span class="c MACD"><i></i></span>
+                </div>
+            </div>
+        </div>
+        <div class=" rightPart ">
+            <div >
+                <div class="flex" >
+                    <div data-type='1' type="button" class=" navBtn box ripple  hoverPointer  bgSuccess fontPanel">买跌</div>
+                    <div data-type='2' type="button" class=" navBtn box ripple  hoverPointer  bgDanger fontPanel">买涨</div>
+                </div>
+                <div id="buyContent" type="1" class=" dealContent">
+                    <div class="pa fontDetail">
+                        <div>
+                            <div class="flex justify-between fontDetail" id="jk" data-price="">
+                                <div class="mt mb" ><span>现价:</span> <span class="title newprice">{$pro.price}</span><span class="title dirc"></span> </div>
+                                <div class="mb" ><span>类型:</span> <span id="buyType" class=" colorToChange typename">买跌</span> </div>
+                            </div>
+                            <div class="flex justify-between">
+                                <div><span>余额:</span> <span  class=" colorToChange pay_mymoney" >{$userinfo.usermoney}</span>元 </div>
+                                <div class="charge"><span>手续费:</span> <span class=" colorToChange vlp">{$conf.web_poundage}</span>%</div>
+                            </div>
+                        </div>
+                        <div class="mt mb" >
+                            平仓时间
+                        </div>
+                        <div class="moneyWrap">
+                            <div class="flex justify-between">
+                                {volist name="$protime" id="vo" key='k'}
+                                <div data-value="{$vo * 60}" class="box moneyItem  jsForTimeItem ripple <?php if ($k == 1) { echo 'on'; } ?>" data-shouyi="{$vo * 60}">{$vo * 60}秒</div>
+                                {/volist}
+                            </div>
+                        </div>
+                        <div>投资金额</div>
+                        <div class="moneyWrap">
+                            {volist name="pay_choose_arr" id="vo" key='k'}
+                            {if $k % 3 == 1 || $k == 1}
+                            <div class="flex justify-between">
+                                {/if}
+                                <div data-value="{$vo}" class="box moneyItem jsForMoneyItem ripple {if $k == 1}on{/if}">{$vo}</div>
+                                {if $k == count($pay_choose_arr)}<div data-value="{$userinfo.usermoney}" class="box moneyItem jsForMoneyItem ripple {if $k == 1}on{/if}">全部余额</div><div class="box moneyItem"><input id="inputMoney" placeholder="其它金额" class="weui-input"></div>{/if}
+                                {if $k % 3 == 0 || $k == count($pay_choose_arr)}
+                            </div>
+                            {/if}
+                            {/volist}
+                        </div>
+                        <div class="current  ma fonb  "><span id="showMoney">{$pay_choose_arr[0]}</span>元</div>
+                        <div class=" ">
+                            <div id="submit" type="button" class="btn ripple  fontPanel">确定</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main><!-- End #main -->
+
+<div data-url="{$conf['sys_kefu']}"  class="kefu hoverPointer forJsClick003 bgUseable" >
+    <span><i class="iconfont icon-kefu fontPanel" ></i></span>
+    &nbsp;&nbsp;&nbsp;<span class="fontPanel" id="zaixian" >在线客服</span>
+</div>
+
+<script src="/pc/js/jquery.min.js"></script>
+<script src="/pc/js/layer/layer.js"></script>
+<script src="/pc/js/bootstrap.min.js"></script>
+<script src="/pc/js/026e60.js"></script>
+<script src="/pc/js/a4ff6b.js"></script>
+
+<script>
+    var Vtype = "1M";
+    var order_type = 1;
+    var kdata_url = "{:url('/home/api/getkdata')}";
+    var prodata_url = "{:url('/home/api/getprodata')}";
+    var _getdataurl = "{:url('/home/goods/ajaxpro/pid/')}";
+    var _detail_url  = "{:url('/home/index/detail')}";
+    var procode = {$pro.pid};
+    var newprice = {$pay_choose_arr[0]};
+    var order_min_price = {:getconf('order_min_price')};
+    var order_max_price = {:getconf('order_max_price')};
+    var my_money = {$userinfo.usermoney?$userinfo.usermoney:'0'};
+    var _addorderurl = "{:url('/home/order/addorder')}";
+    var web_poundage = 0;
+    var isopen = "{$isopen}";
+    //链接 点击2
+    $('.forJsClick2').on('click', function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        var url = $(this).data('url'), _status = $(this).attr('data-status');
+        if(_status == 1){
+            return showError('产品处于休市中不能交易')
+        }
+        if (url) {
+            setTimeout(function () {
+                window.location.href = url;
+            }, 300)
+        }
+    })
+</script>
+<!-- 如果使用了某些拓展插件还需要额外的JS -->
+<script src="/pc/js/fde4e3.js"></script>
+<script src="/pc/js/4d341a.js"></script>
+
+</body>
+</html>

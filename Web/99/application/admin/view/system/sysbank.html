@@ -1,0 +1,86 @@
+{include file="head" /}
+
+
+<!-- 编辑器引入结束 -->
+
+{include file="menu" /}
+
+
+<!--main content start-->
+      <section id="main-content">
+          <section class="wrapper">
+
+            <div class="row">
+                <div class="col-sm-12">
+                    <aside class="profile-info col-lg-9">
+                    <section class="panel">
+                        <div class="panel-body bio-graph-info">
+                            <h1> 入款银行</h1>
+                            <form class="form-horizontal" role="form" method="post" id="formid">
+                                <input type="hidden" value="{$sysbank.id}" name="id">
+                                <div class="form-group">
+                                    <label class="col-lg-2 control-label">开户行</label>
+                                    <div class="col-lg-6">
+                                        <input type="text" class="form-control" name="bank_name" value="{$sysbank.bank_name}" maxlength="20"/>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-lg-2 control-label">开户网点</label>
+                                    <div class="col-lg-6">
+                                        <input type="text" class="form-control" name="bank_addr" value="{$sysbank.bank_addr}" maxlength="20"/>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-lg-2 control-label">开户人姓名</label>
+                                    <div class="col-lg-6">
+                                        <input type="text" class="form-control" name="username" value="{$sysbank.username}" maxlength="20"/>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-lg-2 control-label">银行卡号</label>
+                                    <div class="col-lg-6">
+                                        <input type="text" class="form-control" name="card_no" value="{$sysbank.card_no}" maxlength="20"/>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-lg-offset-2 col-lg-10">
+                                        <input type="submit" value="提交" onclick="return editcon(this.form)" class="btn btn-success"/>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </section>
+                    </aside>
+                </div>
+            </div>
+
+
+          </section>
+      </section>
+      <!--main content end-->
+  </section>
+
+
+{include file="foot" /}
+<script type="text/javascript" src="/static/public/umeditor/umindex.js"></script>
+<script>
+  function editcon(form){
+    var bank_name = form.bank_name.value;
+    var bank_addr = form.bank_addr.value;
+    var username = form.username.value;
+    var card_no = form.card_no.value;
+
+    if(!bank_name){layer.msg('请输入开户行'); return false;}
+    if(!username){layer.msg('请输入开户人姓名'); return false;}
+    if(!card_no){layer.msg('请输入银行卡号'); return false;}
+
+    var formurl = "{:Url('system/sysbank')}";
+    var data = $('#formid').serialize();
+    var locurl = "{:Url('system/sysbank')}";
+
+    WPpost(formurl,data,locurl);
+
+    return false;
+
+  }
+</script>

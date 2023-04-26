@@ -21,7 +21,7 @@
                                 <th>序号</th>
                                 <th>标题</th>
                                 <th>时间</th>
-                                <th>状态</th>
+                                <th>类型</th>
                                 {if $otype == 3}
                                 <th>操作</th>
                                 {/if}
@@ -33,7 +33,7 @@
                                   <td>{$vo.id}</td>
                                   <td>{$vo.title}</td>
                                   <td>{$vo.time|date="Y-m-d H:i",###}</td>
-                                  <td>{if $vo.state==1}启用{else/}停用{/if}</td>
+                                  <td>{if $vo.state==1}走马灯{else/}弹出框{/if}</td>
                                   <td>
                                       <a href="{:url('admin/setup/addnotice',['id'=>$vo['id']])}"><button class="btn btn-primary btn-xs">修改</button></a>
                                       <a href="javascript:;" onclick="delnotice({$vo.id})"><button class="btn btn-danger btn-xs" >删除</button></a>

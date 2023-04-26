@@ -236,10 +236,10 @@ class Setup extends Base
             }
             if($flag){
                 $msg = $id ? '公告修改' : '公告添加';
-                $this->success($msg.'成功',$_SERVER['HTTP_REFERER'],'',1);
+                return WPreturn($msg.'成功',1);
             }else{
                 $msg = $id ? '公告修改' : '公告添加';
-                $this->error($msg.'失败，请重试',$_SERVER['HTTP_REFERER'],'',1);
+                return WPreturn($msg.'失败，请重试',1);
             }
         }else{
             if($id){

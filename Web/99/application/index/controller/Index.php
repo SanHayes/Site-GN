@@ -33,7 +33,11 @@ class Index extends Base
         	$pro[$k]['img'] = $imgarr[$v['pid']];
         }
         $this->assign('pro',$pro);
-        $notices = db('notice')->where(['state' => 1])->order('id desc')->limit(3)->select();
+        $notices_zouma = db('notice')->where(['state' => 1])->order('id desc')->find();
+        $notices_alert = db('notice')->where(['state' => 0])->order('id desc')->find();
+        $notices_data['zouma'] = $notices_zouma;
+        $notices_data['alert'] = $notices_alert;
+        p($notices_data);
         $this->assign('notices', $notices);
         if (!isset($_SESSION['notices'])) {
             $this->assign('notices_tags', true);
@@ -177,8 +181,11 @@ class Index extends Base
             $product[$key] = $item;
         }
         $this->assign('pro', $product);
-        $notices = db('notice')->where(['state' => 1])->order('id desc')->limit(3)->select();
-        $this->assign('notices', $notices);
+        $notices_zouma = db('notice')->where(['state' => 1])->order('id desc')->find();
+        $notices_alert = db('notice')->where(['state' => 0])->order('id desc')->find();
+        $notices_data['zouma'] = $notices_zouma;
+        $notices_data['alert'] = $notices_alert;
+        $this->assign('notices', $notices_data);
 		// 轮播图
 		$gallery = db('gallery')->where(['state'=>1])->order('sort asc,id asc')->select();
         $this->assign('gallery', $gallery);

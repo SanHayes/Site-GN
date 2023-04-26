@@ -51,7 +51,7 @@
         <div class="container">
             <i class="iconfont fontMain icon-gonggao"></i>
             <marquee>
-                <p>{$notices[0]['content']}<br></p>
+                <p>{$notices['zouma']['content']}<br></p>
             </marquee>
         </div>
     </section>
@@ -101,10 +101,10 @@
     <div class="mark"></div>
     <div class="dialogBox ">
         <div class="flex  pa titleWrap">
-            <div class="box font18" id="dialogTitle">{$notices[0]['title']}</div>
+            <div class="box font18" id="dialogTitle">{$notices['alert']['title']}</div>
             <span id="dialogClose"> X</span>
         </div>
-        <div class="mcontent pa" id="mcontent">{:nl2br($notices[0]['content'])}</div>
+        <div class="mcontent pa" id="mcontent">{:nl2br($notices['alert']['content'])}</div>
         <div class="btnWrap" >
             <button id="dialogColseSure" class="btn ripple btn-primary">确定</button>
         </div>

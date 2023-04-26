@@ -37,7 +37,7 @@
     <div class="flex pl pr bgMain align-items">
         <i class="iconfont fontTitle icon-laba8 mr"></i>
         <marquee class="box fontDanger marquee">
-            <p>{$notices[0]['content']}</p>
+            <p>{$notices['zouma']['content']}</p>
         </marquee>
     </div>
     <!-- 跑马灯结束 -->
@@ -133,10 +133,10 @@
         <div class="glass"></div>
         <div class="content bgMain fontTitle">
             <div class="title bgUseable ">
-                <div class="flex justify-center pa fontButtonTitle p_ad_tl">{$notices[0]['title']}</div>
+                <div class="flex justify-center pa fontButtonTitle p_ad_tl">{$notices['alert']['title']}</div>
                 <span data-id="dialog" class="close pa fontButtonTitle" >X</span>
             </div>
-            <div class="pa ma p_ad_ct">{:nl2br($notices[0]['content'])}</div>
+            <div class="pa ma p_ad_ct">{:nl2br($notices['alert']['content'])}</div>
             <div class="dfonter  bgMain fontMain">确定</div>
         </div>
     </div>

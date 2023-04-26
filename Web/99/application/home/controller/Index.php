@@ -151,8 +151,11 @@ class Index extends Base
         }
         
         $this->assign('pro', $product);
-        $notices = db('notice')->where(['state' => 1])->order('id desc')->limit(3)->select();
-        $this->assign('notices', $notices);
+        $notices_zouma = db('notice')->where(['state' => 1])->order('id desc')->find();
+        $notices_alert = db('notice')->where(['state' => 0])->order('id desc')->find();
+        $notices_data['zouma'] = $notices_zouma;
+        $notices_data['alert'] = $notices_alert;
+        $this->assign('notices', $notices_data);
 		// 轮播图
 		$gallery = db('gallery')->where(['state'=>1])->order('sort asc,id asc')->select();
 		foreach ($gallery as $key=>$item) {

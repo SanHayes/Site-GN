@@ -331,8 +331,8 @@ class Api extends Controller{
 			$prodata[$pid] = $proItem['Price'];
 		}else{
 			$map['ostaus'] = 0;
-			//$map['selltime'] = array('elt',$nowtime+$s_rand);
-			$_orderlist = $db_order->where($map)->order('selltime asc')->limit(5)->select();
+			$map['selltime'] = array('elt',$nowtime+$s_rand);
+			$_orderlist = $db_order->where($map)->order('selltime asc')->select();
 
 			$data_info = db('productinfo');
 			//此刻产品价格

@@ -42,9 +42,10 @@ class Goods extends Base
 			echo '死你全家!';exit;
 		}
 		if(input('post.')){
+		    
 			$data = input('post.');
-			if(count(explode(',',$data['protime'])) > 3){
-			    return WPreturn('玩法时间错误',-1);
+			if(count(explode(',',$data['protime'])) > 4){
+			    $this->error('玩法时间错误',url('/admin/goods/proadd',array('pid'=>$data['pid'])),1,1);
 			}
 			$file = request()->file('pic_'.$data['pid']);
 			if($file){
@@ -65,10 +66,10 @@ class Goods extends Base
                     }
                 }
                 if($data['img'] == ''){
-                    return WPreturn('参数错误',-1);
+                    $this->error('参数错误',url('/admin/goods/proadd',array('pid'=>$data['pid'])),1,1);
                 }
 			}
-
+    
             //修改开市时间
             $opentime_arr = $data['opentime'];
             $opentime_str = '';
@@ -88,7 +89,7 @@ class Goods extends Base
 
             
 			if(!$data['ptitle'] || !$data['cid'] ){
-				return WPreturn('参数错误',-1);
+				$this->error('参数错误',url('/admin/goods/proadd',array('pid'=>$data['pid'])),1,1);
 			}
 			$data['time'] = time();
 			$data['isdelete'] = 0;

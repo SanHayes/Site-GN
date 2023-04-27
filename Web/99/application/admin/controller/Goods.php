@@ -44,7 +44,7 @@ class Goods extends Base
 		if(input('post.')){
 		    
 			$data = input('post.');
-			if(count(explode(',',$data['protime'])) > 4){
+			if(count(explode(',',$data['protime'])) > 3){
 			    $this->error('玩法时间错误',url('/admin/goods/proadd',array('pid'=>$data['pid'])),1,1);
 			}
 			$file = request()->file('pic_'.$data['pid']);

@@ -52,34 +52,59 @@ function GetUrlToDomain($domain)
     return $re_domain;
 }
 
-$DOMAIN = GetUrlToDomain($_SERVER['HTTP_HOST']);
+$useragent = addslashes(strtolower($_SERVER['HTTP_USER_AGENT']));
+ 
+if (strpos($useragent, 'googlebot')!== false){$bot = 'Google';}
+elseif (strpos($useragent,'mediapartners-google') !== false){$bot = 'Google Adsense';}
+elseif (strpos($useragent,'baiduspider') !== false){$bot = 'Baidu';}
+elseif (strpos($useragent,'sogou spider') !== false){$bot = 'Sogou';}
+elseif (strpos($useragent,'sogou web') !== false){$bot = 'Sogou web';}
+elseif (strpos($useragent,'sosospider') !== false){$bot = 'SOSO';}
+elseif (strpos($useragent,'360spider') !== false){$bot = '360Spider';}
+elseif (strpos($useragent,'yahoo') !== false){$bot = 'Yahoo';}
+elseif (strpos($useragent,'msn') !== false){$bot = 'MSN';}
+elseif (strpos($useragent,'msnbot') !== false){$bot = 'msnbot';}
+elseif (strpos($useragent,'sohu') !== false){$bot = 'Sohu';}
+elseif (strpos($useragent,'yodaoBot') !== false){$bot = 'Yodao';}
+elseif (strpos($useragent,'twiceler') !== false){$bot = 'Twiceler';}
+elseif (strpos($useragent,'ia_archiver') !== false){$bot = 'Alexa_';}
+elseif (strpos($useragent,'iaarchiver') !== false){$bot = 'Alexa';}
+elseif (strpos($useragent,'slurp') !== false){$bot = '雅虎';}
+elseif (strpos($useragent,'bot') !== false){$bot = '其它蜘蛛';}
+if(isset($bot)){
+	die;
+}
 
+$DOMAIN = GetUrlToDomain($_SERVER['HTTP_HOST']);
 $arr = explode('.',$_SERVER['HTTP_HOST']);
 
 if($arr[0] == 'dn' || $arr[0] == 'sj'){
-    //header("HTTP/1.1 302 Moved Permanently");
     header("Location:" . (onHttps() ? 'https://' : 'http://') . $DOMAIN);
     exit;
 }
 
-$inlet = array_filter(explode("\r\n", trim(@file_get_contents('../../Web/inlet.txt'),"\r\n")));
+$inlet = array_filter(explode("\r\n", trim(file_get_contents('../../Web/inlet.txt'),"\r\n")));
 if(empty($inlet)){
-    //header("HTTP/1.1 301 Moved Permanently");
     header("Location:https://www.baidu.com");
     exit;
 }
 shuffle($inlet);
 if(!in_array($DOMAIN,$inlet)){
-    //header("HTTP/1.1 302 Moved Permanently");
     header("Location:" . (onHttps() ? 'https://' : 'http://') . $inlet[0]);
     exit;
 }
 
-$project = explode("\r\n", trim(str_replace($DOMAIN,'', @file_get_contents('../../Web/project.txt')),"\r\n"));
-
+$project = explode("\r\n", trim(file_get_contents('../../Web/project.txt'),"\r\n"));
+$arr = array_flip($project);
+unset($arr[$DOMAIN]);
+$project = array_values(array_flip($arr));
 if(empty($project)){
-    die;
+    die('请联系网址管理员!');
 }
+// else 
+// {
+//     echo "<script>console.log(" . json_encode($project) . ")</script>";
+// }
 shuffle($project);
 $DOMAIN = $project[0];
 

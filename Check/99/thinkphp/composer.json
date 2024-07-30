@@ -1,0 +1,32 @@
+{
+    "name": "topthink/framework",
+    "description": "the new thinkphp framework",
+    "type": "think-framework",
+    "keywords": [
+        "framework",
+        "thinkphp",
+        "ORM"
+    ],
+    "homepage": "http://thinkphp.cn/",
+    "license": "Apache-2.0",
+    "authors": [
+        {
+            "name": "liu21st",
+            "email": "liu21st@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "topthink/think-installer": "~1.0"
+    },
+    "require-dev": {
+        "johnkary/phpunit-speedtrap": "^1.0",
+        "phploc/phploc": "2.*",
+        "sebastian/phpcpd": "2.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "think\\": "library/think"
+        }
+    }
+}

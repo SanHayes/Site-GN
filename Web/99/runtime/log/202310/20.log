@@ -1,0 +1,1995 @@
+[ 2023-10-20T18:56:27+08:00 ] 45.194.98.96 150.109.247.49 POST /99/index/index/ajaxdata
+[ log ] sj.io3o.cc/99/index/index/ajaxdata [运行时间：0.083812s][吞吐率：11.93req/s] [内存消耗：3,273.93kb] [文件加载：62]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000368s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wp_userinfo` [ RunTime:0.000603s ]
+[ sql ] [ SQL ] SELECT * FROM `wp_userinfo` WHERE  `uid` = 1178 LIMIT 1 [ RunTime:0.000390s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000262s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] UPDATE `wp_userinfo`  SET `online`=1,`update_time`=1697799387  WHERE  `uid` = 1178 [ RunTime:0.060378s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000374s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wp_order` [ RunTime:0.000485s ]
+[ sql ] [ SQL ] SELECT SUM(ploss) AS tp_sum FROM `wp_order` WHERE  `uid` = 1178  AND `selltime` BETWEEN 1697731200 AND 1697817600 LIMIT 1 [ RunTime:0.000333s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000197s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT SUM(ploss) AS tp_sum FROM `wp_order` WHERE  `uid` = 1178  AND `selltime` BETWEEN 1697644800 AND 1697731200 LIMIT 1 [ RunTime:0.000213s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000219s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wp_userinvest` [ RunTime:0.000396s ]
+[ sql ] [ SQL ] SELECT SUM(money) AS tp_sum FROM `wp_userinvest` WHERE  `uid` = 1178 LIMIT 1 [ RunTime:0.000204s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000265s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wp_config` [ RunTime:0.000415s ]
+[ sql ] [ SQL ] SELECT * FROM `wp_config` [ RunTime:0.000280s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000177s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wp_productdata` [ RunTime:0.000346s ]
+[ sql ] [ SQL ] SELECT `pid`,`Name`,`price`,`isdelete` FROM `wp_productdata` WHERE  `isdelete` = 0 [ RunTime:0.000205s ]
+[ error ] [2]ini_set(): A session is active. You cannot change the session module's ini settings at this time[/www/wwwroot/Site-GN/Web/99/thinkphp/library/think/Session.php:77]
+[ error ] [2]ini_set(): A session is active. You cannot change the session module's ini settings at this time[/www/wwwroot/Site-GN/Web/99/thinkphp/library/think/Session.php:78]
+[ info ] [ LANG ] /www/wwwroot/Site-GN/Web/99/thinkphp/lang/zh-cn.php
+[ info ] [ LANG ] /www/wwwroot/Site-GN/Web/99/application/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'ajaxdata',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'sj.io3o.cc',
+  'cookie' => 'PHPSESSID=0csqto0ps8q18te5orja4e098b; think_var=zh-cn; hide=1',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'https://sj.io3o.cc/99/index/index/home',
+  'sec-fetch-dest' => 'empty',
+  'sec-fetch-mode' => 'cors',
+  'sec-fetch-site' => 'same-origin',
+  'origin' => 'https://sj.io3o.cc',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1',
+  'accept' => '*/*',
+  'content-length' => '0',
+)
+[ info ] [ PARAM ] array (
+  '/index/index/ajaxdata' => '',
+)
+[ info ] [ LANG ] /www/wwwroot/Site-GN/Web/99/application/index/lang/zh-cn.php
+[ info ] [ SESSION ] INIT array (
+  'prefix' => '',
+  'expire' => 86400,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Index->ajaxdata[ /www/wwwroot/Site-GN/Web/99/application/index/controller/Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2023-10-20T18:56:32+08:00 ] 45.194.98.96 150.109.247.49 POST /99/index/index/ajaxdata
+[ log ] sj.io3o.cc/99/index/index/ajaxdata [运行时间：0.091638s][吞吐率：10.91req/s] [内存消耗：3,183.18kb] [文件加载：62]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000307s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wp_userinfo` [ RunTime:0.000616s ]
+[ sql ] [ SQL ] SELECT * FROM `wp_userinfo` WHERE  `uid` = 1178 LIMIT 1 [ RunTime:0.000322s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000208s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] UPDATE `wp_userinfo`  SET `online`=1,`update_time`=1697799392  WHERE  `uid` = 1178 [ RunTime:0.067205s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000353s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wp_order` [ RunTime:0.000583s ]
+[ sql ] [ SQL ] SELECT SUM(ploss) AS tp_sum FROM `wp_order` WHERE  `uid` = 1178  AND `selltime` BETWEEN 1697731200 AND 1697817600 LIMIT 1 [ RunTime:0.000250s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000193s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT SUM(ploss) AS tp_sum FROM `wp_order` WHERE  `uid` = 1178  AND `selltime` BETWEEN 1697644800 AND 1697731200 LIMIT 1 [ RunTime:0.000172s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000262s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wp_userinvest` [ RunTime:0.000387s ]
+[ sql ] [ SQL ] SELECT SUM(money) AS tp_sum FROM `wp_userinvest` WHERE  `uid` = 1178 LIMIT 1 [ RunTime:0.000155s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000171s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wp_productdata` [ RunTime:0.000347s ]
+[ sql ] [ SQL ] SELECT `pid`,`Name`,`price`,`isdelete` FROM `wp_productdata` WHERE  `isdelete` = 0 [ RunTime:0.000186s ]
+[ error ] [2]ini_set(): A session is active. You cannot change the session module's ini settings at this time[/www/wwwroot/Site-GN/Web/99/thinkphp/library/think/Session.php:77]
+[ error ] [2]ini_set(): A session is active. You cannot change the session module's ini settings at this time[/www/wwwroot/Site-GN/Web/99/thinkphp/library/think/Session.php:78]
+[ info ] [ LANG ] /www/wwwroot/Site-GN/Web/99/thinkphp/lang/zh-cn.php
+[ info ] [ LANG ] /www/wwwroot/Site-GN/Web/99/application/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'ajaxdata',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'sj.io3o.cc',
+  'cookie' => 'PHPSESSID=0csqto0ps8q18te5orja4e098b; think_var=zh-cn; hide=1',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'https://sj.io3o.cc/99/index/index/home',
+  'sec-fetch-dest' => 'empty',
+  'sec-fetch-mode' => 'cors',
+  'sec-fetch-site' => 'same-origin',
+  'origin' => 'https://sj.io3o.cc',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1',
+  'accept' => '*/*',
+  'content-length' => '0',
+)
+[ info ] [ PARAM ] array (
+  '/index/index/ajaxdata' => '',
+)
+[ info ] [ LANG ] /www/wwwroot/Site-GN/Web/99/application/index/lang/zh-cn.php
+[ info ] [ SESSION ] INIT array (
+  'prefix' => '',
+  'expire' => 86400,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Index->ajaxdata[ /www/wwwroot/Site-GN/Web/99/application/index/controller/Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2023-10-20T18:56:37+08:00 ] 45.194.98.96 150.109.247.49 POST /99/index/index/ajaxdata
+[ log ] sj.io3o.cc/99/index/index/ajaxdata [运行时间：0.119885s][吞吐率：8.34req/s] [内存消耗：3,183.18kb] [文件加载：62]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000489s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wp_userinfo` [ RunTime:0.001080s ]
+[ sql ] [ SQL ] SELECT * FROM `wp_userinfo` WHERE  `uid` = 1178 LIMIT 1 [ RunTime:0.000658s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000405s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] UPDATE `wp_userinfo`  SET `online`=1,`update_time`=1697799397  WHERE  `uid` = 1178 [ RunTime:0.059972s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000474s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wp_order` [ RunTime:0.001189s ]
+[ sql ] [ SQL ] SELECT SUM(ploss) AS tp_sum FROM `wp_order` WHERE  `uid` = 1178  AND `selltime` BETWEEN 1697731200 AND 1697817600 LIMIT 1 [ RunTime:0.000516s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000556s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT SUM(ploss) AS tp_sum FROM `wp_order` WHERE  `uid` = 1178  AND `selltime` BETWEEN 1697644800 AND 1697731200 LIMIT 1 [ RunTime:0.000609s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000469s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wp_userinvest` [ RunTime:0.000987s ]
+[ sql ] [ SQL ] SELECT SUM(money) AS tp_sum FROM `wp_userinvest` WHERE  `uid` = 1178 LIMIT 1 [ RunTime:0.000298s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000285s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wp_productdata` [ RunTime:0.000402s ]
+[ sql ] [ SQL ] SELECT `pid`,`Name`,`price`,`isdelete` FROM `wp_productdata` WHERE  `isdelete` = 0 [ RunTime:0.000222s ]
+[ error ] [2]ini_set(): A session is active. You cannot change the session module's ini settings at this time[/www/wwwroot/Site-GN/Web/99/thinkphp/library/think/Session.php:77]
+[ error ] [2]ini_set(): A session is active. You cannot change the session module's ini settings at this time[/www/wwwroot/Site-GN/Web/99/thinkphp/library/think/Session.php:78]
+[ info ] [ LANG ] /www/wwwroot/Site-GN/Web/99/thinkphp/lang/zh-cn.php
+[ info ] [ LANG ] /www/wwwroot/Site-GN/Web/99/application/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'ajaxdata',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'sj.io3o.cc',
+  'cookie' => 'PHPSESSID=0csqto0ps8q18te5orja4e098b; think_var=zh-cn; hide=1',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'https://sj.io3o.cc/99/index/index/home',
+  'sec-fetch-dest' => 'empty',
+  'sec-fetch-mode' => 'cors',
+  'sec-fetch-site' => 'same-origin',
+  'origin' => 'https://sj.io3o.cc',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1',
+  'accept' => '*/*',
+  'content-length' => '0',
+)
+[ info ] [ PARAM ] array (
+  '/index/index/ajaxdata' => '',
+)
+[ info ] [ LANG ] /www/wwwroot/Site-GN/Web/99/application/index/lang/zh-cn.php
+[ info ] [ SESSION ] INIT array (
+  'prefix' => '',
+  'expire' => 86400,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Index->ajaxdata[ /www/wwwroot/Site-GN/Web/99/application/index/controller/Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2023-10-20T18:56:52+08:00 ] 45.194.98.96 150.109.247.49 POST /99/index/index/ajaxdata
+[ log ] sj.io3o.cc/99/index/index/ajaxdata [运行时间：0.144958s][吞吐率：6.90req/s] [内存消耗：3,183.18kb] [文件加载：62]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000388s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wp_userinfo` [ RunTime:0.000606s ]
+[ sql ] [ SQL ] SELECT * FROM `wp_userinfo` WHERE  `uid` = 1178 LIMIT 1 [ RunTime:0.000353s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000242s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] UPDATE `wp_userinfo`  SET `online`=1,`update_time`=1697799412  WHERE  `uid` = 1178 [ RunTime:0.122211s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000407s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wp_order` [ RunTime:0.000823s ]
+[ sql ] [ SQL ] SELECT SUM(ploss) AS tp_sum FROM `wp_order` WHERE  `uid` = 1178  AND `selltime` BETWEEN 1697731200 AND 1697817600 LIMIT 1 [ RunTime:0.000411s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000289s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT SUM(ploss) AS tp_sum FROM `wp_order` WHERE  `uid` = 1178  AND `selltime` BETWEEN 1697644800 AND 1697731200 LIMIT 1 [ RunTime:0.000227s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000275s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wp_userinvest` [ RunTime:0.000364s ]
+[ sql ] [ SQL ] SELECT SUM(money) AS tp_sum FROM `wp_userinvest` WHERE  `uid` = 1178 LIMIT 1 [ RunTime:0.000192s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000244s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wp_productdata` [ RunTime:0.000425s ]
+[ sql ] [ SQL ] SELECT `pid`,`Name`,`price`,`isdelete` FROM `wp_productdata` WHERE  `isdelete` = 0 [ RunTime:0.000234s ]
+[ error ] [2]ini_set(): A session is active. You cannot change the session module's ini settings at this time[/www/wwwroot/Site-GN/Web/99/thinkphp/library/think/Session.php:77]
+[ error ] [2]ini_set(): A session is active. You cannot change the session module's ini settings at this time[/www/wwwroot/Site-GN/Web/99/thinkphp/library/think/Session.php:78]
+[ info ] [ LANG ] /www/wwwroot/Site-GN/Web/99/thinkphp/lang/zh-cn.php
+[ info ] [ LANG ] /www/wwwroot/Site-GN/Web/99/application/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'ajaxdata',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'sj.io3o.cc',
+  'cookie' => 'PHPSESSID=0csqto0ps8q18te5orja4e098b; think_var=zh-cn; hide=1',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'https://sj.io3o.cc/99/index/index/home',
+  'sec-fetch-dest' => 'empty',
+  'sec-fetch-mode' => 'cors',
+  'sec-fetch-site' => 'same-origin',
+  'origin' => 'https://sj.io3o.cc',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1',
+  'accept' => '*/*',
+  'content-length' => '0',
+)
+[ info ] [ PARAM ] array (
+  '/index/index/ajaxdata' => '',
+)
+[ info ] [ LANG ] /www/wwwroot/Site-GN/Web/99/application/index/lang/zh-cn.php
+[ info ] [ SESSION ] INIT array (
+  'prefix' => '',
+  'expire' => 86400,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Index->ajaxdata[ /www/wwwroot/Site-GN/Web/99/application/index/controller/Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2023-10-20T18:57:45+08:00 ] 45.194.98.96 150.109.247.49 POST /99/index/index/ajaxdata
+[ log ] sj.io3o.cc/99/index/index/ajaxdata [运行时间：0.088163s][吞吐率：11.34req/s] [内存消耗：3,183.18kb] [文件加载：62]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000353s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wp_userinfo` [ RunTime:0.000582s ]
+[ sql ] [ SQL ] SELECT * FROM `wp_userinfo` WHERE  `uid` = 1178 LIMIT 1 [ RunTime:0.000354s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000212s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] UPDATE `wp_userinfo`  SET `online`=1,`update_time`=1697799465  WHERE  `uid` = 1178 [ RunTime:0.066466s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000307s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wp_order` [ RunTime:0.000491s ]
+[ sql ] [ SQL ] SELECT SUM(ploss) AS tp_sum FROM `wp_order` WHERE  `uid` = 1178  AND `selltime` BETWEEN 1697731200 AND 1697817600 LIMIT 1 [ RunTime:0.000258s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000205s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT SUM(ploss) AS tp_sum FROM `wp_order` WHERE  `uid` = 1178  AND `selltime` BETWEEN 1697644800 AND 1697731200 LIMIT 1 [ RunTime:0.000208s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000200s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wp_userinvest` [ RunTime:0.000338s ]
+[ sql ] [ SQL ] SELECT SUM(money) AS tp_sum FROM `wp_userinvest` WHERE  `uid` = 1178 LIMIT 1 [ RunTime:0.000142s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000191s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wp_productdata` [ RunTime:0.000339s ]
+[ sql ] [ SQL ] SELECT `pid`,`Name`,`price`,`isdelete` FROM `wp_productdata` WHERE  `isdelete` = 0 [ RunTime:0.000193s ]
+[ error ] [2]ini_set(): A session is active. You cannot change the session module's ini settings at this time[/www/wwwroot/Site-GN/Web/99/thinkphp/library/think/Session.php:77]
+[ error ] [2]ini_set(): A session is active. You cannot change the session module's ini settings at this time[/www/wwwroot/Site-GN/Web/99/thinkphp/library/think/Session.php:78]
+[ info ] [ LANG ] /www/wwwroot/Site-GN/Web/99/thinkphp/lang/zh-cn.php
+[ info ] [ LANG ] /www/wwwroot/Site-GN/Web/99/application/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'ajaxdata',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'sj.io3o.cc',
+  'cookie' => 'PHPSESSID=0csqto0ps8q18te5orja4e098b; think_var=zh-cn; hide=1',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'https://sj.io3o.cc/99/index/index/home',
+  'sec-fetch-dest' => 'empty',
+  'sec-fetch-mode' => 'cors',
+  'sec-fetch-site' => 'same-origin',
+  'origin' => 'https://sj.io3o.cc',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1',
+  'accept' => '*/*',
+  'content-length' => '0',
+)
+[ info ] [ PARAM ] array (
+  '/index/index/ajaxdata' => '',
+)
+[ info ] [ LANG ] /www/wwwroot/Site-GN/Web/99/application/index/lang/zh-cn.php
+[ info ] [ SESSION ] INIT array (
+  'prefix' => '',
+  'expire' => 86400,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Index->ajaxdata[ /www/wwwroot/Site-GN/Web/99/application/index/controller/Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2023-10-20T18:57:47+08:00 ] 45.194.98.96 150.109.247.49 POST /99/index/index/ajaxdata
+[ log ] sj.io3o.cc/99/index/index/ajaxdata [运行时间：0.072531s][吞吐率：13.79req/s] [内存消耗：3,183.18kb] [文件加载：62]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000326s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wp_userinfo` [ RunTime:0.000558s ]
+[ sql ] [ SQL ] SELECT * FROM `wp_userinfo` WHERE  `uid` = 1178 LIMIT 1 [ RunTime:0.000381s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000287s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] UPDATE `wp_userinfo`  SET `online`=1,`update_time`=1697799467  WHERE  `uid` = 1178 [ RunTime:0.050887s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000373s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wp_order` [ RunTime:0.000579s ]
+[ sql ] [ SQL ] SELECT SUM(ploss) AS tp_sum FROM `wp_order` WHERE  `uid` = 1178  AND `selltime` BETWEEN 1697731200 AND 1697817600 LIMIT 1 [ RunTime:0.000250s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000218s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT SUM(ploss) AS tp_sum FROM `wp_order` WHERE  `uid` = 1178  AND `selltime` BETWEEN 1697644800 AND 1697731200 LIMIT 1 [ RunTime:0.000186s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000200s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wp_userinvest` [ RunTime:0.000377s ]
+[ sql ] [ SQL ] SELECT SUM(money) AS tp_sum FROM `wp_userinvest` WHERE  `uid` = 1178 LIMIT 1 [ RunTime:0.000189s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000215s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wp_productdata` [ RunTime:0.000369s ]
+[ sql ] [ SQL ] SELECT `pid`,`Name`,`price`,`isdelete` FROM `wp_productdata` WHERE  `isdelete` = 0 [ RunTime:0.000205s ]
+[ error ] [2]ini_set(): A session is active. You cannot change the session module's ini settings at this time[/www/wwwroot/Site-GN/Web/99/thinkphp/library/think/Session.php:77]
+[ error ] [2]ini_set(): A session is active. You cannot change the session module's ini settings at this time[/www/wwwroot/Site-GN/Web/99/thinkphp/library/think/Session.php:78]
+[ info ] [ LANG ] /www/wwwroot/Site-GN/Web/99/thinkphp/lang/zh-cn.php
+[ info ] [ LANG ] /www/wwwroot/Site-GN/Web/99/application/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'ajaxdata',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'sj.io3o.cc',
+  'cookie' => 'PHPSESSID=0csqto0ps8q18te5orja4e098b; think_var=zh-cn; hide=1',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'https://sj.io3o.cc/99/index/index/home',
+  'sec-fetch-dest' => 'empty',
+  'sec-fetch-mode' => 'cors',
+  'sec-fetch-site' => 'same-origin',
+  'origin' => 'https://sj.io3o.cc',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1',
+  'accept' => '*/*',
+  'content-length' => '0',
+)
+[ info ] [ PARAM ] array (
+  '/index/index/ajaxdata' => '',
+)
+[ info ] [ LANG ] /www/wwwroot/Site-GN/Web/99/application/index/lang/zh-cn.php
+[ info ] [ SESSION ] INIT array (
+  'prefix' => '',
+  'expire' => 86400,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Index->ajaxdata[ /www/wwwroot/Site-GN/Web/99/application/index/controller/Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2023-10-20T18:57:47+08:00 ] 45.194.98.96 150.109.247.49 GET /99/index/index/home
+[ log ] sj.io3o.cc/99/index/index/home [运行时间：0.132356s][吞吐率：7.56req/s] [内存消耗：8,535.90kb] [文件加载：66]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000280s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wp_userinfo` [ RunTime:0.000624s ]
+[ sql ] [ SQL ] SELECT * FROM `wp_userinfo` WHERE  `uid` = 1178 LIMIT 1 [ RunTime:0.000373s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000257s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] UPDATE `wp_userinfo`  SET `online`=1,`update_time`=1697799467  WHERE  `uid` = 1178 [ RunTime:0.066162s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000390s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wp_order` [ RunTime:0.000557s ]
+[ sql ] [ SQL ] SELECT SUM(ploss) AS tp_sum FROM `wp_order` WHERE  `uid` = 1178  AND `selltime` BETWEEN 1697731200 AND 1697817600 LIMIT 1 [ RunTime:0.000255s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000266s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT SUM(ploss) AS tp_sum FROM `wp_order` WHERE  `uid` = 1178  AND `selltime` BETWEEN 1697644800 AND 1697731200 LIMIT 1 [ RunTime:0.000264s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000313s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wp_userinvest` [ RunTime:0.000593s ]
+[ sql ] [ SQL ] SELECT SUM(money) AS tp_sum FROM `wp_userinvest` WHERE  `uid` = 1178 LIMIT 1 [ RunTime:0.000248s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000372s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wp_productdata` [ RunTime:0.000599s ]
+[ sql ] [ SQL ] SELECT * FROM `wp_productdata` WHERE  `isdelete` = 0 ORDER BY `sort` [ RunTime:0.000554s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000352s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wp_productinfo` [ RunTime:0.000650s ]
+[ sql ] [ SQL ] SELECT * FROM `wp_productinfo` WHERE  `pid` = 30 LIMIT 1 [ RunTime:0.000421s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000313s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_productdata` WHERE  `pid` = '30' LIMIT 1 [ RunTime:0.000437s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000294s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wp_opentime` [ RunTime:0.000349s ]
+[ sql ] [ SQL ] SELECT * FROM `wp_opentime` WHERE  (  pid=30 ) LIMIT 1 [ RunTime:0.000177s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000251s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_productinfo` WHERE  `pid` = 14 LIMIT 1 [ RunTime:0.000258s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000203s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_productdata` WHERE  `pid` = '14' LIMIT 1 [ RunTime:0.000250s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000170s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_opentime` WHERE  (  pid=14 ) LIMIT 1 [ RunTime:0.000144s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000198s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_productinfo` WHERE  `pid` = 15 LIMIT 1 [ RunTime:0.000270s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000185s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_productdata` WHERE  `pid` = '15' LIMIT 1 [ RunTime:0.000236s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000168s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_opentime` WHERE  (  pid=15 ) LIMIT 1 [ RunTime:0.000156s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000160s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_productinfo` WHERE  `pid` = 38 LIMIT 1 [ RunTime:0.000238s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000163s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_productdata` WHERE  `pid` = '38' LIMIT 1 [ RunTime:0.000248s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000208s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_opentime` WHERE  (  pid=38 ) LIMIT 1 [ RunTime:0.000194s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000193s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_productinfo` WHERE  `pid` = 11 LIMIT 1 [ RunTime:0.000270s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000196s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_productdata` WHERE  `pid` = '11' LIMIT 1 [ RunTime:0.000236s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000206s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_opentime` WHERE  (  pid=11 ) LIMIT 1 [ RunTime:0.000182s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000198s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_productinfo` WHERE  `pid` = 29 LIMIT 1 [ RunTime:0.000240s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000188s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_productdata` WHERE  `pid` = '29' LIMIT 1 [ RunTime:0.000295s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000212s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_opentime` WHERE  (  pid=29 ) LIMIT 1 [ RunTime:0.000178s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000199s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_productinfo` WHERE  `pid` = 31 LIMIT 1 [ RunTime:0.000259s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000175s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_productdata` WHERE  `pid` = '31' LIMIT 1 [ RunTime:0.000247s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000200s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_opentime` WHERE  (  pid=31 ) LIMIT 1 [ RunTime:0.000153s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000155s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_productinfo` WHERE  `pid` = 35 LIMIT 1 [ RunTime:0.000243s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000162s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_productdata` WHERE  `pid` = '35' LIMIT 1 [ RunTime:0.000246s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000195s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_opentime` WHERE  (  pid=35 ) LIMIT 1 [ RunTime:0.000184s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000177s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_productinfo` WHERE  `pid` = 41 LIMIT 1 [ RunTime:0.000269s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000183s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_productdata` WHERE  `pid` = '41' LIMIT 1 [ RunTime:0.000256s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000185s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_opentime` WHERE  (  pid=41 ) LIMIT 1 [ RunTime:0.000204s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000226s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_productinfo` WHERE  `pid` = 39 LIMIT 1 [ RunTime:0.000254s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000197s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_productdata` WHERE  `pid` = '39' LIMIT 1 [ RunTime:0.000280s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000214s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_opentime` WHERE  (  pid=39 ) LIMIT 1 [ RunTime:0.000172s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000179s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_productinfo` WHERE  `pid` = 12 LIMIT 1 [ RunTime:0.000254s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000178s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_productdata` WHERE  `pid` = '12' LIMIT 1 [ RunTime:0.000229s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000158s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_opentime` WHERE  (  pid=12 ) LIMIT 1 [ RunTime:0.000143s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000177s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_productinfo` WHERE  `pid` = 23 LIMIT 1 [ RunTime:0.000260s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000161s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_productdata` WHERE  `pid` = '23' LIMIT 1 [ RunTime:0.000237s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000181s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_opentime` WHERE  (  pid=23 ) LIMIT 1 [ RunTime:0.000180s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000194s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_productinfo` WHERE  `pid` = 16 LIMIT 1 [ RunTime:0.000255s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000212s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_productdata` WHERE  `pid` = '16' LIMIT 1 [ RunTime:0.000237s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000162s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_opentime` WHERE  (  pid=16 ) LIMIT 1 [ RunTime:0.000150s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000192s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_productinfo` WHERE  `pid` = 45 LIMIT 1 [ RunTime:0.000269s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000160s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_productdata` WHERE  `pid` = '45' LIMIT 1 [ RunTime:0.000251s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000175s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_opentime` WHERE  (  pid=45 ) LIMIT 1 [ RunTime:0.000156s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000162s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_productinfo` WHERE  `pid` = 37 LIMIT 1 [ RunTime:0.000232s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000204s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_productdata` WHERE  `pid` = '37' LIMIT 1 [ RunTime:0.000270s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000206s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_opentime` WHERE  (  pid=37 ) LIMIT 1 [ RunTime:0.000160s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000192s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_productinfo` WHERE  `pid` = 34 LIMIT 1 [ RunTime:0.000249s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000176s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_productdata` WHERE  `pid` = '34' LIMIT 1 [ RunTime:0.000235s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000225s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_opentime` WHERE  (  pid=34 ) LIMIT 1 [ RunTime:0.000187s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000187s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_productinfo` WHERE  `pid` = 44 LIMIT 1 [ RunTime:0.000244s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000201s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_productdata` WHERE  `pid` = '44' LIMIT 1 [ RunTime:0.000288s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000193s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_opentime` WHERE  (  pid=44 ) LIMIT 1 [ RunTime:0.000153s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000204s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_productinfo` WHERE  `pid` = 36 LIMIT 1 [ RunTime:0.000236s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000203s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_productdata` WHERE  `pid` = '36' LIMIT 1 [ RunTime:0.000253s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000187s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_opentime` WHERE  (  pid=36 ) LIMIT 1 [ RunTime:0.000192s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000167s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_productinfo` WHERE  `pid` = 32 LIMIT 1 [ RunTime:0.000233s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000180s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_productdata` WHERE  `pid` = '32' LIMIT 1 [ RunTime:0.000264s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000196s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_opentime` WHERE  (  pid=32 ) LIMIT 1 [ RunTime:0.000164s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000212s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_productinfo` WHERE  `pid` = 42 LIMIT 1 [ RunTime:0.000259s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000188s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_productdata` WHERE  `pid` = '42' LIMIT 1 [ RunTime:0.000244s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000222s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_opentime` WHERE  (  pid=42 ) LIMIT 1 [ RunTime:0.000190s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000178s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_productinfo` WHERE  `pid` = 43 LIMIT 1 [ RunTime:0.000235s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000161s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_productdata` WHERE  `pid` = '43' LIMIT 1 [ RunTime:0.000238s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000172s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_opentime` WHERE  (  pid=43 ) LIMIT 1 [ RunTime:0.000149s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000169s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_productinfo` WHERE  `pid` = 13 LIMIT 1 [ RunTime:0.000228s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000168s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_productdata` WHERE  `pid` = '13' LIMIT 1 [ RunTime:0.000214s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000158s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_opentime` WHERE  (  pid=13 ) LIMIT 1 [ RunTime:0.000150s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000173s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_productinfo` WHERE  `pid` = 17 LIMIT 1 [ RunTime:0.000221s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000156s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_productdata` WHERE  `pid` = '17' LIMIT 1 [ RunTime:0.000226s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000166s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_opentime` WHERE  (  pid=17 ) LIMIT 1 [ RunTime:0.000141s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000152s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_productinfo` WHERE  `pid` = 22 LIMIT 1 [ RunTime:0.000226s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000170s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_productdata` WHERE  `pid` = '22' LIMIT 1 [ RunTime:0.000218s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000161s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_opentime` WHERE  (  pid=22 ) LIMIT 1 [ RunTime:0.000142s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000160s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wp_notice` [ RunTime:0.000361s ]
+[ sql ] [ SQL ] SELECT * FROM `wp_notice` WHERE  `state` = 1 ORDER BY id desc LIMIT 1 [ RunTime:0.000160s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000162s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_notice` WHERE  `state` = 0 ORDER BY id desc LIMIT 1 [ RunTime:0.000159s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000164s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wp_gallery` [ RunTime:0.000308s ]
+[ sql ] [ SQL ] SELECT * FROM `wp_gallery` WHERE  `state` = 1 ORDER BY sort asc,id asc [ RunTime:0.000177s ]
+[ error ] [2]ini_set(): A session is active. You cannot change the session module's ini settings at this time[/www/wwwroot/Site-GN/Web/99/thinkphp/library/think/Session.php:77]
+[ error ] [2]ini_set(): A session is active. You cannot change the session module's ini settings at this time[/www/wwwroot/Site-GN/Web/99/thinkphp/library/think/Session.php:78]
+[ info ] [ LANG ] /www/wwwroot/Site-GN/Web/99/thinkphp/lang/zh-cn.php
+[ info ] [ LANG ] /www/wwwroot/Site-GN/Web/99/application/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'home',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'sj.io3o.cc',
+  'cookie' => 'PHPSESSID=0csqto0ps8q18te5orja4e098b; think_var=zh-cn; hide=1',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'https://sj.io3o.cc/99/index/login/login',
+  'sec-fetch-dest' => 'document',
+  'sec-fetch-user' => '?1',
+  'sec-fetch-mode' => 'navigate',
+  'sec-fetch-site' => 'same-origin',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+)
+[ info ] [ PARAM ] array (
+  '/index/index/home' => '',
+)
+[ info ] [ LANG ] /www/wwwroot/Site-GN/Web/99/application/index/lang/zh-cn.php
+[ info ] [ SESSION ] INIT array (
+  'prefix' => '',
+  'expire' => 86400,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Index->home[ /www/wwwroot/Site-GN/Web/99/application/index/controller/Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] /www/wwwroot/Site-GN/Web/99/application/index/view/index/home.html [ array (
+  0 => 'token',
+  1 => 'userinfo',
+  2 => 'conf',
+  3 => 'pro',
+  4 => 'notices',
+  5 => 'gallery',
+  6 => 'hide',
+  7 => 'caijin',
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2023-10-20T18:57:49+08:00 ] 45.194.98.96 150.109.247.49 GET /99/index/index/home
+[ log ] sj.io3o.cc/99/index/index/home [运行时间：0.123635s][吞吐率：8.09req/s] [内存消耗：8,199.24kb] [文件加载：63]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000331s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wp_userinfo` [ RunTime:0.000596s ]
+[ sql ] [ SQL ] SELECT * FROM `wp_userinfo` WHERE  `uid` = 1178 LIMIT 1 [ RunTime:0.000339s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000208s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] UPDATE `wp_userinfo`  SET `online`=1,`update_time`=1697799469  WHERE  `uid` = 1178 [ RunTime:0.060032s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000458s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wp_order` [ RunTime:0.000644s ]
+[ sql ] [ SQL ] SELECT SUM(ploss) AS tp_sum FROM `wp_order` WHERE  `uid` = 1178  AND `selltime` BETWEEN 1697731200 AND 1697817600 LIMIT 1 [ RunTime:0.000350s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000270s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT SUM(ploss) AS tp_sum FROM `wp_order` WHERE  `uid` = 1178  AND `selltime` BETWEEN 1697644800 AND 1697731200 LIMIT 1 [ RunTime:0.000289s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000296s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wp_userinvest` [ RunTime:0.000496s ]
+[ sql ] [ SQL ] SELECT SUM(money) AS tp_sum FROM `wp_userinvest` WHERE  `uid` = 1178 LIMIT 1 [ RunTime:0.000226s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000297s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wp_productdata` [ RunTime:0.000524s ]
+[ sql ] [ SQL ] SELECT * FROM `wp_productdata` WHERE  `isdelete` = 0 ORDER BY `sort` [ RunTime:0.000439s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000269s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wp_productinfo` [ RunTime:0.000505s ]
+[ sql ] [ SQL ] SELECT * FROM `wp_productinfo` WHERE  `pid` = 30 LIMIT 1 [ RunTime:0.000328s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000254s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_productdata` WHERE  `pid` = '30' LIMIT 1 [ RunTime:0.000324s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000246s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wp_opentime` [ RunTime:0.000404s ]
+[ sql ] [ SQL ] SELECT * FROM `wp_opentime` WHERE  (  pid=30 ) LIMIT 1 [ RunTime:0.000208s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000287s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_productinfo` WHERE  `pid` = 14 LIMIT 1 [ RunTime:0.000339s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000235s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_productdata` WHERE  `pid` = '14' LIMIT 1 [ RunTime:0.000320s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000202s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_opentime` WHERE  (  pid=14 ) LIMIT 1 [ RunTime:0.000168s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000232s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_productinfo` WHERE  `pid` = 15 LIMIT 1 [ RunTime:0.000293s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000212s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_productdata` WHERE  `pid` = '15' LIMIT 1 [ RunTime:0.000298s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000238s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_opentime` WHERE  (  pid=15 ) LIMIT 1 [ RunTime:0.000215s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000204s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_productinfo` WHERE  `pid` = 38 LIMIT 1 [ RunTime:0.000331s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000226s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_productdata` WHERE  `pid` = '38' LIMIT 1 [ RunTime:0.000317s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000238s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_opentime` WHERE  (  pid=38 ) LIMIT 1 [ RunTime:0.000220s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000231s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_productinfo` WHERE  `pid` = 11 LIMIT 1 [ RunTime:0.000267s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000175s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_productdata` WHERE  `pid` = '11' LIMIT 1 [ RunTime:0.000224s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000194s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_opentime` WHERE  (  pid=11 ) LIMIT 1 [ RunTime:0.000175s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000236s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_productinfo` WHERE  `pid` = 29 LIMIT 1 [ RunTime:0.000282s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000206s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_productdata` WHERE  `pid` = '29' LIMIT 1 [ RunTime:0.000243s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000221s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_opentime` WHERE  (  pid=29 ) LIMIT 1 [ RunTime:0.000190s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000233s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_productinfo` WHERE  `pid` = 31 LIMIT 1 [ RunTime:0.000298s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000191s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_productdata` WHERE  `pid` = '31' LIMIT 1 [ RunTime:0.000241s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000176s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_opentime` WHERE  (  pid=31 ) LIMIT 1 [ RunTime:0.000184s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000199s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_productinfo` WHERE  `pid` = 35 LIMIT 1 [ RunTime:0.000260s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000190s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_productdata` WHERE  `pid` = '35' LIMIT 1 [ RunTime:0.000279s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000200s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_opentime` WHERE  (  pid=35 ) LIMIT 1 [ RunTime:0.000197s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000176s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_productinfo` WHERE  `pid` = 41 LIMIT 1 [ RunTime:0.000238s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000161s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_productdata` WHERE  `pid` = '41' LIMIT 1 [ RunTime:0.000233s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000154s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_opentime` WHERE  (  pid=41 ) LIMIT 1 [ RunTime:0.000160s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000182s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_productinfo` WHERE  `pid` = 39 LIMIT 1 [ RunTime:0.000249s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000194s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_productdata` WHERE  `pid` = '39' LIMIT 1 [ RunTime:0.000254s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000171s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_opentime` WHERE  (  pid=39 ) LIMIT 1 [ RunTime:0.000177s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000177s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_productinfo` WHERE  `pid` = 12 LIMIT 1 [ RunTime:0.000232s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000192s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_productdata` WHERE  `pid` = '12' LIMIT 1 [ RunTime:0.000241s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000182s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_opentime` WHERE  (  pid=12 ) LIMIT 1 [ RunTime:0.000180s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000188s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_productinfo` WHERE  `pid` = 23 LIMIT 1 [ RunTime:0.000249s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000156s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_productdata` WHERE  `pid` = '23' LIMIT 1 [ RunTime:0.000224s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000163s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_opentime` WHERE  (  pid=23 ) LIMIT 1 [ RunTime:0.000151s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000204s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_productinfo` WHERE  `pid` = 16 LIMIT 1 [ RunTime:0.000262s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000189s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_productdata` WHERE  `pid` = '16' LIMIT 1 [ RunTime:0.000264s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000171s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_opentime` WHERE  (  pid=16 ) LIMIT 1 [ RunTime:0.000146s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000158s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_productinfo` WHERE  `pid` = 45 LIMIT 1 [ RunTime:0.000232s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000202s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_productdata` WHERE  `pid` = '45' LIMIT 1 [ RunTime:0.000277s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000148s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_opentime` WHERE  (  pid=45 ) LIMIT 1 [ RunTime:0.000156s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000157s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_productinfo` WHERE  `pid` = 37 LIMIT 1 [ RunTime:0.000228s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000182s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_productdata` WHERE  `pid` = '37' LIMIT 1 [ RunTime:0.000280s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000163s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_opentime` WHERE  (  pid=37 ) LIMIT 1 [ RunTime:0.000156s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000171s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_productinfo` WHERE  `pid` = 34 LIMIT 1 [ RunTime:0.000229s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000192s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_productdata` WHERE  `pid` = '34' LIMIT 1 [ RunTime:0.000268s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000194s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_opentime` WHERE  (  pid=34 ) LIMIT 1 [ RunTime:0.000186s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000189s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_productinfo` WHERE  `pid` = 44 LIMIT 1 [ RunTime:0.000260s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000172s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_productdata` WHERE  `pid` = '44' LIMIT 1 [ RunTime:0.000235s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000164s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_opentime` WHERE  (  pid=44 ) LIMIT 1 [ RunTime:0.000154s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000164s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_productinfo` WHERE  `pid` = 36 LIMIT 1 [ RunTime:0.000219s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000204s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_productdata` WHERE  `pid` = '36' LIMIT 1 [ RunTime:0.000263s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000170s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_opentime` WHERE  (  pid=36 ) LIMIT 1 [ RunTime:0.000158s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000173s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_productinfo` WHERE  `pid` = 32 LIMIT 1 [ RunTime:0.000288s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000181s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_productdata` WHERE  `pid` = '32' LIMIT 1 [ RunTime:0.000245s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000183s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_opentime` WHERE  (  pid=32 ) LIMIT 1 [ RunTime:0.000188s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000190s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_productinfo` WHERE  `pid` = 42 LIMIT 1 [ RunTime:0.000263s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000176s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_productdata` WHERE  `pid` = '42' LIMIT 1 [ RunTime:0.000266s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000161s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_opentime` WHERE  (  pid=42 ) LIMIT 1 [ RunTime:0.000148s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000155s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_productinfo` WHERE  `pid` = 43 LIMIT 1 [ RunTime:0.000237s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000160s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_productdata` WHERE  `pid` = '43' LIMIT 1 [ RunTime:0.000233s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000165s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_opentime` WHERE  (  pid=43 ) LIMIT 1 [ RunTime:0.000146s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000161s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_productinfo` WHERE  `pid` = 13 LIMIT 1 [ RunTime:0.000224s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000158s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_productdata` WHERE  `pid` = '13' LIMIT 1 [ RunTime:0.000211s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000159s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_opentime` WHERE  (  pid=13 ) LIMIT 1 [ RunTime:0.000141s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000160s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_productinfo` WHERE  `pid` = 17 LIMIT 1 [ RunTime:0.000221s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000143s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_productdata` WHERE  `pid` = '17' LIMIT 1 [ RunTime:0.000229s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000153s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_opentime` WHERE  (  pid=17 ) LIMIT 1 [ RunTime:0.000139s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000162s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_productinfo` WHERE  `pid` = 22 LIMIT 1 [ RunTime:0.000226s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000161s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_productdata` WHERE  `pid` = '22' LIMIT 1 [ RunTime:0.000215s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000154s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_opentime` WHERE  (  pid=22 ) LIMIT 1 [ RunTime:0.000143s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000162s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wp_notice` [ RunTime:0.000346s ]
+[ sql ] [ SQL ] SELECT * FROM `wp_notice` WHERE  `state` = 1 ORDER BY id desc LIMIT 1 [ RunTime:0.000160s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000161s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_notice` WHERE  `state` = 0 ORDER BY id desc LIMIT 1 [ RunTime:0.000193s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000164s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wp_gallery` [ RunTime:0.000348s ]
+[ sql ] [ SQL ] SELECT * FROM `wp_gallery` WHERE  `state` = 1 ORDER BY sort asc,id asc [ RunTime:0.000177s ]
+[ error ] [2]ini_set(): A session is active. You cannot change the session module's ini settings at this time[/www/wwwroot/Site-GN/Web/99/thinkphp/library/think/Session.php:77]
+[ error ] [2]ini_set(): A session is active. You cannot change the session module's ini settings at this time[/www/wwwroot/Site-GN/Web/99/thinkphp/library/think/Session.php:78]
+[ info ] [ LANG ] /www/wwwroot/Site-GN/Web/99/thinkphp/lang/zh-cn.php
+[ info ] [ LANG ] /www/wwwroot/Site-GN/Web/99/application/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'home',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'sj.io3o.cc',
+  'cookie' => 'PHPSESSID=0csqto0ps8q18te5orja4e098b; think_var=zh-cn; hide=1',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'https://sj.io3o.cc/99/index/login/login',
+  'sec-fetch-dest' => 'document',
+  'sec-fetch-user' => '?1',
+  'sec-fetch-mode' => 'navigate',
+  'sec-fetch-site' => 'same-origin',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+)
+[ info ] [ PARAM ] array (
+  '/index/index/home' => '',
+)
+[ info ] [ LANG ] /www/wwwroot/Site-GN/Web/99/application/index/lang/zh-cn.php
+[ info ] [ SESSION ] INIT array (
+  'prefix' => '',
+  'expire' => 86400,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Index->home[ /www/wwwroot/Site-GN/Web/99/application/index/controller/Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] /www/wwwroot/Site-GN/Web/99/application/index/view/index/home.html [ array (
+  0 => 'token',
+  1 => 'userinfo',
+  2 => 'conf',
+  3 => 'pro',
+  4 => 'notices',
+  5 => 'gallery',
+  6 => 'hide',
+  7 => 'caijin',
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2023-10-20T18:57:55+08:00 ] 45.194.98.96 150.109.247.49 POST /99/index/index/ajaxdata
+[ log ] sj.io3o.cc/99/index/index/ajaxdata [运行时间：0.094254s][吞吐率：10.61req/s] [内存消耗：3,183.18kb] [文件加载：62]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000308s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wp_userinfo` [ RunTime:0.000554s ]
+[ sql ] [ SQL ] SELECT * FROM `wp_userinfo` WHERE  `uid` = 1178 LIMIT 1 [ RunTime:0.000307s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000271s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] UPDATE `wp_userinfo`  SET `online`=1,`update_time`=1697799475  WHERE  `uid` = 1178 [ RunTime:0.068532s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000353s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wp_order` [ RunTime:0.000562s ]
+[ sql ] [ SQL ] SELECT SUM(ploss) AS tp_sum FROM `wp_order` WHERE  `uid` = 1178  AND `selltime` BETWEEN 1697731200 AND 1697817600 LIMIT 1 [ RunTime:0.000284s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000229s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT SUM(ploss) AS tp_sum FROM `wp_order` WHERE  `uid` = 1178  AND `selltime` BETWEEN 1697644800 AND 1697731200 LIMIT 1 [ RunTime:0.000236s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000240s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wp_userinvest` [ RunTime:0.000370s ]
+[ sql ] [ SQL ] SELECT SUM(money) AS tp_sum FROM `wp_userinvest` WHERE  `uid` = 1178 LIMIT 1 [ RunTime:0.000160s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000194s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wp_productdata` [ RunTime:0.000366s ]
+[ sql ] [ SQL ] SELECT `pid`,`Name`,`price`,`isdelete` FROM `wp_productdata` WHERE  `isdelete` = 0 [ RunTime:0.000197s ]
+[ error ] [2]ini_set(): A session is active. You cannot change the session module's ini settings at this time[/www/wwwroot/Site-GN/Web/99/thinkphp/library/think/Session.php:77]
+[ error ] [2]ini_set(): A session is active. You cannot change the session module's ini settings at this time[/www/wwwroot/Site-GN/Web/99/thinkphp/library/think/Session.php:78]
+[ info ] [ LANG ] /www/wwwroot/Site-GN/Web/99/thinkphp/lang/zh-cn.php
+[ info ] [ LANG ] /www/wwwroot/Site-GN/Web/99/application/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'ajaxdata',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'sj.io3o.cc',
+  'cookie' => 'PHPSESSID=0csqto0ps8q18te5orja4e098b; think_var=zh-cn; hide=1',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'https://sj.io3o.cc/99/index/index/home',
+  'sec-fetch-dest' => 'empty',
+  'sec-fetch-mode' => 'cors',
+  'sec-fetch-site' => 'same-origin',
+  'origin' => 'https://sj.io3o.cc',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1',
+  'accept' => '*/*',
+  'content-length' => '0',
+)
+[ info ] [ PARAM ] array (
+  '/index/index/ajaxdata' => '',
+)
+[ info ] [ LANG ] /www/wwwroot/Site-GN/Web/99/application/index/lang/zh-cn.php
+[ info ] [ SESSION ] INIT array (
+  'prefix' => '',
+  'expire' => 86400,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Index->ajaxdata[ /www/wwwroot/Site-GN/Web/99/application/index/controller/Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2023-10-20T18:57:57+08:00 ] 45.194.98.96 119.108.238.171 GET /99/index/login/login
+[ log ] dn.io3o.cc/99/index/login/login [运行时间：0.028580s][吞吐率：34.99req/s] [内存消耗：3,636.60kb] [文件加载：65]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000353s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wp_blacklist` [ RunTime:0.000407s ]
+[ sql ] [ SQL ] SELECT * FROM `wp_blacklist` WHERE  `ip` = '119.108.238.171' LIMIT 1 [ RunTime:0.000291s ]
+[ error ] [8]未定义数组索引: HTTP_X_REAL_IP[/www/wwwroot/Site-GN/Web/99/application/index/controller/Login.php:26]
+[ info ] [ LANG ] /www/wwwroot/Site-GN/Web/99/thinkphp/lang/zh-cn.php
+[ info ] [ LANG ] /www/wwwroot/Site-GN/Web/99/application/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'login',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'dn.io3o.cc',
+  'sec-fetch-dest' => 'document',
+  'accept-language' => 'zh-CN,zh-Hans;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 17_0_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.0.1 Mobile/15E148 Safari/604.1',
+  'sec-fetch-mode' => 'navigate',
+  'upgrade-insecure-requests' => '1',
+  'accept-encoding' => 'gzip, deflate',
+  'cookie' => 'PHPSESSID=jc7t61tve2lsl0llgjb3j18pai; think_var=zh-cn',
+  'sec-fetch-site' => 'none',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+)
+[ info ] [ PARAM ] array (
+  '/index/login/login' => '',
+)
+[ info ] [ LANG ] /www/wwwroot/Site-GN/Web/99/application/index/lang/zh-cn.php
+[ info ] [ CACHE ] INIT File
+[ info ] [ RUN ] app\index\controller\Login->login[ /www/wwwroot/Site-GN/Web/99/application/index/controller/Login.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] /www/wwwroot/Site-GN/Web/99/application/index/view/login/login.html [ array (
+  0 => 'conf',
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2023-10-20T18:58:00+08:00 ] 45.194.98.96 150.109.247.49 POST /99/index/index/ajaxdata
+[ log ] sj.io3o.cc/99/index/index/ajaxdata [运行时间：0.081736s][吞吐率：12.23req/s] [内存消耗：3,183.18kb] [文件加载：62]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000305s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wp_userinfo` [ RunTime:0.000601s ]
+[ sql ] [ SQL ] SELECT * FROM `wp_userinfo` WHERE  `uid` = 1178 LIMIT 1 [ RunTime:0.000379s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000322s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] UPDATE `wp_userinfo`  SET `online`=1,`update_time`=1697799480  WHERE  `uid` = 1178 [ RunTime:0.059599s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000305s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wp_order` [ RunTime:0.000517s ]
+[ sql ] [ SQL ] SELECT SUM(ploss) AS tp_sum FROM `wp_order` WHERE  `uid` = 1178  AND `selltime` BETWEEN 1697731200 AND 1697817600 LIMIT 1 [ RunTime:0.000260s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000297s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT SUM(ploss) AS tp_sum FROM `wp_order` WHERE  `uid` = 1178  AND `selltime` BETWEEN 1697644800 AND 1697731200 LIMIT 1 [ RunTime:0.000232s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000268s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wp_userinvest` [ RunTime:0.000455s ]
+[ sql ] [ SQL ] SELECT SUM(money) AS tp_sum FROM `wp_userinvest` WHERE  `uid` = 1178 LIMIT 1 [ RunTime:0.000158s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000201s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wp_productdata` [ RunTime:0.000400s ]
+[ sql ] [ SQL ] SELECT `pid`,`Name`,`price`,`isdelete` FROM `wp_productdata` WHERE  `isdelete` = 0 [ RunTime:0.000221s ]
+[ error ] [2]ini_set(): A session is active. You cannot change the session module's ini settings at this time[/www/wwwroot/Site-GN/Web/99/thinkphp/library/think/Session.php:77]
+[ error ] [2]ini_set(): A session is active. You cannot change the session module's ini settings at this time[/www/wwwroot/Site-GN/Web/99/thinkphp/library/think/Session.php:78]
+[ info ] [ LANG ] /www/wwwroot/Site-GN/Web/99/thinkphp/lang/zh-cn.php
+[ info ] [ LANG ] /www/wwwroot/Site-GN/Web/99/application/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'ajaxdata',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'sj.io3o.cc',
+  'cookie' => 'PHPSESSID=0csqto0ps8q18te5orja4e098b; think_var=zh-cn; hide=1',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'https://sj.io3o.cc/99/index/index/home',
+  'sec-fetch-dest' => 'empty',
+  'sec-fetch-mode' => 'cors',
+  'sec-fetch-site' => 'same-origin',
+  'origin' => 'https://sj.io3o.cc',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1',
+  'accept' => '*/*',
+  'content-length' => '0',
+)
+[ info ] [ PARAM ] array (
+  '/index/index/ajaxdata' => '',
+)
+[ info ] [ LANG ] /www/wwwroot/Site-GN/Web/99/application/index/lang/zh-cn.php
+[ info ] [ SESSION ] INIT array (
+  'prefix' => '',
+  'expire' => 86400,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Index->ajaxdata[ /www/wwwroot/Site-GN/Web/99/application/index/controller/Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2023-10-20T18:58:05+08:00 ] 45.194.98.96 150.109.247.49 POST /99/index/index/ajaxdata
+[ log ] sj.io3o.cc/99/index/index/ajaxdata [运行时间：0.087839s][吞吐率：11.38req/s] [内存消耗：3,183.18kb] [文件加载：62]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000284s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wp_userinfo` [ RunTime:0.000565s ]
+[ sql ] [ SQL ] SELECT * FROM `wp_userinfo` WHERE  `uid` = 1178 LIMIT 1 [ RunTime:0.000368s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000240s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] UPDATE `wp_userinfo`  SET `online`=1,`update_time`=1697799485  WHERE  `uid` = 1178 [ RunTime:0.065314s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000343s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wp_order` [ RunTime:0.000540s ]
+[ sql ] [ SQL ] SELECT SUM(ploss) AS tp_sum FROM `wp_order` WHERE  `uid` = 1178  AND `selltime` BETWEEN 1697731200 AND 1697817600 LIMIT 1 [ RunTime:0.000252s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000289s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT SUM(ploss) AS tp_sum FROM `wp_order` WHERE  `uid` = 1178  AND `selltime` BETWEEN 1697644800 AND 1697731200 LIMIT 1 [ RunTime:0.000239s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000221s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wp_userinvest` [ RunTime:0.000382s ]
+[ sql ] [ SQL ] SELECT SUM(money) AS tp_sum FROM `wp_userinvest` WHERE  `uid` = 1178 LIMIT 1 [ RunTime:0.000213s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000198s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wp_productdata` [ RunTime:0.000386s ]
+[ sql ] [ SQL ] SELECT `pid`,`Name`,`price`,`isdelete` FROM `wp_productdata` WHERE  `isdelete` = 0 [ RunTime:0.000194s ]
+[ error ] [2]ini_set(): A session is active. You cannot change the session module's ini settings at this time[/www/wwwroot/Site-GN/Web/99/thinkphp/library/think/Session.php:77]
+[ error ] [2]ini_set(): A session is active. You cannot change the session module's ini settings at this time[/www/wwwroot/Site-GN/Web/99/thinkphp/library/think/Session.php:78]
+[ info ] [ LANG ] /www/wwwroot/Site-GN/Web/99/thinkphp/lang/zh-cn.php
+[ info ] [ LANG ] /www/wwwroot/Site-GN/Web/99/application/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'ajaxdata',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'sj.io3o.cc',
+  'cookie' => 'PHPSESSID=0csqto0ps8q18te5orja4e098b; think_var=zh-cn; hide=1',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'https://sj.io3o.cc/99/index/index/home',
+  'sec-fetch-dest' => 'empty',
+  'sec-fetch-mode' => 'cors',
+  'sec-fetch-site' => 'same-origin',
+  'origin' => 'https://sj.io3o.cc',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1',
+  'accept' => '*/*',
+  'content-length' => '0',
+)
+[ info ] [ PARAM ] array (
+  '/index/index/ajaxdata' => '',
+)
+[ info ] [ LANG ] /www/wwwroot/Site-GN/Web/99/application/index/lang/zh-cn.php
+[ info ] [ SESSION ] INIT array (
+  'prefix' => '',
+  'expire' => 86400,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Index->ajaxdata[ /www/wwwroot/Site-GN/Web/99/application/index/controller/Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2023-10-20T18:58:10+08:00 ] 45.194.98.96 150.109.247.49 POST /99/index/index/ajaxdata
+[ log ] sj.io3o.cc/99/index/index/ajaxdata [运行时间：0.081881s][吞吐率：12.21req/s] [内存消耗：3,183.18kb] [文件加载：62]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000310s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wp_userinfo` [ RunTime:0.000588s ]
+[ sql ] [ SQL ] SELECT * FROM `wp_userinfo` WHERE  `uid` = 1178 LIMIT 1 [ RunTime:0.000377s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000206s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] UPDATE `wp_userinfo`  SET `online`=1,`update_time`=1697799490  WHERE  `uid` = 1178 [ RunTime:0.059781s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000377s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wp_order` [ RunTime:0.000531s ]
+[ sql ] [ SQL ] SELECT SUM(ploss) AS tp_sum FROM `wp_order` WHERE  `uid` = 1178  AND `selltime` BETWEEN 1697731200 AND 1697817600 LIMIT 1 [ RunTime:0.000302s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000292s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT SUM(ploss) AS tp_sum FROM `wp_order` WHERE  `uid` = 1178  AND `selltime` BETWEEN 1697644800 AND 1697731200 LIMIT 1 [ RunTime:0.000236s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000233s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wp_userinvest` [ RunTime:0.000391s ]
+[ sql ] [ SQL ] SELECT SUM(money) AS tp_sum FROM `wp_userinvest` WHERE  `uid` = 1178 LIMIT 1 [ RunTime:0.000200s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000242s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wp_productdata` [ RunTime:0.000376s ]
+[ sql ] [ SQL ] SELECT `pid`,`Name`,`price`,`isdelete` FROM `wp_productdata` WHERE  `isdelete` = 0 [ RunTime:0.000189s ]
+[ error ] [2]ini_set(): A session is active. You cannot change the session module's ini settings at this time[/www/wwwroot/Site-GN/Web/99/thinkphp/library/think/Session.php:77]
+[ error ] [2]ini_set(): A session is active. You cannot change the session module's ini settings at this time[/www/wwwroot/Site-GN/Web/99/thinkphp/library/think/Session.php:78]
+[ info ] [ LANG ] /www/wwwroot/Site-GN/Web/99/thinkphp/lang/zh-cn.php
+[ info ] [ LANG ] /www/wwwroot/Site-GN/Web/99/application/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'ajaxdata',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'sj.io3o.cc',
+  'cookie' => 'PHPSESSID=0csqto0ps8q18te5orja4e098b; think_var=zh-cn; hide=1',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'https://sj.io3o.cc/99/index/index/home',
+  'sec-fetch-dest' => 'empty',
+  'sec-fetch-mode' => 'cors',
+  'sec-fetch-site' => 'same-origin',
+  'origin' => 'https://sj.io3o.cc',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1',
+  'accept' => '*/*',
+  'content-length' => '0',
+)
+[ info ] [ PARAM ] array (
+  '/index/index/ajaxdata' => '',
+)
+[ info ] [ LANG ] /www/wwwroot/Site-GN/Web/99/application/index/lang/zh-cn.php
+[ info ] [ SESSION ] INIT array (
+  'prefix' => '',
+  'expire' => 86400,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Index->ajaxdata[ /www/wwwroot/Site-GN/Web/99/application/index/controller/Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2023-10-20T18:58:15+08:00 ] 45.194.98.96 150.109.247.49 POST /99/index/index/ajaxdata
+[ log ] sj.io3o.cc/99/index/index/ajaxdata [运行时间：0.078437s][吞吐率：12.75req/s] [内存消耗：3,183.18kb] [文件加载：62]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000305s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wp_userinfo` [ RunTime:0.000514s ]
+[ sql ] [ SQL ] SELECT * FROM `wp_userinfo` WHERE  `uid` = 1178 LIMIT 1 [ RunTime:0.000309s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000211s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] UPDATE `wp_userinfo`  SET `online`=1,`update_time`=1697799495  WHERE  `uid` = 1178 [ RunTime:0.057437s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000361s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wp_order` [ RunTime:0.000473s ]
+[ sql ] [ SQL ] SELECT SUM(ploss) AS tp_sum FROM `wp_order` WHERE  `uid` = 1178  AND `selltime` BETWEEN 1697731200 AND 1697817600 LIMIT 1 [ RunTime:0.000281s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000196s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT SUM(ploss) AS tp_sum FROM `wp_order` WHERE  `uid` = 1178  AND `selltime` BETWEEN 1697644800 AND 1697731200 LIMIT 1 [ RunTime:0.000205s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000216s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wp_userinvest` [ RunTime:0.000392s ]
+[ sql ] [ SQL ] SELECT SUM(money) AS tp_sum FROM `wp_userinvest` WHERE  `uid` = 1178 LIMIT 1 [ RunTime:0.000201s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000218s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wp_productdata` [ RunTime:0.000346s ]
+[ sql ] [ SQL ] SELECT `pid`,`Name`,`price`,`isdelete` FROM `wp_productdata` WHERE  `isdelete` = 0 [ RunTime:0.000188s ]
+[ error ] [2]ini_set(): A session is active. You cannot change the session module's ini settings at this time[/www/wwwroot/Site-GN/Web/99/thinkphp/library/think/Session.php:77]
+[ error ] [2]ini_set(): A session is active. You cannot change the session module's ini settings at this time[/www/wwwroot/Site-GN/Web/99/thinkphp/library/think/Session.php:78]
+[ info ] [ LANG ] /www/wwwroot/Site-GN/Web/99/thinkphp/lang/zh-cn.php
+[ info ] [ LANG ] /www/wwwroot/Site-GN/Web/99/application/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'ajaxdata',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'sj.io3o.cc',
+  'cookie' => 'PHPSESSID=0csqto0ps8q18te5orja4e098b; think_var=zh-cn; hide=1',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'https://sj.io3o.cc/99/index/index/home',
+  'sec-fetch-dest' => 'empty',
+  'sec-fetch-mode' => 'cors',
+  'sec-fetch-site' => 'same-origin',
+  'origin' => 'https://sj.io3o.cc',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1',
+  'accept' => '*/*',
+  'content-length' => '0',
+)
+[ info ] [ PARAM ] array (
+  '/index/index/ajaxdata' => '',
+)
+[ info ] [ LANG ] /www/wwwroot/Site-GN/Web/99/application/index/lang/zh-cn.php
+[ info ] [ SESSION ] INIT array (
+  'prefix' => '',
+  'expire' => 86400,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Index->ajaxdata[ /www/wwwroot/Site-GN/Web/99/application/index/controller/Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2023-10-20T18:58:20+08:00 ] 45.194.98.96 150.109.247.49 POST /99/index/index/ajaxdata
+[ log ] sj.io3o.cc/99/index/index/ajaxdata [运行时间：0.094121s][吞吐率：10.62req/s] [内存消耗：3,183.18kb] [文件加载：62]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000276s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wp_userinfo` [ RunTime:0.000587s ]
+[ sql ] [ SQL ] SELECT * FROM `wp_userinfo` WHERE  `uid` = 1178 LIMIT 1 [ RunTime:0.000379s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000245s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] UPDATE `wp_userinfo`  SET `online`=1,`update_time`=1697799500  WHERE  `uid` = 1178 [ RunTime:0.067193s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000444s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wp_order` [ RunTime:0.000788s ]
+[ sql ] [ SQL ] SELECT SUM(ploss) AS tp_sum FROM `wp_order` WHERE  `uid` = 1178  AND `selltime` BETWEEN 1697731200 AND 1697817600 LIMIT 1 [ RunTime:0.000372s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000398s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT SUM(ploss) AS tp_sum FROM `wp_order` WHERE  `uid` = 1178  AND `selltime` BETWEEN 1697644800 AND 1697731200 LIMIT 1 [ RunTime:0.000358s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000376s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wp_userinvest` [ RunTime:0.000583s ]
+[ sql ] [ SQL ] SELECT SUM(money) AS tp_sum FROM `wp_userinvest` WHERE  `uid` = 1178 LIMIT 1 [ RunTime:0.000277s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000273s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wp_productdata` [ RunTime:0.000506s ]
+[ sql ] [ SQL ] SELECT `pid`,`Name`,`price`,`isdelete` FROM `wp_productdata` WHERE  `isdelete` = 0 [ RunTime:0.000322s ]
+[ error ] [2]ini_set(): A session is active. You cannot change the session module's ini settings at this time[/www/wwwroot/Site-GN/Web/99/thinkphp/library/think/Session.php:77]
+[ error ] [2]ini_set(): A session is active. You cannot change the session module's ini settings at this time[/www/wwwroot/Site-GN/Web/99/thinkphp/library/think/Session.php:78]
+[ info ] [ LANG ] /www/wwwroot/Site-GN/Web/99/thinkphp/lang/zh-cn.php
+[ info ] [ LANG ] /www/wwwroot/Site-GN/Web/99/application/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'ajaxdata',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'sj.io3o.cc',
+  'cookie' => 'PHPSESSID=0csqto0ps8q18te5orja4e098b; think_var=zh-cn; hide=1',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'https://sj.io3o.cc/99/index/index/home',
+  'sec-fetch-dest' => 'empty',
+  'sec-fetch-mode' => 'cors',
+  'sec-fetch-site' => 'same-origin',
+  'origin' => 'https://sj.io3o.cc',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1',
+  'accept' => '*/*',
+  'content-length' => '0',
+)
+[ info ] [ PARAM ] array (
+  '/index/index/ajaxdata' => '',
+)
+[ info ] [ LANG ] /www/wwwroot/Site-GN/Web/99/application/index/lang/zh-cn.php
+[ info ] [ SESSION ] INIT array (
+  'prefix' => '',
+  'expire' => 86400,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Index->ajaxdata[ /www/wwwroot/Site-GN/Web/99/application/index/controller/Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2023-10-20T18:58:25+08:00 ] 45.194.98.96 150.109.247.49 POST /99/index/index/ajaxdata
+[ log ] sj.io3o.cc/99/index/index/ajaxdata [运行时间：0.084082s][吞吐率：11.89req/s] [内存消耗：3,183.18kb] [文件加载：62]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000307s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wp_userinfo` [ RunTime:0.000524s ]
+[ sql ] [ SQL ] SELECT * FROM `wp_userinfo` WHERE  `uid` = 1178 LIMIT 1 [ RunTime:0.000312s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000217s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] UPDATE `wp_userinfo`  SET `online`=1,`update_time`=1697799505  WHERE  `uid` = 1178 [ RunTime:0.059349s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000353s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wp_order` [ RunTime:0.000539s ]
+[ sql ] [ SQL ] SELECT SUM(ploss) AS tp_sum FROM `wp_order` WHERE  `uid` = 1178  AND `selltime` BETWEEN 1697731200 AND 1697817600 LIMIT 1 [ RunTime:0.000242s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000255s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT SUM(ploss) AS tp_sum FROM `wp_order` WHERE  `uid` = 1178  AND `selltime` BETWEEN 1697644800 AND 1697731200 LIMIT 1 [ RunTime:0.000230s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000263s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wp_userinvest` [ RunTime:0.000395s ]
+[ sql ] [ SQL ] SELECT SUM(money) AS tp_sum FROM `wp_userinvest` WHERE  `uid` = 1178 LIMIT 1 [ RunTime:0.000201s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000195s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wp_productdata` [ RunTime:0.000398s ]
+[ sql ] [ SQL ] SELECT `pid`,`Name`,`price`,`isdelete` FROM `wp_productdata` WHERE  `isdelete` = 0 [ RunTime:0.000231s ]
+[ error ] [2]ini_set(): A session is active. You cannot change the session module's ini settings at this time[/www/wwwroot/Site-GN/Web/99/thinkphp/library/think/Session.php:77]
+[ error ] [2]ini_set(): A session is active. You cannot change the session module's ini settings at this time[/www/wwwroot/Site-GN/Web/99/thinkphp/library/think/Session.php:78]
+[ info ] [ LANG ] /www/wwwroot/Site-GN/Web/99/thinkphp/lang/zh-cn.php
+[ info ] [ LANG ] /www/wwwroot/Site-GN/Web/99/application/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'ajaxdata',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'sj.io3o.cc',
+  'cookie' => 'PHPSESSID=0csqto0ps8q18te5orja4e098b; think_var=zh-cn; hide=1',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'https://sj.io3o.cc/99/index/index/home',
+  'sec-fetch-dest' => 'empty',
+  'sec-fetch-mode' => 'cors',
+  'sec-fetch-site' => 'same-origin',
+  'origin' => 'https://sj.io3o.cc',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1',
+  'accept' => '*/*',
+  'content-length' => '0',
+)
+[ info ] [ PARAM ] array (
+  '/index/index/ajaxdata' => '',
+)
+[ info ] [ LANG ] /www/wwwroot/Site-GN/Web/99/application/index/lang/zh-cn.php
+[ info ] [ SESSION ] INIT array (
+  'prefix' => '',
+  'expire' => 86400,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Index->ajaxdata[ /www/wwwroot/Site-GN/Web/99/application/index/controller/Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2023-10-20T18:58:30+08:00 ] 45.194.98.96 150.109.247.49 POST /99/index/index/ajaxdata
+[ log ] sj.io3o.cc/99/index/index/ajaxdata [运行时间：0.089498s][吞吐率：11.17req/s] [内存消耗：3,183.18kb] [文件加载：62]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000378s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wp_userinfo` [ RunTime:0.000596s ]
+[ sql ] [ SQL ] SELECT * FROM `wp_userinfo` WHERE  `uid` = 1178 LIMIT 1 [ RunTime:0.000350s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000212s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] UPDATE `wp_userinfo`  SET `online`=1,`update_time`=1697799510  WHERE  `uid` = 1178 [ RunTime:0.065191s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000329s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wp_order` [ RunTime:0.000507s ]
+[ sql ] [ SQL ] SELECT SUM(ploss) AS tp_sum FROM `wp_order` WHERE  `uid` = 1178  AND `selltime` BETWEEN 1697731200 AND 1697817600 LIMIT 1 [ RunTime:0.000244s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000323s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT SUM(ploss) AS tp_sum FROM `wp_order` WHERE  `uid` = 1178  AND `selltime` BETWEEN 1697644800 AND 1697731200 LIMIT 1 [ RunTime:0.000231s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000364s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wp_userinvest` [ RunTime:0.000672s ]
+[ sql ] [ SQL ] SELECT SUM(money) AS tp_sum FROM `wp_userinvest` WHERE  `uid` = 1178 LIMIT 1 [ RunTime:0.000300s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000307s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wp_productdata` [ RunTime:0.000686s ]
+[ sql ] [ SQL ] SELECT `pid`,`Name`,`price`,`isdelete` FROM `wp_productdata` WHERE  `isdelete` = 0 [ RunTime:0.000363s ]
+[ error ] [2]ini_set(): A session is active. You cannot change the session module's ini settings at this time[/www/wwwroot/Site-GN/Web/99/thinkphp/library/think/Session.php:77]
+[ error ] [2]ini_set(): A session is active. You cannot change the session module's ini settings at this time[/www/wwwroot/Site-GN/Web/99/thinkphp/library/think/Session.php:78]
+[ info ] [ LANG ] /www/wwwroot/Site-GN/Web/99/thinkphp/lang/zh-cn.php
+[ info ] [ LANG ] /www/wwwroot/Site-GN/Web/99/application/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'ajaxdata',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'sj.io3o.cc',
+  'cookie' => 'PHPSESSID=0csqto0ps8q18te5orja4e098b; think_var=zh-cn; hide=1',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'https://sj.io3o.cc/99/index/index/home',
+  'sec-fetch-dest' => 'empty',
+  'sec-fetch-mode' => 'cors',
+  'sec-fetch-site' => 'same-origin',
+  'origin' => 'https://sj.io3o.cc',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1',
+  'accept' => '*/*',
+  'content-length' => '0',
+)
+[ info ] [ PARAM ] array (
+  '/index/index/ajaxdata' => '',
+)
+[ info ] [ LANG ] /www/wwwroot/Site-GN/Web/99/application/index/lang/zh-cn.php
+[ info ] [ SESSION ] INIT array (
+  'prefix' => '',
+  'expire' => 86400,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Index->ajaxdata[ /www/wwwroot/Site-GN/Web/99/application/index/controller/Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2023-10-20T18:58:31+08:00 ] 45.194.98.96 150.109.247.49 GET /99/index/index/home
+[ log ] sj.io3o.cc/99/index/index/home [运行时间：0.122117s][吞吐率：8.19req/s] [内存消耗：8,199.27kb] [文件加载：63]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000356s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wp_userinfo` [ RunTime:0.000515s ]
+[ sql ] [ SQL ] SELECT * FROM `wp_userinfo` WHERE  `uid` = 1178 LIMIT 1 [ RunTime:0.000406s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000291s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] UPDATE `wp_userinfo`  SET `online`=1,`update_time`=1697799511  WHERE  `uid` = 1178 [ RunTime:0.059783s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000437s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wp_order` [ RunTime:0.000802s ]
+[ sql ] [ SQL ] SELECT SUM(ploss) AS tp_sum FROM `wp_order` WHERE  `uid` = 1178  AND `selltime` BETWEEN 1697731200 AND 1697817600 LIMIT 1 [ RunTime:0.000370s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000347s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT SUM(ploss) AS tp_sum FROM `wp_order` WHERE  `uid` = 1178  AND `selltime` BETWEEN 1697644800 AND 1697731200 LIMIT 1 [ RunTime:0.000305s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000397s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wp_userinvest` [ RunTime:0.000646s ]
+[ sql ] [ SQL ] SELECT SUM(money) AS tp_sum FROM `wp_userinvest` WHERE  `uid` = 1178 LIMIT 1 [ RunTime:0.000309s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000333s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wp_productdata` [ RunTime:0.000449s ]
+[ sql ] [ SQL ] SELECT * FROM `wp_productdata` WHERE  `isdelete` = 0 ORDER BY `sort` [ RunTime:0.000353s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000226s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wp_productinfo` [ RunTime:0.000414s ]
+[ sql ] [ SQL ] SELECT * FROM `wp_productinfo` WHERE  `pid` = 30 LIMIT 1 [ RunTime:0.000278s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000247s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_productdata` WHERE  `pid` = '30' LIMIT 1 [ RunTime:0.000287s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000226s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wp_opentime` [ RunTime:0.000329s ]
+[ sql ] [ SQL ] SELECT * FROM `wp_opentime` WHERE  (  pid=30 ) LIMIT 1 [ RunTime:0.000146s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000181s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_productinfo` WHERE  `pid` = 14 LIMIT 1 [ RunTime:0.000227s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000199s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_productdata` WHERE  `pid` = '14' LIMIT 1 [ RunTime:0.000248s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000172s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_opentime` WHERE  (  pid=14 ) LIMIT 1 [ RunTime:0.000159s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000204s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_productinfo` WHERE  `pid` = 15 LIMIT 1 [ RunTime:0.000273s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000187s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_productdata` WHERE  `pid` = '15' LIMIT 1 [ RunTime:0.000260s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000200s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_opentime` WHERE  (  pid=15 ) LIMIT 1 [ RunTime:0.000187s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000188s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_productinfo` WHERE  `pid` = 38 LIMIT 1 [ RunTime:0.000237s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000197s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_productdata` WHERE  `pid` = '38' LIMIT 1 [ RunTime:0.000270s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000171s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_opentime` WHERE  (  pid=38 ) LIMIT 1 [ RunTime:0.000168s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000201s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_productinfo` WHERE  `pid` = 11 LIMIT 1 [ RunTime:0.000259s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000190s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_productdata` WHERE  `pid` = '11' LIMIT 1 [ RunTime:0.000245s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000202s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_opentime` WHERE  (  pid=11 ) LIMIT 1 [ RunTime:0.000160s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000193s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_productinfo` WHERE  `pid` = 29 LIMIT 1 [ RunTime:0.000236s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000166s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_productdata` WHERE  `pid` = '29' LIMIT 1 [ RunTime:0.000235s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000195s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_opentime` WHERE  (  pid=29 ) LIMIT 1 [ RunTime:0.000161s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000219s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_productinfo` WHERE  `pid` = 31 LIMIT 1 [ RunTime:0.000238s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000164s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_productdata` WHERE  `pid` = '31' LIMIT 1 [ RunTime:0.000232s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000193s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_opentime` WHERE  (  pid=31 ) LIMIT 1 [ RunTime:0.000190s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000164s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_productinfo` WHERE  `pid` = 35 LIMIT 1 [ RunTime:0.000233s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000204s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_productdata` WHERE  `pid` = '35' LIMIT 1 [ RunTime:0.000264s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000172s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_opentime` WHERE  (  pid=35 ) LIMIT 1 [ RunTime:0.000150s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000189s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_productinfo` WHERE  `pid` = 41 LIMIT 1 [ RunTime:0.000261s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000188s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_productdata` WHERE  `pid` = '41' LIMIT 1 [ RunTime:0.000262s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000208s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_opentime` WHERE  (  pid=41 ) LIMIT 1 [ RunTime:0.000164s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000204s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_productinfo` WHERE  `pid` = 39 LIMIT 1 [ RunTime:0.000244s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000181s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_productdata` WHERE  `pid` = '39' LIMIT 1 [ RunTime:0.000258s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000182s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_opentime` WHERE  (  pid=39 ) LIMIT 1 [ RunTime:0.000158s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000217s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_productinfo` WHERE  `pid` = 12 LIMIT 1 [ RunTime:0.000239s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000171s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_productdata` WHERE  `pid` = '12' LIMIT 1 [ RunTime:0.000229s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000190s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_opentime` WHERE  (  pid=12 ) LIMIT 1 [ RunTime:0.000189s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000200s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_productinfo` WHERE  `pid` = 23 LIMIT 1 [ RunTime:0.000258s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000199s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_productdata` WHERE  `pid` = '23' LIMIT 1 [ RunTime:0.000262s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000172s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_opentime` WHERE  (  pid=23 ) LIMIT 1 [ RunTime:0.000168s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000181s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_productinfo` WHERE  `pid` = 16 LIMIT 1 [ RunTime:0.000289s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000196s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_productdata` WHERE  `pid` = '16' LIMIT 1 [ RunTime:0.000252s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000169s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_opentime` WHERE  (  pid=16 ) LIMIT 1 [ RunTime:0.000144s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000214s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_productinfo` WHERE  `pid` = 45 LIMIT 1 [ RunTime:0.000260s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000158s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_productdata` WHERE  `pid` = '45' LIMIT 1 [ RunTime:0.000254s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000175s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_opentime` WHERE  (  pid=45 ) LIMIT 1 [ RunTime:0.000155s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000158s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_productinfo` WHERE  `pid` = 37 LIMIT 1 [ RunTime:0.000227s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000214s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_productdata` WHERE  `pid` = '37' LIMIT 1 [ RunTime:0.000279s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000176s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_opentime` WHERE  (  pid=37 ) LIMIT 1 [ RunTime:0.000190s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000154s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_productinfo` WHERE  `pid` = 34 LIMIT 1 [ RunTime:0.000221s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000176s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_productdata` WHERE  `pid` = '34' LIMIT 1 [ RunTime:0.000261s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000186s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_opentime` WHERE  (  pid=34 ) LIMIT 1 [ RunTime:0.000182s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000151s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_productinfo` WHERE  `pid` = 44 LIMIT 1 [ RunTime:0.000241s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000164s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_productdata` WHERE  `pid` = '44' LIMIT 1 [ RunTime:0.000238s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000187s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_opentime` WHERE  (  pid=44 ) LIMIT 1 [ RunTime:0.000188s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000208s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_productinfo` WHERE  `pid` = 36 LIMIT 1 [ RunTime:0.000264s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000191s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_productdata` WHERE  `pid` = '36' LIMIT 1 [ RunTime:0.000270s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000198s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_opentime` WHERE  (  pid=36 ) LIMIT 1 [ RunTime:0.000180s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000182s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_productinfo` WHERE  `pid` = 32 LIMIT 1 [ RunTime:0.000224s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000175s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_productdata` WHERE  `pid` = '32' LIMIT 1 [ RunTime:0.000236s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000195s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_opentime` WHERE  (  pid=32 ) LIMIT 1 [ RunTime:0.000170s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000189s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_productinfo` WHERE  `pid` = 42 LIMIT 1 [ RunTime:0.000272s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000224s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_productdata` WHERE  `pid` = '42' LIMIT 1 [ RunTime:0.000254s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000187s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_opentime` WHERE  (  pid=42 ) LIMIT 1 [ RunTime:0.000165s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000171s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_productinfo` WHERE  `pid` = 43 LIMIT 1 [ RunTime:0.000225s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000177s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_productdata` WHERE  `pid` = '43' LIMIT 1 [ RunTime:0.000234s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000170s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_opentime` WHERE  (  pid=43 ) LIMIT 1 [ RunTime:0.000148s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000172s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_productinfo` WHERE  `pid` = 13 LIMIT 1 [ RunTime:0.000229s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000168s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_productdata` WHERE  `pid` = '13' LIMIT 1 [ RunTime:0.000215s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000169s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_opentime` WHERE  (  pid=13 ) LIMIT 1 [ RunTime:0.000148s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000173s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_productinfo` WHERE  `pid` = 17 LIMIT 1 [ RunTime:0.000220s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000176s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_productdata` WHERE  `pid` = '17' LIMIT 1 [ RunTime:0.000221s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000168s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_opentime` WHERE  (  pid=17 ) LIMIT 1 [ RunTime:0.000141s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000165s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_productinfo` WHERE  `pid` = 22 LIMIT 1 [ RunTime:0.000226s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000179s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_productdata` WHERE  `pid` = '22' LIMIT 1 [ RunTime:0.000216s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000168s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_opentime` WHERE  (  pid=22 ) LIMIT 1 [ RunTime:0.000142s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000173s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wp_notice` [ RunTime:0.000382s ]
+[ sql ] [ SQL ] SELECT * FROM `wp_notice` WHERE  `state` = 1 ORDER BY id desc LIMIT 1 [ RunTime:0.000163s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000174s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT * FROM `wp_notice` WHERE  `state` = 0 ORDER BY id desc LIMIT 1 [ RunTime:0.000179s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000172s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wp_gallery` [ RunTime:0.000306s ]
+[ sql ] [ SQL ] SELECT * FROM `wp_gallery` WHERE  `state` = 1 ORDER BY sort asc,id asc [ RunTime:0.000178s ]
+[ error ] [2]ini_set(): A session is active. You cannot change the session module's ini settings at this time[/www/wwwroot/Site-GN/Web/99/thinkphp/library/think/Session.php:77]
+[ error ] [2]ini_set(): A session is active. You cannot change the session module's ini settings at this time[/www/wwwroot/Site-GN/Web/99/thinkphp/library/think/Session.php:78]
+[ info ] [ LANG ] /www/wwwroot/Site-GN/Web/99/thinkphp/lang/zh-cn.php
+[ info ] [ LANG ] /www/wwwroot/Site-GN/Web/99/application/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'home',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'sj.io3o.cc',
+  'cookie' => 'PHPSESSID=0csqto0ps8q18te5orja4e098b; think_var=zh-cn; hide=1',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'https://sj.io3o.cc/99/index/login/login',
+  'sec-fetch-dest' => 'document',
+  'sec-fetch-user' => '?1',
+  'sec-fetch-mode' => 'navigate',
+  'sec-fetch-site' => 'same-origin',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+)
+[ info ] [ PARAM ] array (
+  '/index/index/home' => '',
+)
+[ info ] [ LANG ] /www/wwwroot/Site-GN/Web/99/application/index/lang/zh-cn.php
+[ info ] [ SESSION ] INIT array (
+  'prefix' => '',
+  'expire' => 86400,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Index->home[ /www/wwwroot/Site-GN/Web/99/application/index/controller/Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] /www/wwwroot/Site-GN/Web/99/application/index/view/index/home.html [ array (
+  0 => 'token',
+  1 => 'userinfo',
+  2 => 'conf',
+  3 => 'pro',
+  4 => 'notices',
+  5 => 'gallery',
+  6 => 'hide',
+  7 => 'caijin',
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2023-10-20T18:58:34+08:00 ] 45.194.98.96 150.109.247.49 POST /99/index/index/99/index/index/hide
+[ log ] sj.io3o.cc/99/index/index/99/index/index/hide [运行时间：0.087619s][吞吐率：11.41req/s] [内存消耗：3,139.34kb] [文件加载：63]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000297s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wp_userinfo` [ RunTime:0.000555s ]
+[ sql ] [ SQL ] SELECT * FROM `wp_userinfo` WHERE  `uid` = 1178 LIMIT 1 [ RunTime:0.000335s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000205s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] UPDATE `wp_userinfo`  SET `online`=1,`update_time`=1697799514  WHERE  `uid` = 1178 [ RunTime:0.064769s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000355s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wp_order` [ RunTime:0.000556s ]
+[ sql ] [ SQL ] SELECT SUM(ploss) AS tp_sum FROM `wp_order` WHERE  `uid` = 1178  AND `selltime` BETWEEN 1697731200 AND 1697817600 LIMIT 1 [ RunTime:0.000248s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000252s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT SUM(ploss) AS tp_sum FROM `wp_order` WHERE  `uid` = 1178  AND `selltime` BETWEEN 1697644800 AND 1697731200 LIMIT 1 [ RunTime:0.000233s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000206s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wp_userinvest` [ RunTime:0.000412s ]
+[ sql ] [ SQL ] SELECT SUM(money) AS tp_sum FROM `wp_userinvest` WHERE  `uid` = 1178 LIMIT 1 [ RunTime:0.000192s ]
+[ error ] [2]ini_set(): A session is active. You cannot change the session module's ini settings at this time[/www/wwwroot/Site-GN/Web/99/thinkphp/library/think/Session.php:77]
+[ error ] [2]ini_set(): A session is active. You cannot change the session module's ini settings at this time[/www/wwwroot/Site-GN/Web/99/thinkphp/library/think/Session.php:78]
+[ info ] [ LANG ] /www/wwwroot/Site-GN/Web/99/thinkphp/lang/zh-cn.php
+[ info ] [ LANG ] /www/wwwroot/Site-GN/Web/99/application/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => '99',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'sj.io3o.cc',
+  'cookie' => 'PHPSESSID=0csqto0ps8q18te5orja4e098b; think_var=zh-cn; hide=1',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'https://sj.io3o.cc/99/index/index/home',
+  'sec-fetch-dest' => 'empty',
+  'sec-fetch-mode' => 'cors',
+  'sec-fetch-site' => 'same-origin',
+  'origin' => 'https://sj.io3o.cc',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1',
+  'accept' => '*/*',
+  'content-length' => '0',
+)
+[ info ] [ PARAM ] array (
+  '/index/index/99/index/index/hide' => '',
+  'index' => 'index',
+)
+[ info ] [ LANG ] /www/wwwroot/Site-GN/Web/99/application/index/lang/zh-cn.php
+[ info ] [ SESSION ] INIT array (
+  'prefix' => '',
+  'expire' => 86400,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2023-10-20T18:58:37+08:00 ] 45.194.98.96 150.109.247.49 POST /99/index/index/ajaxdata
+[ log ] sj.io3o.cc/99/index/index/ajaxdata [运行时间：0.082262s][吞吐率：12.16req/s] [内存消耗：3,183.18kb] [文件加载：62]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000329s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wp_userinfo` [ RunTime:0.000526s ]
+[ sql ] [ SQL ] SELECT * FROM `wp_userinfo` WHERE  `uid` = 1178 LIMIT 1 [ RunTime:0.000409s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000291s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] UPDATE `wp_userinfo`  SET `online`=1,`update_time`=1697799517  WHERE  `uid` = 1178 [ RunTime:0.060317s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000383s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wp_order` [ RunTime:0.000549s ]
+[ sql ] [ SQL ] SELECT SUM(ploss) AS tp_sum FROM `wp_order` WHERE  `uid` = 1178  AND `selltime` BETWEEN 1697731200 AND 1697817600 LIMIT 1 [ RunTime:0.000281s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000265s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SELECT SUM(ploss) AS tp_sum FROM `wp_order` WHERE  `uid` = 1178  AND `selltime` BETWEEN 1697644800 AND 1697731200 LIMIT 1 [ RunTime:0.000250s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000286s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wp_userinvest` [ RunTime:0.000436s ]
+[ sql ] [ SQL ] SELECT SUM(money) AS tp_sum FROM `wp_userinvest` WHERE  `uid` = 1178 LIMIT 1 [ RunTime:0.000174s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000192s ] mysql:dbname=site;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `wp_productdata` [ RunTime:0.000404s ]
+[ sql ] [ SQL ] SELECT `pid`,`Name`,`price`,`isdelete` FROM `wp_productdata` WHERE  `isdelete` = 0 [ RunTime:0.000220s ]
+[ error ] [2]ini_set(): A session is active. You cannot change the session module's ini settings at this time[/www/wwwroot/Site-GN/Web/99/thinkphp/library/think/Session.php:77]
+[ error ] [2]ini_set(): A session is active. You cannot change the session module's ini settings at this time[/www/wwwroot/Site-GN/Web/99/thinkphp/library/think/Session.php:78]
+[ info ] [ LANG ] /www/wwwroot/Site-GN/Web/99/thinkphp/lang/zh-cn.php
+[ info ] [ LANG ] /www/wwwroot/Site-GN/Web/99/application/lang/zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'ajaxdata',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'sj.io3o.cc',
+  'cookie' => 'PHPSESSID=0csqto0ps8q18te5orja4e098b; think_var=zh-cn; hide=1',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'https://sj.io3o.cc/99/index/index/home',
+  'sec-fetch-dest' => 'empty',
+  'sec-fetch-mode' => 'cors',
+  'sec-fetch-site' => 'same-origin',
+  'origin' => 'https://sj.io3o.cc',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1',
+  'accept' => '*/*',
+  'content-length' => '0',
+)
+[ info ] [ PARAM ] array (
+  '/index/index/ajaxdata' => '',
+)
+[ info ] [ LANG ] /www/wwwroot/Site-GN/Web/99/application/index/lang/zh-cn.php
+[ info ] [ SESSION ] INIT array (
+  'prefix' => '',
+  'expire' => 86400,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Index->ajaxdata[ /www/wwwroot/Site-GN/Web/99/application/index/controller/Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------

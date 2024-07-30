@@ -7,8 +7,10 @@ function Jump_301($url){
 //可以访问静态目录
 $STATIC = ['mobile','pc','public','static','99'];
 $Folder = explode('/',$_SERVER['REDIRECT_URL'])[1];
+$jump = true;
 foreach($STATIC as $key => $val){
-    if($Folder != $val){
-        Jump_301('https://baidu.com');
+    if($Folder == $val){
+    	$jump = false;
     }
 }
+if ($jump) Jump_301('https://baidu.com');

@@ -235,7 +235,7 @@ class Index extends Base
     }
   
       public function member() {
-        $downloadUrl = getconf()['sys_app_url'];
+        $downloadUrl = db('config')->where('name', 'sys_app_url')->value('value');
         $this->assign('downloadUrl', $downloadUrl);
         $this->assign('userInfo', $this->user);
         return $this->fetch('mine');

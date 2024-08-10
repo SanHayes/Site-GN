@@ -199,7 +199,7 @@ $(document).ready(function (e) {
     $('.iconCopy').on('click', function () {
         var val = $(this).data('value');
         copy(val);
-        $.toast("复制成功:" + val, "text");
+        $.toast("複製成功:" + val, "text");
     });
     //提交
     $('#submit').on('click', function () {
@@ -276,7 +276,6 @@ $(document).ready(function (e) {
 
                 //余额
                 $('.pay_mymoney').html(resdata.data.commission);
-                $('.jsForMoneyItem').attr('data-value', resdata.data.commission);
             }else{
                 // $.toast(resdata.data, "forbidden");
                 $('#orderError').removeClass('hidden');
@@ -1184,7 +1183,7 @@ function tempmy(onedata,data){
         data.topdata=onedata;
         data.topdata.state="down"
     }
-//			data.items[59] = [data.items[59][0],onedata.now,onedata.now,data.items[59][3],data.items[59][4]];
+//          data.items[59] = [data.items[59][0],onedata.now,onedata.now,data.items[59][3],data.items[59][4]];
     data.items[data.items.length-1][2] = onedata.now;
     maxQiya = maxQiya>onedata.now?maxQiya:onedata.now;
     minQiya = minQiya<onedata.now?minQiya:onedata.now;

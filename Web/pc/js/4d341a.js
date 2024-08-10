@@ -147,7 +147,6 @@ var page = {
               showSuccess('交易成功');
               $('.allmoney').attr('data-value', 0);
               $('.pay_mymoney').html($('.pay_mymoney').html() - resdata.data.fee);
-              $('.jsForMoneyItem').attr('data-value', $('.pay_mymoney').html());
           }else{
               showError(resdata.data);
           }

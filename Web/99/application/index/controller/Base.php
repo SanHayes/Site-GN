@@ -11,8 +11,8 @@ class Base extends Controller
         $HTTP_HOST = $_SERVER['HTTP_HOST'];
         $HTTP_HOST_ARR = explode('.',$HTTP_HOST);
 		if(!isMobile()){
-            $HOST = (isHttps() ? 'https://' : 'http://').'dn.'.$HTTP_HOST_ARR[1].'.'.$HTTP_HOST_ARR[2].'/99/home';
-            $this->redirect($HOST, [], 302, []);
+            		    $this->redirect(url('home/index/index',[]));
+
         }
 	    session(['prefix' => '', 'expire' => 60*60*24]);
 		$this->token = md5(time());

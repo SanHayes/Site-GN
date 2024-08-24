@@ -266,7 +266,7 @@ class Index extends Base
         $data['online'] = $mUser->where(['online'=>1])->count();
         $data['recharge'] = $model->where(['bptype'=>1,'isverified'=>0])->count();
         $data['withdraw'] = $model->where(['bptype'=>['in',[0,5]],'isverified'=>0])->count();
-        $data['orders'] = Db::name('order')->where(['buytime'=>['egt',time()-30],'ostaus'=>0])->count();
+        $data['orders'] = Db::name('order')->where('ostaus', 0)->where('kong_type', 0)->count();
         $params = ['state'=>true, 'data'=>$data];
         return json($params);
     }

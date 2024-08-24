@@ -10,8 +10,8 @@ class Base extends Controller
         $HTTP_HOST = $_SERVER['HTTP_HOST'];
         $HTTP_HOST_ARR = explode('.',$HTTP_HOST);
     	if(isMobile()){
-            $HOST = (isHttps() ? 'https://' : 'http://').'sj.'.$HTTP_HOST_ARR[1].'.'.$HTTP_HOST_ARR[2].'/99/index';
-            $this->redirect($HOST, [], 302, []);
+           $this->redirect(url('index/index/index',[]));
+
         }
         $this->HOST = ($this->isHTTPS() ? 'https://' : 'http://').'admin.'.$HTTP_HOST_ARR[1].'.'.$HTTP_HOST_ARR[2];
         $themeConfig = \db('config')->where('name', 'theme')->value('value');

@@ -376,6 +376,8 @@ class Order extends Base
 		$uid = $this->uid;
 		$hold = Db::name('order')->where(array('uid'=>$uid,'ostaus'=>1, 'selltime' => ['lt', time()]))->order('oid desc')->paginate(20);
         $hold->getCollection()->each(function ($item, $key) use ($hold) {
+             $item['time'] = $item['selltime'] - $item['buytime'];
+            $item['selltime'] = date('Y-m-d H:i:s', $item['selltime']);
             $item['buytime'] = date('Y-m-d H:i:s', $item['buytime']);
             $item['pro'] = GetProData($item['pid'],'pi.*');
             $hold->offsetSet($key, $item);

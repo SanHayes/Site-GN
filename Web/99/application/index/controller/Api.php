@@ -22,14 +22,14 @@ class Api extends Controller{
 		$this->user_loss = array();//指定客户亏损
 		
 		//K线数据库
-		$this->klinedata = db('klinedata');
+		$this->klinedata = Db::name('klinedata');
 	}
 
-	public function getdate()
+	public function getdata()
 	{		
 	    //echo date('Y-m-d H:i:s') . " getdate[3] -> ok \n\r";
 		//产品列表
-		$pro = db('productinfo')->where('isdelete',0)->select();
+		$pro = Db::name('productinfo')->where('isdelete',0)->select();
 		if(!isset($pro)) return json(false);
 
 		$nowtime = time();
@@ -153,7 +153,7 @@ class Api extends Controller{
 		   		//$thisdata['Price'] = $this->fengkong($res['buy'],$v);;
 		   		$thisdata['Price'] = $res['buy'];
 				$thisdata['Open'] = $res['open'];
-				$thisdata['Close'] = $res['last_close'];
+				$thisdata['Close'] = $res['nowPrice'];
 				$thisdata['High'] = $res['top'];
 				$thisdata['Low'] = $res['low'];
 				$thisdata['Diff'] = 0;
@@ -196,7 +196,7 @@ class Api extends Controller{
 			$thisdata['pid'] = $v['pid'];
 
 			$thisdatas[$v['pid']] = $thisdata;
-			$ids = db('productdata')->where('pid',$v['pid'])->update($thisdata);
+			$ids = Db::name('productdata')->where('pid',$v['pid'])->update($thisdata);
 
 			
 		}
@@ -295,9 +295,7 @@ class Api extends Controller{
 		// 	return json(false);
 		// }
 
-		trace('api - order 全局平仓 oid : '.$oid, 'sql');
-		
-		$config = db('config')->field('value')->where(['name'=>'sys_limit','status'=>1])->find();
+		$config = Db::name('config')->field('value')->where(['name'=>'sys_limit','status'=>1])->find();
 		$sys_limit = $config['value'];
 		if($oid>0 && $sys_limit==0){
 			return json(false);
@@ -309,48 +307,45 @@ class Api extends Controller{
 		if(count($kong_end_arr) == 2){
 			$s_rand = rand($kong_end_arr[0],$kong_end_arr[1]);
 		}else{
-			$s_rand = rand(6,12);
+			$s_rand = 0;
 		}
 		
-		$db_order = db('order');
-		$db_userinfo = db('userinfo');
 		$prodata = array();
 		//风控参数
-		$risk = db('risk')->find();
+		$risk = Db::name('risk')->find();
 
 		cache('order:'.$oid, 1, 2);
 
 		//订单列表
 		if($oid>0){
-			$orderlist = $db_order->where(['oid'=>$oid])->select();
+			$orderlist = Db::name('order')->where(['oid'=>$oid])->select();
 			if(!$orderlist){
 				return json(false);
 			}
 			$pid = $orderlist[0]['pid'];
-			$proItem = db('productdata')->field('Price')->where(['pid'=>$pid])->find();
+			$proItem = Db::name('productdata')->field('Price')->where(['pid'=>$pid])->find();
 			$prodata[$pid] = $proItem['Price'];
 		}else{
 			$map['ostaus'] = 0;
 			$map['selltime'] = array('elt',$nowtime+$s_rand);
-			$_orderlist = $db_order->where($map)->order('selltime asc')->select();
+			$_orderlist = Db::name('order')->where($map)->order('selltime asc')->select();
 
-			$data_info = db('productinfo');
 			//此刻产品价格
 			$p_map['isdelete'] = 0;
-			$pro = db('productdata')->field('pid,Price')->where($p_map)->select();
+			$pro = Db::name('productdata')->field('pid,Price')->where($p_map)->select();
 			foreach ($pro as $k => $v) {
 				$_pro = cache('nowdata');
 				if(!isset($_pro[$v['pid']])){
 					$prodata[$v['pid']] = $v['Price'];
 					continue;
 				}
-				$prodata[$v['pid']] = $this->order_type($_orderlist,$_pro[$v['pid']],$risk,$data_info);
+				$prodata[$v['pid']] = $this->order_type($_orderlist,$_pro[$v['pid']],$risk);
 			}
 
 			//订单列表
 			$map['ostaus'] = 0;
 			$map['selltime'] = array('elt',$nowtime);
-			$orderlist = $db_order->where($map)->limit(0,50)->select();
+			$orderlist = Db::name('order')->where($map)->limit(0,50)->select();
 
 			if(!$orderlist){
 				return json(false);
@@ -423,7 +418,7 @@ class Api extends Controller{
 								$sellprice = round($v['buyprice']+$gain*$v['point'], 6);
 							}
 						}
-						db('productdata')->where(['pid'=>$v['pid']])->update(['Price'=>$sellprice]);
+						Db::name('productdata')->where(['pid'=>$v['pid']])->update(['Price'=>$sellprice]);
 						$order_cha = round(floatval($sellprice)-floatval($buyprice), 6);
 
 					}elseif(strpos($risk['to_loss']."", $v['uid']."")!==false){
@@ -444,7 +439,7 @@ class Api extends Controller{
 								$sellprice = round($v['buyprice']+$gain*$v['point'], 6);
 							}
 						}
-						db('productdata')->where(['pid'=>$v['pid']])->update(['Price'=>$sellprice]);
+						Db::name('productdata')->where(['pid'=>$v['pid']])->update(['Price'=>$sellprice]);
 						$order_cha = round(floatval($sellprice)-floatval($buyprice), 6);
 					}else{
 						$is_dist = 0;
@@ -469,7 +464,7 @@ class Api extends Controller{
 							}
 						}
 						if($is_dist==1){
-							db('productdata')->where(['pid'=>$v['pid']])->update(['Price'=>$sellprice]);
+							Db::name('productdata')->where(['pid'=>$v['pid']])->update(['Price'=>$sellprice]);
 							$order_cha = round(floatval($sellprice)-floatval($buyprice), 6);
 						}
 					}
@@ -499,7 +494,7 @@ class Api extends Controller{
 						}
 						//平仓增加用户金额
 						$u_add = $yingli + $fee;
-						$db_userinfo->where('uid',$v['uid'])->setInc('usermoney',$u_add);
+						Db::name('userinfo')->where('uid',$v['uid'])->setInc('usermoney',$u_add);
 						//写入日志
 						$this->set_order_log($v,$u_add);
 					}elseif($order_cha < 0){	//亏损
@@ -524,7 +519,7 @@ class Api extends Controller{
 						}
 						//平仓增加用户金额
 						$u_add = $yingli + $fee;
-						$db_userinfo->where('uid',$v['uid'])->setInc('usermoney',$u_add);
+						Db::name('userinfo')->where('uid',$v['uid'])->setInc('usermoney',$u_add);
 						$this->set_order_log($v,$u_add);
 					}else{		//无效
 						$yingli = 0;
@@ -535,7 +530,7 @@ class Api extends Controller{
 						}
 						//平仓增加用户金额
 						$u_add = $fee;
-						$db_userinfo->where('uid',$v['uid'])->setInc('usermoney',$u_add);
+						Db::name('userinfo')->where('uid',$v['uid'])->setInc('usermoney',$u_add);
 						//写入日志
 						$this->set_order_log($v,$u_add);
 					}
@@ -545,7 +540,7 @@ class Api extends Controller{
 					$d_map['sellprice'] = $sellprice;
 					$d_map['ploss'] = $yingli;
 					$d_map['oid'] = $v['oid'];
-					db('order')->update($d_map);
+					Db::name('order')->update($d_map);
 
 				//买跌
 				}elseif($v['ostyle']==1 && (($sys_limit==1 && $oid>0) || ($nowtime >= $v['selltime']))) {
@@ -571,7 +566,7 @@ class Api extends Controller{
 						}
 						//平仓增加用户金额
 						$u_add = $yingli + $fee;
-						$db_userinfo->where('uid',$v['uid'])->setInc('usermoney',$u_add);
+						Db::name('userinfo')->where('uid',$v['uid'])->setInc('usermoney',$u_add);
 						//写入日志
 						$this->set_order_log($v,$u_add);
 					}elseif($order_cha > 0){	//亏损
@@ -596,7 +591,7 @@ class Api extends Controller{
 						}
 						//平仓增加用户金额
 						$u_add = $yingli + $fee;
-						$db_userinfo->where('uid',$v['uid'])->setInc('usermoney',$u_add);
+						Db::name('userinfo')->where('uid',$v['uid'])->setInc('usermoney',$u_add);
 						$this->set_order_log($v,$u_add);
 					}else{		//无效
 						$yingli = 0;
@@ -607,7 +602,7 @@ class Api extends Controller{
 						}
 						//平仓增加用户金额
 						$u_add = $fee;
-						$db_userinfo->where('uid',$v['uid'])->setInc('usermoney',$u_add);
+						Db::name('userinfo')->where('uid',$v['uid'])->setInc('usermoney',$u_add);
 						//写入日志
 						$this->set_order_log($v,$u_add);
 					}
@@ -630,7 +625,7 @@ class Api extends Controller{
 		$d_map['is_win'] = $is_win;
 		$d_map['ploss'] = $yingli;
 		$d_map['sellprice'] = $sellprice;
-		return db('order')->where(['ostaus'=>0,'oid'=>$oid])->update($d_map);
+		return Db::name('order')->where(['ostaus'=>0,'oid'=>$oid])->update($d_map);
 	}
 
 
@@ -648,8 +643,8 @@ class Api extends Controller{
        	$o_log['addprice'] = $addprice;
        	$o_log['addpoint'] = 0;
        	$o_log['time'] = time();
-       	$o_log['user_money'] = db('userinfo')->where('uid',$v['uid'])->value('usermoney');
-       	db('order_log')->insert($o_log);
+       	$o_log['user_money'] = Db::name('userinfo')->where('uid',$v['uid'])->value('usermoney');
+       	Db::name('order_log')->insert($o_log);
 
        	//资金日志
        	set_price_log($v['uid'],1,$addprice,'结单','订单到期获利结算',$v['oid'],$o_log['user_money']);
@@ -661,7 +656,7 @@ class Api extends Controller{
 	 * @param  [type] $orders [description]
 	 * @return [type]         [description]
 	 */
-	public function order_type($orders,$pro,$risk,$data_info)
+	public function order_type($orders,$pro,$risk)
 	{
 		$_prcie = $pro['Price'];
 
@@ -691,7 +686,7 @@ class Api extends Controller{
 		$to_loss = explode('|',$risk['to_loss']);
 		$to_loss = array_filter(array_merge($to_loss,$this->user_loss));
 
-		$proinfo = $data_info->where('pid',$pro['pid'])->find();
+		$proinfo = Db::name('productinfo')->where('pid',$pro['pid'])->find();
 
 		$i = 0;
 		$point = 0;
@@ -870,7 +865,7 @@ class Api extends Controller{
 			$pro['Price'] = $this->fengkong($pro['Price'],$proinfo);
 		}
 		
-		db('productdata')->where('pid',$pro['pid'])->update($pro);
+		Db::name('productdata')->where('pid',$pro['pid'])->update($pro);
 		return $pro['Price'];
 	}
 
@@ -1238,7 +1233,7 @@ class Api extends Controller{
 		$map['isshow'] = 0;
 		$map['ostaus'] = 1;
 		$map['selltime'] = array('<',time()-300);
-		$list = db('order')->where($map)->limit(0,10)->select();
+		$list = Db::name('order')->where($map)->limit(0,10)->select();
 
 		if(!$list){
 			return json(false);
@@ -1248,7 +1243,7 @@ class Api extends Controller{
 			//分配金额
 			$this->allotfee($v['uid'],$v['fee'],$v['is_win'],$v['oid'],$v['ploss']);
 			//更改订单状态
-			db('order')->where('oid',$v['oid'])->update(array('isshow'=>1));
+			Db::name('order')->where('oid',$v['oid'])->update(array('isshow'=>1));
 
 		}
 		//dump($list);
@@ -1258,8 +1253,8 @@ class Api extends Controller{
 
 	private function allotfee($uid,$fee,$is_win,$order_id,$ploss)
 	{
-		$userinfo = db('userinfo');
-		$allot = db('allot');
+		$userinfo = Db::name('userinfo');
+		$allot = Db::name('allot');
 		$nowtime = time();
 
 		$user = $userinfo->field('uid,oid')->where('uid',$uid)->find();
@@ -1337,7 +1332,7 @@ class Api extends Controller{
 			if($ids_fee){
 				//余额
 				$nowmoney = $userinfo->where('uid',$v['uid'])->value('usermoney');
-				set_price_log($v['uid'],$type,$_fee,'对冲','下线客户平仓对冲',$order_id,$nowmoney);
+				set_price_log($v['uid'],$type,$_fee,'對衝','下線客戶平倉對衝',$order_id,$nowmoney);
 				
 			}
 
@@ -1351,7 +1346,7 @@ class Api extends Controller{
 			if($ids_feerebate){
 				//余额
 				$nowmoney = $userinfo->where('uid',$v['uid'])->value('usermoney');
-				set_price_log($v['uid'],1,$_feerebate,'客户手续费','下线客户下单手续费',$order_id,$nowmoney);
+				set_price_log($v['uid'],1,$_feerebate,'客戶手續費','下線客戶下單手續費',$order_id,$nowmoney);
 				
 			}
 
@@ -1398,8 +1393,7 @@ class Api extends Controller{
 		$map['bptime'] = array('lt',$lttime);
 		$map['pay_type'] = array('in',array('ysy_alwap','ysy_wxwap'));
 		$map['bptype'] = 3;
-		$db_balance = db('balance');
-		$list = $db_balance->where($map)->select();
+		$list = Db::name('balance')->where($map)->select();
 		
 		if(!$list) return json(false);
 		
@@ -1471,7 +1465,7 @@ class Api extends Controller{
 				
 				$_map['bpid'] = $val['bpid'];
 				$_map['bptype'] = 4;
-				$db_balance->update($_map);
+				Db::name('balance')->update($_map);
 				
 		}
 		
@@ -1511,37 +1505,37 @@ class Api extends Controller{
 		}else{
 			$userinvest = Db::name('userinvest')->field('id,uid,username,money,interest,state')->where(['state'=>1,'totime'=>['elt',time()]])->find();
 			if(!$userinvest){
-				return json(WPreturn('暂无可操作订单！',1));
+				return json(WPreturn('暫無可操作訂單！',1));
 			}
 			if($userinvest['state'] != 1){
-				return json(WPreturn('此订单已操作',-1));
+				return json(WPreturn('此訂單已操作',-1));
 			}
 			//获取个人信息
 			$userinfo = Db::name('userinfo')->field('uid,username,usermoney')->where('uid',$userinvest['uid'])->find();
 			$id = $userinvest['id'];
 			if(empty($userinfo)){
 			    Db::name('userinvest')->where(['state'=>1,'id'=>$id])->update(['state'=>0]);
-				return json(WPreturn('回款失败，缺少参数!',-1));
+				return json(WPreturn('回款失敗，缺少引數!',-1));
 			}
 			$ret = Db::name('userinvest')->where(['id'=>$id,'state'=>1])->update(['state'=>2,'totime'=>time()]);
 			if($ret){
 				$sys_yue_benjin = getconf('sys_yue_benjin');
 				if($sys_yue_benjin==2){
-					db('userinfo')->where('uid',$userinvest['uid'])->setInc('usermoney',$userinvest['money']+$userinvest['interest']);
+					Db::name('userinfo')->where('uid',$userinvest['uid'])->setInc('usermoney',$userinvest['money']+$userinvest['interest']);
 				}else{
-					db('userinfo')->where('uid',$userinvest['uid'])->setInc('usermoney',$userinvest['interest']);
+					Db::name('userinfo')->where('uid',$userinvest['uid'])->setInc('usermoney',$userinvest['interest']);
 				}
-				db('userinfo')->where('uid',$userinvest['uid'])->setDec('freeze',$userinvest['money']);
+				Db::name('userinfo')->where('uid',$userinvest['uid'])->setDec('freeze',$userinvest['money']);
 				//资金日志
 				if($sys_yue_benjin==2){
-					set_price_log($userinvest['uid'],1,$userinvest['money'],'利息宝','会员投资本金',$id,$userinfo['usermoney']);
-					set_price_log($userinvest['uid'],1,$userinvest['interest'],'利息宝','会员投资利息',$id,$userinfo['usermoney']+$userinvest['money']);
+					set_price_log($userinvest['uid'],1,$userinvest['money'],'利息寶','會員投資本金',$id,$userinfo['usermoney']);
+					set_price_log($userinvest['uid'],1,$userinvest['interest'],'利息寶','會員投資利息',$id,$userinfo['usermoney']+$userinvest['money']);
 				}else{
-					set_price_log($userinvest['uid'],1,$userinvest['interest'],'利息宝','会员投资利息',$id,$userinfo['usermoney']);
+					set_price_log($userinvest['uid'],1,$userinvest['interest'],'利息寶','會員投資利息',$id,$userinfo['usermoney']);
 				}
 				return json(WPreturn('操作成功！',1));
 			}else{
-				return json(WPreturn('操作失败！',-1));
+				return json(WPreturn('操作失敗！',-1));
 			}
 		}
 	}

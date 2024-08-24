@@ -154,9 +154,9 @@ $(document).ready(function (e) {
     $('body').on('click', '.buyUpForJS, .buyDownForJS', function (e) {
         order_type = $(this).data('type');
         if(order_type == 0){
-            $('.typename').html('买涨');
+            $('.typename').html('買漲');
         }else {
-            $('.typename').html('买跌');
+            $('.typename').html('買跌');
         }
         $('#orderDialog').removeClass('hidden');
     });
@@ -240,16 +240,16 @@ $(document).ready(function (e) {
         };
 
         if(order_price > my_money){
-            $.toast("资金不足，请先充值", "forbidden");
+            $.toast("資金不足，請先充值", "forbidden");
             return;
         }
 
         if(order_price < order_min_price){
-            $.toast('最小下注金额为'+order_min_price, "forbidden");
+            $.toast('最小下注金額為'+order_min_price, "forbidden");
             return;
         }
         if(order_price > order_max_price){
-            $.toast('最大下注金额为'+order_max_price, "forbidden");
+            $.toast('最大下注金額為'+order_max_price, "forbidden");
             return;
         }
         var _loading = $('#loadingNotTuochClose');
@@ -691,7 +691,7 @@ function gotoecharts(data){
                     animationDuration:0,
                     data: [
                         {
-                            name: '最新价',
+                            name: '最新價',
                             x: '100%',
                             yAxis: data.topdata.now,
                             value: data.topdata.now,
@@ -1183,7 +1183,7 @@ function tempmy(onedata,data){
         data.topdata=onedata;
         data.topdata.state="down"
     }
-//          data.items[59] = [data.items[59][0],onedata.now,onedata.now,data.items[59][3],data.items[59][4]];
+//			data.items[59] = [data.items[59][0],onedata.now,onedata.now,data.items[59][3],data.items[59][4]];
     data.items[data.items.length-1][2] = onedata.now;
     maxQiya = maxQiya>onedata.now?maxQiya:onedata.now;
     minQiya = minQiya<onedata.now?minQiya:onedata.now;

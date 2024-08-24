@@ -574,7 +574,7 @@ function gotoecharts(data){
                     animationDuration:0,
                     data: [
                         {
-                            name: '最新价',
+                            name: '最新價',
                             x: '100%',
                             yAxis: data.topdata.now,
                             value: data.topdata.now,

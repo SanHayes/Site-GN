@@ -13,8 +13,8 @@ class Login extends Controller
         $HTTP_HOST = $_SERVER['HTTP_HOST'];
         $HTTP_HOST_ARR = explode('.',$HTTP_HOST);
         if(isMobile()){
-            $HOST = (isHttps() ? 'https://' : 'http://').'sj.'.$HTTP_HOST_ARR[1].'.'.$HTTP_HOST_ARR[2].'/99/index';
-            $this->redirect($HOST, [], 302, []);
+           $this->redirect(url('index/index/index',[]));
+
         }
         $this->conf = getconf('');
         if($this->conf['is_close'] != 1){
